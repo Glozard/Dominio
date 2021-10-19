@@ -16,9 +16,9 @@ namespace DominioElChivito
             pedidos = new List<Pedido>();
         }
 
-        public void agregarPedido(string direccion, int cantidad, int numero_orden, int codigo, int codigo_producto)
+        public void agregarPedido(string direccion, int cantidad, int numero_orden, int codigo, int codigo_producto , byte estado)
         {
-            Pedido p = new Pedido(direccion, cantidad, numero_orden, codigo, codigo_producto);
+            Pedido p = new Pedido(direccion, cantidad, numero_orden, codigo, codigo_producto, estado);
             pedidos.Add(p);
         }
 
@@ -49,8 +49,23 @@ namespace DominioElChivito
             }
             return respuesta;
         }
-       
+        public List<Pedido> levantarPedido()
+        {
+            List<Pedido> resp = new List<Pedido>();
 
-    }//.
+            foreach(Pedido aux in pedidos)
+            {
+                if (aux.Estado==0)
+                {
+                    resp.Add(aux.);
+                }
+            }
+            return resp;
+        }
+
+            
+         
+
+    }
 
 }

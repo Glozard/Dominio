@@ -12,7 +12,14 @@ namespace Interface
     public partial class agregarPedido : Form
     {
         Restaurante restaurante;
-        
+        string unaDireccion = "";
+        int unaCantidad;
+        int unNumero_orden = 0;
+        int unCodigo = 0;
+        int unCodigo_producto = -1;
+        string comida = "";
+        byte estado = 0;
+
         public agregarPedido(Restaurante unRestaurante)
         {
             this.restaurante = unRestaurante;
@@ -30,13 +37,10 @@ namespace Interface
 
         }
 
-
+    
         private void lblAgregar_Click(object sender, EventArgs e)
         {
-
-
-            int unCodigo_producto = -1;
-            string comida = "";
+      
             if (listaPizza.SelectedIndex != -1)
             {
                 comida = listaPizza.SelectedItem.ToString();
@@ -48,12 +52,12 @@ namespace Interface
                 unCodigo_producto = listaHamburguesa.SelectedIndex;
             }
 
-            string unaDireccion = txtDireccion.Text;
-            int unaCantidad = Convert.ToInt32(txtCantidad.Text);
-            int unNumero_orden = +1;
-            int unCodigo = +1;
+            unaDireccion = txtDireccion.Text;
+            unaCantidad = Convert.ToInt32(txtCantidad.Text);
+            unNumero_orden = +1;
+            unCodigo = +1;
     
-            restaurante.agregarPedido(unaDireccion, unaCantidad, unNumero_orden, unCodigo, unCodigo_producto);
+           
             dataPedido.Rows.Add(comida, unaCantidad, unaDireccion, unNumero_orden, unCodigo, unCodigo_producto);
 
 
@@ -62,8 +66,11 @@ namespace Interface
             listaPizza.SelectedIndex = -1;
             listaHamburguesa.SelectedItem = -1;
 
-            Cocina cocina = new Cocina(comida ,unaDireccion, unaCantidad, unNumero_orden, unCodigo, unCodigo_producto);
+        }
 
+        private void btnEnviar_Click(object sender, EventArgs e)
+        {
+            restaurante.agregarPedido(unaDireccion, unaCantidad, unNumero_orden, unCodigo, unCodigo_producto , estado);
         }
     }
 }

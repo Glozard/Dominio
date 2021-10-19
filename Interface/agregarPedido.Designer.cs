@@ -47,6 +47,8 @@ namespace Interface
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.lblAgregar = new System.Windows.Forms.Button();
+            this.btnEnviar = new System.Windows.Forms.Button();
+            this.tablaChivito = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.dataPedido)).BeginInit();
             this.tablaComida.SuspendLayout();
             this.Pizza.SuspendLayout();
@@ -56,9 +58,9 @@ namespace Interface
             // lblProducto
             // 
             this.lblProducto.AutoSize = true;
-            this.lblProducto.Location = new System.Drawing.Point(227, 26);
+            this.lblProducto.Location = new System.Drawing.Point(199, 20);
             this.lblProducto.Name = "lblProducto";
-            this.lblProducto.Size = new System.Drawing.Size(61, 20);
+            this.lblProducto.Size = new System.Drawing.Size(49, 15);
             this.lblProducto.TabIndex = 24;
             this.lblProducto.Text = "Comida";
             // 
@@ -72,11 +74,12 @@ namespace Interface
             this.Numero_de_Orden,
             this.Codigo,
             this.Cliente});
-            this.dataPedido.Location = new System.Drawing.Point(35, 329);
+            this.dataPedido.Location = new System.Drawing.Point(31, 247);
+            this.dataPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataPedido.Name = "dataPedido";
             this.dataPedido.RowHeadersWidth = 51;
             this.dataPedido.RowTemplate.Height = 29;
-            this.dataPedido.Size = new System.Drawing.Size(803, 188);
+            this.dataPedido.Size = new System.Drawing.Size(804, 138);
             this.dataPedido.TabIndex = 26;
             this.dataPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -126,19 +129,22 @@ namespace Interface
             // 
             this.tablaComida.Controls.Add(this.Pizza);
             this.tablaComida.Controls.Add(this.Hamburguesa);
-            this.tablaComida.Location = new System.Drawing.Point(31, 62);
+            this.tablaComida.Controls.Add(this.tablaChivito);
+            this.tablaComida.Location = new System.Drawing.Point(27, 46);
+            this.tablaComida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tablaComida.Name = "tablaComida";
             this.tablaComida.SelectedIndex = 0;
-            this.tablaComida.Size = new System.Drawing.Size(807, 242);
+            this.tablaComida.Size = new System.Drawing.Size(706, 182);
             this.tablaComida.TabIndex = 27;
             // 
             // Pizza
             // 
             this.Pizza.Controls.Add(this.listaPizza);
-            this.Pizza.Location = new System.Drawing.Point(4, 29);
+            this.Pizza.Location = new System.Drawing.Point(4, 24);
+            this.Pizza.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Pizza.Name = "Pizza";
-            this.Pizza.Padding = new System.Windows.Forms.Padding(3);
-            this.Pizza.Size = new System.Drawing.Size(799, 209);
+            this.Pizza.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Pizza.Size = new System.Drawing.Size(698, 154);
             this.Pizza.TabIndex = 1;
             this.Pizza.Text = "Pizza";
             this.Pizza.UseVisualStyleBackColor = true;
@@ -146,21 +152,23 @@ namespace Interface
             // listaPizza
             // 
             this.listaPizza.FormattingEnabled = true;
-            this.listaPizza.ItemHeight = 20;
+            this.listaPizza.ItemHeight = 15;
             this.listaPizza.Items.AddRange(new object[] {
             "Pizza"});
-            this.listaPizza.Location = new System.Drawing.Point(16, 12);
+            this.listaPizza.Location = new System.Drawing.Point(14, 9);
+            this.listaPizza.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listaPizza.Name = "listaPizza";
-            this.listaPizza.Size = new System.Drawing.Size(705, 184);
+            this.listaPizza.Size = new System.Drawing.Size(617, 139);
             this.listaPizza.TabIndex = 0;
             // 
             // Hamburguesa
             // 
             this.Hamburguesa.Controls.Add(this.listaHamburguesa);
-            this.Hamburguesa.Location = new System.Drawing.Point(4, 29);
+            this.Hamburguesa.Location = new System.Drawing.Point(4, 24);
+            this.Hamburguesa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Hamburguesa.Name = "Hamburguesa";
-            this.Hamburguesa.Padding = new System.Windows.Forms.Padding(3);
-            this.Hamburguesa.Size = new System.Drawing.Size(799, 209);
+            this.Hamburguesa.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Hamburguesa.Size = new System.Drawing.Size(698, 154);
             this.Hamburguesa.TabIndex = 2;
             this.Hamburguesa.Text = "Hamburguesa";
             this.Hamburguesa.UseVisualStyleBackColor = true;
@@ -168,62 +176,89 @@ namespace Interface
             // listaHamburguesa
             // 
             this.listaHamburguesa.FormattingEnabled = true;
-            this.listaHamburguesa.ItemHeight = 20;
+            this.listaHamburguesa.ItemHeight = 15;
             this.listaHamburguesa.Items.AddRange(new object[] {
             "Hamburguesa"});
-            this.listaHamburguesa.Location = new System.Drawing.Point(19, 12);
+            this.listaHamburguesa.Location = new System.Drawing.Point(17, 9);
+            this.listaHamburguesa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listaHamburguesa.Name = "listaHamburguesa";
-            this.listaHamburguesa.Size = new System.Drawing.Size(764, 184);
+            this.listaHamburguesa.Size = new System.Drawing.Size(669, 139);
             this.listaHamburguesa.TabIndex = 0;
             // 
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(1056, 106);
+            this.lblCantidad.Location = new System.Drawing.Point(992, 82);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(69, 20);
+            this.lblCantidad.Size = new System.Drawing.Size(55, 15);
             this.lblCantidad.TabIndex = 28;
             this.lblCantidad.Text = "Cantidad";
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(896, 103);
+            this.txtCantidad.Location = new System.Drawing.Point(852, 79);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(125, 27);
+            this.txtCantidad.Size = new System.Drawing.Size(110, 23);
             this.txtCantidad.TabIndex = 29;
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(896, 163);
+            this.txtDireccion.Location = new System.Drawing.Point(852, 124);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(125, 27);
+            this.txtDireccion.Size = new System.Drawing.Size(110, 23);
             this.txtDireccion.TabIndex = 31;
             // 
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(1056, 166);
+            this.lblDireccion.Location = new System.Drawing.Point(992, 126);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(72, 20);
+            this.lblDireccion.Size = new System.Drawing.Size(57, 15);
             this.lblDireccion.TabIndex = 30;
             this.lblDireccion.Text = "Direccion";
             // 
             // lblAgregar
             // 
             this.lblAgregar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAgregar.Location = new System.Drawing.Point(919, 255);
+            this.lblAgregar.Location = new System.Drawing.Point(852, 190);
+            this.lblAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblAgregar.Name = "lblAgregar";
-            this.lblAgregar.Size = new System.Drawing.Size(194, 45);
+            this.lblAgregar.Size = new System.Drawing.Size(170, 34);
             this.lblAgregar.TabIndex = 32;
-            this.lblAgregar.Text = "Agregar y enviar\r\n\r\n";
+            this.lblAgregar.Text = "Agregar";
             this.lblAgregar.UseVisualStyleBackColor = true;
             this.lblAgregar.Click += new System.EventHandler(this.lblAgregar_Click);
             // 
+            // btnEnviar
+            // 
+            this.btnEnviar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnEnviar.Location = new System.Drawing.Point(875, 237);
+            this.btnEnviar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.Size = new System.Drawing.Size(120, 31);
+            this.btnEnviar.TabIndex = 33;
+            this.btnEnviar.Text = "Enviar";
+            this.btnEnviar.UseVisualStyleBackColor = true;
+            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
+            // 
+            // tablaChivito
+            // 
+            this.tablaChivito.Location = new System.Drawing.Point(4, 24);
+            this.tablaChivito.Name = "tablaChivito";
+            this.tablaChivito.Padding = new System.Windows.Forms.Padding(3);
+            this.tablaChivito.Size = new System.Drawing.Size(698, 154);
+            this.tablaChivito.TabIndex = 3;
+            this.tablaChivito.Text = "Chivito";
+            this.tablaChivito.UseVisualStyleBackColor = true;
+            // 
             // agregarPedido
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1308, 619);
+            this.ClientSize = new System.Drawing.Size(1144, 464);
+            this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.lblAgregar);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.lblDireccion);
@@ -232,6 +267,7 @@ namespace Interface
             this.Controls.Add(this.tablaComida);
             this.Controls.Add(this.dataPedido);
             this.Controls.Add(this.lblProducto);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "agregarPedido";
             this.Text = "agregarPedido";
             ((System.ComponentModel.ISupportInitialize)(this.dataPedido)).EndInit();
@@ -262,5 +298,7 @@ namespace Interface
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.Button lblAgregar;
+        private System.Windows.Forms.Button btnEnviar;
+        private System.Windows.Forms.TabPage tablaChivito;
     }
 }

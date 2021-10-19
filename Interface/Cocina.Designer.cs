@@ -30,8 +30,8 @@ namespace Interface
         private void InitializeComponent()
         {
             this.dataListaPedidos = new System.Windows.Forms.DataGridView();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Comida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataListaPedidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,21 +41,14 @@ namespace Interface
             this.dataListaPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Comida,
             this.Cantidad});
-            this.dataListaPedidos.Location = new System.Drawing.Point(55, 121);
+            this.dataListaPedidos.Location = new System.Drawing.Point(48, 91);
+            this.dataListaPedidos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataListaPedidos.Name = "dataListaPedidos";
             this.dataListaPedidos.RowHeadersWidth = 51;
             this.dataListaPedidos.RowTemplate.Height = 29;
-            this.dataListaPedidos.Size = new System.Drawing.Size(412, 188);
+            this.dataListaPedidos.Size = new System.Drawing.Size(360, 141);
             this.dataListaPedidos.TabIndex = 0;
             this.dataListaPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListaPedidos_CellContentClick);
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            this.Cantidad.Width = 125;
             // 
             // Comida
             // 
@@ -65,14 +58,24 @@ namespace Interface
             this.Comida.ReadOnly = true;
             this.Comida.Width = 125;
             // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 6;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            this.Cantidad.Width = 125;
+            // 
             // Cocina
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(700, 338);
             this.Controls.Add(this.dataListaPedidos);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Cocina";
             this.Text = "Cocina";
+            this.Load += new System.EventHandler(this.Cocina_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataListaPedidos)).EndInit();
             this.ResumeLayout(false);
 

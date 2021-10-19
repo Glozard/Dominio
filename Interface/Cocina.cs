@@ -17,23 +17,21 @@ namespace Interface
         {
             this.restaurante = unRestaurante;
             InitializeComponent();
+            dataListaPedidos.Rows.Add(restaurante.levantarPedido());
         }
        
-        public Cocina (string comida ,string direccion, int cantidad, int numero_orden, int codigo, int codigo_producto)
-        {   
-            string unaComida = comida;
-            string unaDirección = direccion;
-            int unaCantidad = cantidad;
-            int unNumero_orden = numero_orden;
-            int unCodigo = codigo;
-            int unCodigo_producto = codigo_producto;      
-        }
+
 
 
         private void dataListaPedidos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            dataListaPedidos.Rows.Add();
+            
+        }
+
+        private void Cocina_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
