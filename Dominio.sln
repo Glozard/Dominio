@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interface", "Interface\Interface.csproj", "{E73CA88E-36E0-4D8C-814E-5FC0B2EC97B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DominioElChivito", "DominioElChivito\DominioElChivito.csproj", "{B02FAE9D-E99E-46A6-A489-5CFEBF1C3E97}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E73CA88E-36E0-4D8C-814E-5FC0B2EC97B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E73CA88E-36E0-4D8C-814E-5FC0B2EC97B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E73CA88E-36E0-4D8C-814E-5FC0B2EC97B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E73CA88E-36E0-4D8C-814E-5FC0B2EC97B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B02FAE9D-E99E-46A6-A489-5CFEBF1C3E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B02FAE9D-E99E-46A6-A489-5CFEBF1C3E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B02FAE9D-E99E-46A6-A489-5CFEBF1C3E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B02FAE9D-E99E-46A6-A489-5CFEBF1C3E97}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03BDAB8C-E90E-41D3-92BE-3E0FA275D5AD}
+	EndGlobalSection
+EndGlobal
