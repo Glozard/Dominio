@@ -248,7 +248,7 @@ namespace Interface
             // 
             // btnNoDisponble
             // 
-            this.btnNoDisponble.Location = new System.Drawing.Point(338, 316);
+            this.btnNoDisponble.Location = new System.Drawing.Point(427, 316);
             this.btnNoDisponble.Name = "btnNoDisponble";
             this.btnNoDisponble.Size = new System.Drawing.Size(169, 48);
             this.btnNoDisponble.TabIndex = 34;
@@ -257,7 +257,7 @@ namespace Interface
             // 
             // btnDisponible
             // 
-            this.btnDisponible.Location = new System.Drawing.Point(163, 316);
+            this.btnDisponible.Location = new System.Drawing.Point(252, 316);
             this.btnDisponible.Name = "btnDisponible";
             this.btnDisponible.Size = new System.Drawing.Size(169, 48);
             this.btnDisponible.TabIndex = 35;

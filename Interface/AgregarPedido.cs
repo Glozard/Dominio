@@ -91,7 +91,7 @@ namespace Interface
                 dataPedido.Visible = false;
                 lblCantidad.Visible = false;
                 lblDireccion.Visible = false;
-                agregarPedido.Sice 
+                Size = new Size(918, 431); 
                 
             }
         }
