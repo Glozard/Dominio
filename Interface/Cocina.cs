@@ -17,7 +17,8 @@ namespace Interface
         {
             this.restaurante = unRestaurante;
             InitializeComponent();
-            dataListaPedidos.Rows.Add(restaurante.levantarPedido());
+          
+            dataListaPedidos.DataSource=(restaurante.levantarPedido());
         }
        
 
@@ -30,6 +31,11 @@ namespace Interface
         }
 
         private void Cocina_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listaComidas_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

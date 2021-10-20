@@ -15,10 +15,10 @@ namespace DominioElChivito
             empleados = new List<Empleado>();
             pedidos = new List<Pedido>();
         }
-
-        public void agregarPedido(string direccion, int cantidad, int numero_orden, int codigo, int codigo_producto , byte estado)
+        
+        public void agregarPedido(string comida, int cantidad, byte estado, int numero_orden, int codigo, int codigo_producto, string direccion)
         {
-            Pedido p = new Pedido(direccion, cantidad, numero_orden, codigo, codigo_producto, estado);
+            Pedido p = new Pedido(comida, cantidad, estado , numero_orden , codigo , codigo_producto, direccion);
             pedidos.Add(p);
         }
 
@@ -49,15 +49,16 @@ namespace DominioElChivito
             }
             return respuesta;
         }
+       
         public List<Pedido> levantarPedido()
         {
             List<Pedido> resp = new List<Pedido>();
 
-            foreach(Pedido aux in pedidos)
+            foreach (Pedido aux in pedidos)
             {
                 if (aux.Estado==0)
                 {
-                    resp.Add(aux.);
+                    resp.Add(aux);
                 }
             }
             return resp;

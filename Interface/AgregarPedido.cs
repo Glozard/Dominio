@@ -58,7 +58,7 @@ namespace Interface
             unCodigo = +1;
     
            
-            dataPedido.Rows.Add(comida, unaCantidad, unaDireccion, unNumero_orden, unCodigo, unCodigo_producto);
+            dataPedido.Rows.Add(comida, unaCantidad, estado, unNumero_orden, unCodigo, unCodigo_producto, unaDireccion);
 
 
             txtCantidad.Text = "";
@@ -70,7 +70,7 @@ namespace Interface
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            restaurante.agregarPedido(unaDireccion, unaCantidad, unNumero_orden, unCodigo, unCodigo_producto , estado);
+            restaurante.agregarPedido(comida , unaCantidad , estado , unNumero_orden, unCodigo, unCodigo_producto , unaDireccion);
         }
     }
 }
