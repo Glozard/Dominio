@@ -91,7 +91,7 @@ namespace Interface
                 dataPedido.Visible = false;
                 lblCantidad.Visible = false;
                 lblDireccion.Visible = false;
-                agregarPedido.
+                agregarPedido.Sice 
                 
             }
         }
