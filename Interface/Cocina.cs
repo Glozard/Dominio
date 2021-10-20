@@ -76,6 +76,7 @@ namespace Interface
             btnComenzar.Enabled = true;
 
            // dataListaPedidos.Rows.RemoveAt(posicion);
+
         }
 
         private void btnListaDeProductos_Click(object sender, EventArgs e)

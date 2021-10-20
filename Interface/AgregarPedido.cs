@@ -19,7 +19,7 @@ namespace Interface
         int unCodigo_producto = -1;
         string comida = "";
         byte estado = 0;
-
+ 
         int unaPocision = 1;
 
         public agregarPedido(Restaurante unRestaurante)
@@ -94,6 +94,16 @@ namespace Interface
                 Size = new Size(918, 431); 
                 
             }
+        }
+
+        private void btnDisponible_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNoDisponble_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

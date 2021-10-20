@@ -254,6 +254,7 @@ namespace Interface
             this.btnNoDisponble.TabIndex = 34;
             this.btnNoDisponble.Text = "No disponible";
             this.btnNoDisponble.UseVisualStyleBackColor = true;
+            this.btnNoDisponble.Click += new System.EventHandler(this.btnNoDisponble_Click);
             // 
             // btnDisponible
             // 
@@ -263,6 +264,7 @@ namespace Interface
             this.btnDisponible.TabIndex = 35;
             this.btnDisponible.Text = "Disponible";
             this.btnDisponible.UseVisualStyleBackColor = true;
+            this.btnDisponible.Click += new System.EventHandler(this.btnDisponible_Click);
             // 
             // agregarPedido
             // 

@@ -25,7 +25,7 @@ namespace Interface
 
         private void button1_Click(object sender, EventArgs e)
         {
-            agregarPedido pedido = new agregarPedido(restaurante);
+            agregarPedido pedido = new agregarPedido(restaurante); 
             pedido.Show();
         }
 
