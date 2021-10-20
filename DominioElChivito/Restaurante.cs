@@ -9,16 +9,17 @@ namespace DominioElChivito
         List<Cliente> clientes;
         List<Empleado> empleados;
         List<Pedido> pedidos;
+
         public Restaurante()
         {
             clientes = new List<Cliente>();
             empleados = new List<Empleado>();
             pedidos = new List<Pedido>();
         }
-        
+
         public void agregarPedido(string comida, int cantidad, byte estado, int numero_orden, int codigo, int codigo_producto, string direccion)
         {
-            Pedido p = new Pedido(comida, cantidad, estado , numero_orden , codigo , codigo_producto, direccion);
+            Pedido p = new Pedido(comida, cantidad, estado, numero_orden, codigo, codigo_producto, direccion);
             pedidos.Add(p);
         }
 
@@ -36,37 +37,35 @@ namespace DominioElChivito
         public string devolverRol(byte rol)
         {
             string respuesta = "";
-            if (rol == 0) {
+            if (rol == 0)
+            {
                 respuesta = "Administrador";
             }
 
-            if (rol == 1) {
+            if (rol == 1)
+            {
                 respuesta = "Recepcionista";
             }
 
-            if (rol == 2) {
+            if (rol == 2)
+            {
                 respuesta = "Cocinero";
             }
             return respuesta;
         }
-       
+
         public List<Pedido> levantarPedido()
         {
             List<Pedido> resp = new List<Pedido>();
 
             foreach (Pedido aux in pedidos)
             {
-                if (aux.Estado==0)
+                if (aux.Estado == 0)
                 {
                     resp.Add(aux);
                 }
             }
             return resp;
         }
-
-            
-         
-
     }
-
 }

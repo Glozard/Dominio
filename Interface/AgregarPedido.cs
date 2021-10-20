@@ -15,14 +15,24 @@ namespace Interface
         string unaDireccion = "";
         int unaCantidad;
         int unNumero_orden = 0;
-        int unCodigo = 0;
+        int unCodigo;
         int unCodigo_producto = -1;
         string comida = "";
         byte estado = 0;
 
+        int unaPocision = 1;
+
         public agregarPedido(Restaurante unRestaurante)
         {
+            
             this.restaurante = unRestaurante;
+            InitializeComponent();
+            btnDisponible.Visible = false;
+            btnNoDisponble.Visible = false;
+        }
+        public agregarPedido(int posicion)
+        {
+            this.unaPocision = posicion;
             InitializeComponent();
         }
 
@@ -54,23 +64,36 @@ namespace Interface
 
             unaDireccion = txtDireccion.Text;
             unaCantidad = Convert.ToInt32(txtCantidad.Text);
-            unNumero_orden = +1;
-            unCodigo = +1;
-    
-           
+            unNumero_orden =unNumero_orden +1;
+            unCodigo = unCodigo +1;
+
             dataPedido.Rows.Add(comida, unaCantidad, estado, unNumero_orden, unCodigo, unCodigo_producto, unaDireccion);
-
-
             txtCantidad.Text = "";
             txtDireccion.Text = "";
             listaPizza.SelectedIndex = -1;
-            listaHamburguesa.SelectedItem = -1;
+            listaHamburguesa.SelectedIndex = -1;
 
         }
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
             restaurante.agregarPedido(comida , unaCantidad , estado , unNumero_orden, unCodigo, unCodigo_producto , unaDireccion);
+        }
+
+        private void agregarPedido_Load(object sender, EventArgs e)
+        {
+            if (unaPocision == 0)
+            {
+                btnEnviar.Visible = false;
+                lblAgregar.Visible = false;
+                txtCantidad.Visible = false;
+                txtDireccion.Visible = false;
+                dataPedido.Visible = false;
+                lblCantidad.Visible = false;
+                lblDireccion.Visible = false;
+                agregarPedido.
+                
+            }
         }
     }
 }
