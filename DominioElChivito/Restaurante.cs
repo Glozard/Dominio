@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using DominioBD;
 
 namespace DominioElChivito
 {
+    
     public class Restaurante
+
     {
+        
+
         List<Cliente> clientes;
         List<Empleado> empleados;
         List<Pedido> pedidos;
@@ -67,5 +72,6 @@ namespace DominioElChivito
             }
             return resp;
         }
+      
     }
 }
