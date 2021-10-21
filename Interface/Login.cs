@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DominioElChivito;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,17 @@ namespace Interface
 {
     public partial class Login : Form
     {
-        public Login()
+        Restaurante restaurante;
+        public Login(Restaurante unRestaurante)
         {
+
+            this.restaurante = unRestaurante;
             InitializeComponent();
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -34,6 +34,8 @@ namespace Interface
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
+            this.comboRol = new System.Windows.Forms.ComboBox();
+            this.lblRol = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblContraseña
@@ -50,7 +52,7 @@ namespace Interface
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNombre.Location = new System.Drawing.Point(63, 134);
+            this.lblNombre.Location = new System.Drawing.Point(63, 151);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(85, 28);
             this.lblNombre.TabIndex = 1;
@@ -58,7 +60,7 @@ namespace Interface
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(245, 138);
+            this.txtNombre.Location = new System.Drawing.Point(245, 155);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(125, 27);
             this.txtNombre.TabIndex = 2;
@@ -73,18 +75,47 @@ namespace Interface
             // btnIngresar
             // 
             this.btnIngresar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnIngresar.Location = new System.Drawing.Point(334, 337);
+            this.btnIngresar.Location = new System.Drawing.Point(335, 406);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(117, 48);
             this.btnIngresar.TabIndex = 4;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
+            // 
+            // comboRol
+            // 
+            this.comboRol.AutoCompleteCustomSource.AddRange(new string[] {
+            "Administrador",
+            "Recepcionista",
+            "Cocinero"});
+            this.comboRol.FormattingEnabled = true;
+            this.comboRol.Items.AddRange(new object[] {
+            "Administrador",
+            "Rececpcionista",
+            "Cocinero"});
+            this.comboRol.Location = new System.Drawing.Point(245, 305);
+            this.comboRol.Name = "comboRol";
+            this.comboRol.Size = new System.Drawing.Size(134, 28);
+            this.comboRol.TabIndex = 26;
+            // 
+            // lblRol
+            // 
+            this.lblRol.AutoSize = true;
+            this.lblRol.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblRol.Location = new System.Drawing.Point(63, 305);
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(40, 28);
+            this.lblRol.TabIndex = 25;
+            this.lblRol.Text = "Rol";
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 494);
+            this.Controls.Add(this.comboRol);
+            this.Controls.Add(this.lblRol);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtNombre);
@@ -104,5 +135,7 @@ namespace Interface
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Button btnIngresar;
+        private System.Windows.Forms.ComboBox comboRol;
+        private System.Windows.Forms.Label lblRol;
     }
 }
