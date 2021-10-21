@@ -51,6 +51,9 @@ namespace Interface
             this.btnEnviar = new System.Windows.Forms.Button();
             this.btnNoDisponble = new System.Windows.Forms.Button();
             this.btnDisponible = new System.Windows.Forms.Button();
+            this.listaPizzaNoDisponible = new System.Windows.Forms.ListBox();
+            this.lblDisponible = new System.Windows.Forms.Label();
+            this.lblNoDisponible = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataPedido)).BeginInit();
             this.tablaComida.SuspendLayout();
             this.Pizza.SuspendLayout();
@@ -139,6 +142,9 @@ namespace Interface
             // 
             // Pizza
             // 
+            this.Pizza.Controls.Add(this.lblNoDisponible);
+            this.Pizza.Controls.Add(this.lblDisponible);
+            this.Pizza.Controls.Add(this.listaPizzaNoDisponible);
             this.Pizza.Controls.Add(this.listaPizza);
             this.Pizza.Location = new System.Drawing.Point(4, 29);
             this.Pizza.Name = "Pizza";
@@ -154,9 +160,9 @@ namespace Interface
             this.listaPizza.ItemHeight = 20;
             this.listaPizza.Items.AddRange(new object[] {
             "Pizza"});
-            this.listaPizza.Location = new System.Drawing.Point(16, 12);
+            this.listaPizza.Location = new System.Drawing.Point(16, 32);
             this.listaPizza.Name = "listaPizza";
-            this.listaPizza.Size = new System.Drawing.Size(756, 184);
+            this.listaPizza.Size = new System.Drawing.Size(375, 164);
             this.listaPizza.TabIndex = 0;
             // 
             // Hamburguesa
@@ -266,6 +272,33 @@ namespace Interface
             this.btnDisponible.UseVisualStyleBackColor = true;
             this.btnDisponible.Click += new System.EventHandler(this.btnDisponible_Click);
             // 
+            // listaPizzaNoDisponible
+            // 
+            this.listaPizzaNoDisponible.FormattingEnabled = true;
+            this.listaPizzaNoDisponible.ItemHeight = 20;
+            this.listaPizzaNoDisponible.Location = new System.Drawing.Point(411, 32);
+            this.listaPizzaNoDisponible.Name = "listaPizzaNoDisponible";
+            this.listaPizzaNoDisponible.Size = new System.Drawing.Size(375, 164);
+            this.listaPizzaNoDisponible.TabIndex = 1;
+            // 
+            // lblDisponible
+            // 
+            this.lblDisponible.AutoSize = true;
+            this.lblDisponible.Location = new System.Drawing.Point(137, 9);
+            this.lblDisponible.Name = "lblDisponible";
+            this.lblDisponible.Size = new System.Drawing.Size(81, 20);
+            this.lblDisponible.TabIndex = 36;
+            this.lblDisponible.Text = "Disponible";
+            // 
+            // lblNoDisponible
+            // 
+            this.lblNoDisponible.AutoSize = true;
+            this.lblNoDisponible.Location = new System.Drawing.Point(558, 9);
+            this.lblNoDisponible.Name = "lblNoDisponible";
+            this.lblNoDisponible.Size = new System.Drawing.Size(103, 20);
+            this.lblNoDisponible.TabIndex = 37;
+            this.lblNoDisponible.Text = "No disponible";
+            // 
             // agregarPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -288,6 +321,7 @@ namespace Interface
             ((System.ComponentModel.ISupportInitialize)(this.dataPedido)).EndInit();
             this.tablaComida.ResumeLayout(false);
             this.Pizza.ResumeLayout(false);
+            this.Pizza.PerformLayout();
             this.Hamburguesa.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -317,5 +351,8 @@ namespace Interface
         private System.Windows.Forms.TabPage tablaChivito;
         private System.Windows.Forms.Button btnNoDisponble;
         private System.Windows.Forms.Button btnDisponible;
+        private System.Windows.Forms.Label lblNoDisponible;
+        private System.Windows.Forms.Label lblDisponible;
+        private System.Windows.Forms.ListBox listaPizzaNoDisponible;
     }
 }

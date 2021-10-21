@@ -75,13 +75,13 @@ namespace Interface
             btnTerminado.Enabled = false;
             btnComenzar.Enabled = true;
 
-           // dataListaPedidos.Rows.RemoveAt(posicion);
+         // dataListaPedidos.Rows.RemoveAt(posicion);
 
         }
 
         private void btnListaDeProductos_Click(object sender, EventArgs e)
         {
-            agregarPedido agregar = new agregarPedido(posicion);
+            agregarPedido agregar = new agregarPedido(restaurante ,0);
             agregar.Show();
         }
     }

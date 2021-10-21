@@ -12,6 +12,7 @@ namespace Interface
     public partial class MenuPrincipal : Form
     {
         Restaurante restaurante;
+       
         public MenuPrincipal(Restaurante unRestaurante)
         {
             this.restaurante = unRestaurante;
@@ -25,7 +26,7 @@ namespace Interface
 
         private void button1_Click(object sender, EventArgs e)
         {
-            agregarPedido pedido = new agregarPedido(restaurante); 
+            agregarPedido pedido = new agregarPedido(restaurante , 1); 
             pedido.Show();
         }
 

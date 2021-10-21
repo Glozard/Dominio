@@ -20,21 +20,19 @@ namespace Interface
         string comida = "";
         byte estado = 0;
  
-        int unaPocision = 1;
+        int unaPocision = -1;
 
-        public agregarPedido(Restaurante unRestaurante)
+        public agregarPedido(Restaurante unRestaurante ,int posicion)
         {
             
             this.restaurante = unRestaurante;
             InitializeComponent();
             btnDisponible.Visible = false;
             btnNoDisponble.Visible = false;
+            unaPocision = posicion;
+
         }
-        public agregarPedido(int posicion)
-        {
-            this.unaPocision = posicion;
-            InitializeComponent();
-        }
+     
 
       
 
@@ -91,19 +89,23 @@ namespace Interface
                 dataPedido.Visible = false;
                 lblCantidad.Visible = false;
                 lblDireccion.Visible = false;
-                Size = new Size(918, 431); 
-                
+                Size = new Size(918, 431);
+                btnDisponible.Visible = true;
+                btnNoDisponble.Visible = true;
             }
+        
         }
 
         private void btnDisponible_Click(object sender, EventArgs e)
         {
-
+            listaPizza.Items.Add(listaPizzaNoDisponible.SelectedItem);
+            listaPizzaNoDisponible.Items.Remove(listaPizzaNoDisponible.SelectedItem);
         }
 
         private void btnNoDisponble_Click(object sender, EventArgs e)
         {
-           
+            listaPizzaNoDisponible.Items.Add(listaPizza.SelectedItem);
+            listaPizza.Items.Remove(listaPizza.SelectedItem);
         }
     }
 }
