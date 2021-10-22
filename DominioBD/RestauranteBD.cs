@@ -9,14 +9,6 @@ namespace DominioBD
 {
     public class RestauranteBD
     {
-        public static MySqlConnection ObtenerConexion()
-        {
-
-            MySqlConnection conectar = new MySqlConnection("server=localhost; Uid=root; Password=Arierom123; Database=chivitobd; Port=3306");
-
-            conectar.Open();
-           
-            return conectar;
-        }
+       
     }
 }

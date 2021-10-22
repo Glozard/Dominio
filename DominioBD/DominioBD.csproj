@@ -45,8 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConexionBD.cs" />
+    <Compile Include="PedidoBD.cs" />
     <Compile Include="RestauranteBD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Elevador\Elevador.csproj">
+      <Project>{e4ec40a8-9132-40f4-9b8b-3ef629b40193}</Project>
+      <Name>Elevador</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

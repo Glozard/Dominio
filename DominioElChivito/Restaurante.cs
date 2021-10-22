@@ -9,14 +9,16 @@ namespace DominioElChivito
     public class Restaurante
 
     {
-        
+        RestauranteBD restaurantebd;  
 
         List<Cliente> clientes;
         List<Empleado> empleados;
         List<Pedido> pedidos;
+        
 
         public Restaurante()
         {
+            restaurantebd = new RestauranteBD();
             clientes = new List<Cliente>();
             empleados = new List<Empleado>();
             pedidos = new List<Pedido>();
