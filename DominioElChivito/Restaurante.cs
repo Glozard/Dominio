@@ -24,10 +24,11 @@ namespace DominioElChivito
             pedidos = new List<Pedido>();
         }
 
-        public void agregarPedido(string comida, int cantidad, byte estado, int numero_orden, int codigo, int codigo_producto, string direccion)
+        public bool agregarPedido(string comida, int cantidad, byte estado, int numero_orden, int codigo, int codigo_producto, string direccion)
         {
             Pedido p = new Pedido(comida, cantidad, estado, numero_orden, codigo, codigo_producto, direccion);
             pedidos.Add(p);
+            return restaurantebd.AgregarPedido(new PedidoElevador(comida, cantidad, estado, numero_orden, codigo, codigo_producto, direccion));
         }
 
         public void agregarEmpleado(byte rol, string nombre, string apellido, int ci, int telefono)

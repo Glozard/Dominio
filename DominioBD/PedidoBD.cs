@@ -8,18 +8,20 @@ using MySql.Data.MySqlClient;
 
 namespace DominioBD
 {
-    class PedidoBD
+    public class PedidoBD
     {
 
         public static int AgregarPedido(PedidoElevador pedido)
         {
 
             int retorno = 0;
-             
+
+            MySqlCommand comando = new MySqlCommand(string.Format("Insert into pedido ( comida,  cantidad,  estado,  numero_orden,  codigo,  codigo_producto, direccion) values('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", pedido.Comida, pedido.Cantidad, pedido.Estado, pedido.Numero_orden, pedido.Codigo, pedido.Codigo_producto, pedido.Direccion), ConexionBD.ObtenerConexion());
+
+            retorno = comando.ExecuteNonQuery();
+            return retorno;
 
         }
-
-
 
     }
 }

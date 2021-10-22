@@ -5,10 +5,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace DominioBD
 {
+   
     public class RestauranteBD
     {
-       
+        
+        
+
+        public RestauranteBD()
+        {
+
+        }
+
     }
 }
