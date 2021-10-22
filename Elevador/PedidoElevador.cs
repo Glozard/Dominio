@@ -4,16 +4,16 @@ using System.Text;
 
 namespace Elevador
 {
-    class PedidoElevador
+    public class PedidoElevador
     {
 
-        string comida;
-        int cantidad;
-        byte estado;
-        int numero_orden;
-        int codigo;
-        int codigo_producto;
-        string direccion;
+       private string comida;
+        private int cantidad;
+        private byte estado;
+        private int numero_orden;
+        private int codigo;
+        private int codigo_producto;
+        private string direccion;
 
         public PedidoElevador(string comida, int cantidad, byte estado, int numero_orden, int codigo, int codigo_producto, string direccion)
         {
