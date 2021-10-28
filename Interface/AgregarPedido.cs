@@ -19,7 +19,6 @@ namespace Interface
         int unCodigo_producto = -1;
         string comida = "";
         byte estado = 0;
- 
         int unaPocision = -1;
 
         public agregarPedido(Restaurante unRestaurante ,int posicion)
@@ -81,9 +80,11 @@ namespace Interface
                     int cantidadAux = Convert.ToInt32(aux.Cells[1].Value);
                     int codigoAux = Convert.ToInt32(aux.Cells[5].Value);
                     int numeroDeOrdenAux = Convert.ToInt32(aux.Cells[4].Value);
-                    restaurante.agregarPedido(aux.Cells[0].Value.ToString(), cantidadAux, estado, numeroDeOrdenAux, codigoAux, unCodigo_producto, aux.Cells[3].Value.ToString(),123); // cambiar telefono
+                    string direccionAux = aux.Cells[2].Value.ToString();
+
+                    restaurante.agregarPedido(aux.Cells[0].Value.ToString(), cantidadAux, estado, numeroDeOrdenAux, codigoAux, unCodigo_producto, direccionAux,123); // cambiar telefono Y DIRECCION NO FUNCIONA!
                    
-                        dataPedido.Rows.RemoveAt(0);
+                    dataPedido.Rows.RemoveAt(0);
              
                 }
             }

@@ -35,7 +35,6 @@ namespace Interface
                 dataListaPedidos.Rows[indice].Cells[2].Value = aux.Codigo;
                 dataListaPedidos.Rows[indice].Cells[3].Value = aux.Codigo_producto;
                 dataListaPedidos.Rows[indice].Cells[4].Value = aux.Numero_orden;
-
             }
         }
 

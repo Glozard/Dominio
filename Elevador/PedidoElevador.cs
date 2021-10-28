@@ -7,7 +7,7 @@ namespace Elevador
     public class PedidoElevador
     {
 
-       private string comida;
+        private string comida;
         private int cantidad;
         private byte estado;
         private int numero_orden;
