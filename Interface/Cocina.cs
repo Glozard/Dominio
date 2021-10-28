@@ -22,10 +22,22 @@ namespace Interface
             this.restaurante = unRestaurante;
             InitializeComponent();
             btnTerminado.Enabled = false;
-          
-            dataListaPedidos.DataSource=(restaurante.levantarPedido());
+            cargarListaPedidos();
+
         }
-       
+        public void cargarListaPedidos()
+        {
+            foreach (Pedido aux in restaurante.levantarPedido())
+            {
+                int indice = dataListaPedidos.Rows.Add();
+                dataListaPedidos.Rows[indice].Cells[0].Value = aux.Comida;
+                dataListaPedidos.Rows[indice].Cells[1].Value = aux.Cantidad;
+                dataListaPedidos.Rows[indice].Cells[2].Value = aux.Codigo;
+                dataListaPedidos.Rows[indice].Cells[3].Value = aux.Codigo_producto;
+                dataListaPedidos.Rows[indice].Cells[4].Value = aux.Numero_orden;
+
+            }
+        }
 
 
 
@@ -65,8 +77,6 @@ namespace Interface
         private void btnTerminado_Click(object sender, EventArgs e)
         {
             posicion = dataListaPedidos.CurrentRow.Index;
-            
-
             reloj.Reset();
             txtSegundos.Text = "00";
             txtMinutos.Text = "00";
@@ -75,8 +85,10 @@ namespace Interface
             btnTerminado.Enabled = false;
             btnComenzar.Enabled = true;
 
-         // dataListaPedidos.Rows.RemoveAt(posicion);
 
+            restaurante.levantarPedido().RemoveAt(0);
+            dataListaPedidos.Rows.RemoveAt(0);
+      
         }
 
         private void btnListaDeProductos_Click(object sender, EventArgs e)

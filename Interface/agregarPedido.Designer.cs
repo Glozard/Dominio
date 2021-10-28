@@ -39,6 +39,9 @@ namespace Interface
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tablaComida = new System.Windows.Forms.TabControl();
             this.Pizza = new System.Windows.Forms.TabPage();
+            this.lblNoDisponible = new System.Windows.Forms.Label();
+            this.lblDisponible = new System.Windows.Forms.Label();
+            this.listaPizzaNoDisponible = new System.Windows.Forms.ListBox();
             this.listaPizza = new System.Windows.Forms.ListBox();
             this.Hamburguesa = new System.Windows.Forms.TabPage();
             this.listaHamburguesa = new System.Windows.Forms.ListBox();
@@ -51,9 +54,7 @@ namespace Interface
             this.btnEnviar = new System.Windows.Forms.Button();
             this.btnNoDisponble = new System.Windows.Forms.Button();
             this.btnDisponible = new System.Windows.Forms.Button();
-            this.listaPizzaNoDisponible = new System.Windows.Forms.ListBox();
-            this.lblDisponible = new System.Windows.Forms.Label();
-            this.lblNoDisponible = new System.Windows.Forms.Label();
+            this.btnAgregarCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataPedido)).BeginInit();
             this.tablaComida.SuspendLayout();
             this.Pizza.SuspendLayout();
@@ -63,9 +64,9 @@ namespace Interface
             // lblProducto
             // 
             this.lblProducto.AutoSize = true;
-            this.lblProducto.Location = new System.Drawing.Point(227, 27);
+            this.lblProducto.Location = new System.Drawing.Point(199, 20);
             this.lblProducto.Name = "lblProducto";
-            this.lblProducto.Size = new System.Drawing.Size(61, 20);
+            this.lblProducto.Size = new System.Drawing.Size(49, 15);
             this.lblProducto.TabIndex = 24;
             this.lblProducto.Text = "Comida";
             // 
@@ -79,11 +80,12 @@ namespace Interface
             this.Numero_de_Orden,
             this.Codigo,
             this.Cliente});
-            this.dataPedido.Location = new System.Drawing.Point(35, 369);
+            this.dataPedido.Location = new System.Drawing.Point(31, 277);
+            this.dataPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataPedido.Name = "dataPedido";
             this.dataPedido.RowHeadersWidth = 51;
             this.dataPedido.RowTemplate.Height = 29;
-            this.dataPedido.Size = new System.Drawing.Size(919, 184);
+            this.dataPedido.Size = new System.Drawing.Size(804, 138);
             this.dataPedido.TabIndex = 26;
             this.dataPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -134,10 +136,11 @@ namespace Interface
             this.tablaComida.Controls.Add(this.Pizza);
             this.tablaComida.Controls.Add(this.Hamburguesa);
             this.tablaComida.Controls.Add(this.tablaChivito);
-            this.tablaComida.Location = new System.Drawing.Point(31, 61);
+            this.tablaComida.Location = new System.Drawing.Point(27, 46);
+            this.tablaComida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tablaComida.Name = "tablaComida";
             this.tablaComida.SelectedIndex = 0;
-            this.tablaComida.Size = new System.Drawing.Size(807, 243);
+            this.tablaComida.Size = new System.Drawing.Size(706, 182);
             this.tablaComida.TabIndex = 27;
             // 
             // Pizza
@@ -146,32 +149,63 @@ namespace Interface
             this.Pizza.Controls.Add(this.lblDisponible);
             this.Pizza.Controls.Add(this.listaPizzaNoDisponible);
             this.Pizza.Controls.Add(this.listaPizza);
-            this.Pizza.Location = new System.Drawing.Point(4, 29);
+            this.Pizza.Location = new System.Drawing.Point(4, 24);
+            this.Pizza.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Pizza.Name = "Pizza";
-            this.Pizza.Padding = new System.Windows.Forms.Padding(3);
-            this.Pizza.Size = new System.Drawing.Size(799, 210);
+            this.Pizza.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Pizza.Size = new System.Drawing.Size(698, 154);
             this.Pizza.TabIndex = 1;
             this.Pizza.Text = "Pizza";
             this.Pizza.UseVisualStyleBackColor = true;
             // 
+            // lblNoDisponible
+            // 
+            this.lblNoDisponible.AutoSize = true;
+            this.lblNoDisponible.Location = new System.Drawing.Point(488, 7);
+            this.lblNoDisponible.Name = "lblNoDisponible";
+            this.lblNoDisponible.Size = new System.Drawing.Size(81, 15);
+            this.lblNoDisponible.TabIndex = 37;
+            this.lblNoDisponible.Text = "No disponible";
+            // 
+            // lblDisponible
+            // 
+            this.lblDisponible.AutoSize = true;
+            this.lblDisponible.Location = new System.Drawing.Point(120, 7);
+            this.lblDisponible.Name = "lblDisponible";
+            this.lblDisponible.Size = new System.Drawing.Size(63, 15);
+            this.lblDisponible.TabIndex = 36;
+            this.lblDisponible.Text = "Disponible";
+            // 
+            // listaPizzaNoDisponible
+            // 
+            this.listaPizzaNoDisponible.FormattingEnabled = true;
+            this.listaPizzaNoDisponible.ItemHeight = 15;
+            this.listaPizzaNoDisponible.Location = new System.Drawing.Point(360, 24);
+            this.listaPizzaNoDisponible.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listaPizzaNoDisponible.Name = "listaPizzaNoDisponible";
+            this.listaPizzaNoDisponible.Size = new System.Drawing.Size(329, 124);
+            this.listaPizzaNoDisponible.TabIndex = 1;
+            // 
             // listaPizza
             // 
             this.listaPizza.FormattingEnabled = true;
-            this.listaPizza.ItemHeight = 20;
+            this.listaPizza.ItemHeight = 15;
             this.listaPizza.Items.AddRange(new object[] {
             "Pizza"});
-            this.listaPizza.Location = new System.Drawing.Point(16, 32);
+            this.listaPizza.Location = new System.Drawing.Point(14, 24);
+            this.listaPizza.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listaPizza.Name = "listaPizza";
-            this.listaPizza.Size = new System.Drawing.Size(375, 164);
+            this.listaPizza.Size = new System.Drawing.Size(329, 124);
             this.listaPizza.TabIndex = 0;
             // 
             // Hamburguesa
             // 
             this.Hamburguesa.Controls.Add(this.listaHamburguesa);
-            this.Hamburguesa.Location = new System.Drawing.Point(4, 29);
+            this.Hamburguesa.Location = new System.Drawing.Point(4, 24);
+            this.Hamburguesa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Hamburguesa.Name = "Hamburguesa";
-            this.Hamburguesa.Padding = new System.Windows.Forms.Padding(3);
-            this.Hamburguesa.Size = new System.Drawing.Size(799, 210);
+            this.Hamburguesa.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Hamburguesa.Size = new System.Drawing.Size(698, 154);
             this.Hamburguesa.TabIndex = 2;
             this.Hamburguesa.Text = "Hamburguesa";
             this.Hamburguesa.UseVisualStyleBackColor = true;
@@ -179,21 +213,21 @@ namespace Interface
             // listaHamburguesa
             // 
             this.listaHamburguesa.FormattingEnabled = true;
-            this.listaHamburguesa.ItemHeight = 20;
+            this.listaHamburguesa.ItemHeight = 15;
             this.listaHamburguesa.Items.AddRange(new object[] {
             "Hamburguesa"});
-            this.listaHamburguesa.Location = new System.Drawing.Point(19, 12);
+            this.listaHamburguesa.Location = new System.Drawing.Point(17, 9);
+            this.listaHamburguesa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listaHamburguesa.Name = "listaHamburguesa";
-            this.listaHamburguesa.Size = new System.Drawing.Size(764, 184);
+            this.listaHamburguesa.Size = new System.Drawing.Size(669, 139);
             this.listaHamburguesa.TabIndex = 0;
             // 
             // tablaChivito
             // 
-            this.tablaChivito.Location = new System.Drawing.Point(4, 29);
-            this.tablaChivito.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tablaChivito.Location = new System.Drawing.Point(4, 24);
             this.tablaChivito.Name = "tablaChivito";
-            this.tablaChivito.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tablaChivito.Size = new System.Drawing.Size(799, 210);
+            this.tablaChivito.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tablaChivito.Size = new System.Drawing.Size(698, 154);
             this.tablaChivito.TabIndex = 3;
             this.tablaChivito.Text = "Chivito";
             this.tablaChivito.UseVisualStyleBackColor = true;
@@ -201,41 +235,44 @@ namespace Interface
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(1134, 109);
+            this.lblCantidad.Location = new System.Drawing.Point(992, 82);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(69, 20);
+            this.lblCantidad.Size = new System.Drawing.Size(55, 15);
             this.lblCantidad.TabIndex = 28;
             this.lblCantidad.Text = "Cantidad";
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(974, 105);
+            this.txtCantidad.Location = new System.Drawing.Point(852, 79);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(125, 27);
+            this.txtCantidad.Size = new System.Drawing.Size(110, 23);
             this.txtCantidad.TabIndex = 29;
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(974, 165);
+            this.txtDireccion.Location = new System.Drawing.Point(852, 124);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(125, 27);
+            this.txtDireccion.Size = new System.Drawing.Size(110, 23);
             this.txtDireccion.TabIndex = 31;
             // 
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(1134, 168);
+            this.lblDireccion.Location = new System.Drawing.Point(992, 126);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(72, 20);
+            this.lblDireccion.Size = new System.Drawing.Size(57, 15);
             this.lblDireccion.TabIndex = 30;
             this.lblDireccion.Text = "Direccion";
             // 
             // lblAgregar
             // 
             this.lblAgregar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAgregar.Location = new System.Drawing.Point(974, 253);
+            this.lblAgregar.Location = new System.Drawing.Point(852, 190);
+            this.lblAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblAgregar.Name = "lblAgregar";
-            this.lblAgregar.Size = new System.Drawing.Size(194, 45);
+            this.lblAgregar.Size = new System.Drawing.Size(170, 34);
             this.lblAgregar.TabIndex = 32;
             this.lblAgregar.Text = "Agregar";
             this.lblAgregar.UseVisualStyleBackColor = true;
@@ -244,9 +281,10 @@ namespace Interface
             // btnEnviar
             // 
             this.btnEnviar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEnviar.Location = new System.Drawing.Point(1000, 316);
+            this.btnEnviar.Location = new System.Drawing.Point(875, 237);
+            this.btnEnviar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(137, 41);
+            this.btnEnviar.Size = new System.Drawing.Size(120, 31);
             this.btnEnviar.TabIndex = 33;
             this.btnEnviar.Text = "Enviar";
             this.btnEnviar.UseVisualStyleBackColor = true;
@@ -254,9 +292,10 @@ namespace Interface
             // 
             // btnNoDisponble
             // 
-            this.btnNoDisponble.Location = new System.Drawing.Point(427, 316);
+            this.btnNoDisponble.Location = new System.Drawing.Point(374, 237);
+            this.btnNoDisponble.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNoDisponble.Name = "btnNoDisponble";
-            this.btnNoDisponble.Size = new System.Drawing.Size(169, 48);
+            this.btnNoDisponble.Size = new System.Drawing.Size(148, 36);
             this.btnNoDisponble.TabIndex = 34;
             this.btnNoDisponble.Text = "No disponible";
             this.btnNoDisponble.UseVisualStyleBackColor = true;
@@ -264,46 +303,32 @@ namespace Interface
             // 
             // btnDisponible
             // 
-            this.btnDisponible.Location = new System.Drawing.Point(252, 316);
+            this.btnDisponible.Location = new System.Drawing.Point(220, 237);
+            this.btnDisponible.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDisponible.Name = "btnDisponible";
-            this.btnDisponible.Size = new System.Drawing.Size(169, 48);
+            this.btnDisponible.Size = new System.Drawing.Size(148, 36);
             this.btnDisponible.TabIndex = 35;
             this.btnDisponible.Text = "Disponible";
             this.btnDisponible.UseVisualStyleBackColor = true;
             this.btnDisponible.Click += new System.EventHandler(this.btnDisponible_Click);
             // 
-            // listaPizzaNoDisponible
+            // btnAgregarCliente
             // 
-            this.listaPizzaNoDisponible.FormattingEnabled = true;
-            this.listaPizzaNoDisponible.ItemHeight = 20;
-            this.listaPizzaNoDisponible.Location = new System.Drawing.Point(411, 32);
-            this.listaPizzaNoDisponible.Name = "listaPizzaNoDisponible";
-            this.listaPizzaNoDisponible.Size = new System.Drawing.Size(375, 164);
-            this.listaPizzaNoDisponible.TabIndex = 1;
-            // 
-            // lblDisponible
-            // 
-            this.lblDisponible.AutoSize = true;
-            this.lblDisponible.Location = new System.Drawing.Point(137, 9);
-            this.lblDisponible.Name = "lblDisponible";
-            this.lblDisponible.Size = new System.Drawing.Size(81, 20);
-            this.lblDisponible.TabIndex = 36;
-            this.lblDisponible.Text = "Disponible";
-            // 
-            // lblNoDisponible
-            // 
-            this.lblNoDisponible.AutoSize = true;
-            this.lblNoDisponible.Location = new System.Drawing.Point(558, 9);
-            this.lblNoDisponible.Name = "lblNoDisponible";
-            this.lblNoDisponible.Size = new System.Drawing.Size(103, 20);
-            this.lblNoDisponible.TabIndex = 37;
-            this.lblNoDisponible.Text = "No disponible";
+            this.btnAgregarCliente.Location = new System.Drawing.Point(1008, 431);
+            this.btnAgregarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAgregarCliente.Name = "btnAgregarCliente";
+            this.btnAgregarCliente.Size = new System.Drawing.Size(124, 22);
+            this.btnAgregarCliente.TabIndex = 36;
+            this.btnAgregarCliente.Text = "Agregar Cliente";
+            this.btnAgregarCliente.UseVisualStyleBackColor = true;
+            this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
             // 
             // agregarPedido
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1307, 619);
+            this.ClientSize = new System.Drawing.Size(1144, 464);
+            this.Controls.Add(this.btnAgregarCliente);
             this.Controls.Add(this.btnDisponible);
             this.Controls.Add(this.btnNoDisponble);
             this.Controls.Add(this.btnEnviar);
@@ -315,6 +340,7 @@ namespace Interface
             this.Controls.Add(this.tablaComida);
             this.Controls.Add(this.dataPedido);
             this.Controls.Add(this.lblProducto);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "agregarPedido";
             this.Text = "agregarPedido";
             this.Load += new System.EventHandler(this.agregarPedido_Load);
@@ -354,5 +380,6 @@ namespace Interface
         private System.Windows.Forms.Label lblNoDisponible;
         private System.Windows.Forms.Label lblDisponible;
         private System.Windows.Forms.ListBox listaPizzaNoDisponible;
+        private System.Windows.Forms.Button btnAgregarCliente;
     }
 }

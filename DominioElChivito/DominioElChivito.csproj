@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DominioBD\DominioBD.csproj" />
+    <ProjectReference Include="..\DominoBDD\DominoBDD.csproj" />
     <ProjectReference Include="..\Elevador\Elevador.csproj" />
   </ItemGroup>
 

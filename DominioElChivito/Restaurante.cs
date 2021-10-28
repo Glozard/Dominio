@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using DominioBD;
+using DominoBDD;
 using Elevador;
 
 namespace DominioElChivito
 {
-    
+
     public class Restaurante
 
     {
-        RestauranteBD restaurantebd;  
-
+        RestauranteBD restaurantebd;
         List<Cliente> clientes;
         List<Empleado> empleados;
         List<Pedido> pedidos;
-        
+
 
         public Restaurante()
         {
@@ -23,15 +22,15 @@ namespace DominioElChivito
             clientes = new List<Cliente>();
             empleados = new List<Empleado>();
             pedidos = new List<Pedido>();
+
         }
         
-        
 
-        public bool agregarPedido(string comida, int cantidad, byte estado, int numero_orden, int codigo, int codigo_producto, string direccion)
+        public bool agregarPedido(string comida, int cantidad, byte estado, int numero_orden, int codigo, int codigo_producto, string direccion , int telefono)
         {
-            Pedido p = new Pedido(comida, cantidad, estado, numero_orden, codigo, codigo_producto, direccion);
+            Pedido p = new Pedido(comida, cantidad, estado, numero_orden, codigo, codigo_producto, direccion , telefono);
             pedidos.Add(p);
-            return restaurantebd.GuardarPedido(new PedidoElevador(comida, cantidad, estado, numero_orden, codigo, codigo_producto, direccion));
+            return restaurantebd.GuardarPedido(new PedidoElevador(comida, cantidad, estado, numero_orden, codigo, codigo_producto, direccion , telefono));
 
         }
 

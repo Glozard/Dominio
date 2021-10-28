@@ -21,7 +21,7 @@ namespace DominioBD
 
         public bool GuardarPedido(PedidoElevador p)
         {
-            return pedidobd.AgregarPedido(p);
+            return true; ////CAMBIAR
 
         }
     }

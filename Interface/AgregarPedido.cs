@@ -75,7 +75,18 @@ namespace Interface
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            restaurante.agregarPedido(comida , unaCantidad , estado , unNumero_orden, unCodigo, unCodigo_producto , unaDireccion);
+            foreach (DataGridViewRow aux in dataPedido.Rows) {
+                if (aux.Cells[0].Value != null)
+                {
+                    int cantidadAux = Convert.ToInt32(aux.Cells[1].Value);
+                    int codigoAux = Convert.ToInt32(aux.Cells[5].Value);
+                    int numeroDeOrdenAux = Convert.ToInt32(aux.Cells[4].Value);
+                    restaurante.agregarPedido(aux.Cells[0].Value.ToString(), cantidadAux, estado, numeroDeOrdenAux, codigoAux, unCodigo_producto, aux.Cells[3].Value.ToString(),123); // cambiar telefono
+                   
+                        dataPedido.Rows.RemoveAt(0);
+             
+                }
+            }
         }
 
         private void agregarPedido_Load(object sender, EventArgs e)
@@ -106,6 +117,12 @@ namespace Interface
         {
             listaPizzaNoDisponible.Items.Add(listaPizza.SelectedItem);
             listaPizza.Items.Remove(listaPizza.SelectedItem);
+        }
+
+        private void btnAgregarCliente_Click(object sender, EventArgs e)
+        {
+            AgregarCliente cliente = new AgregarCliente(restaurante);
+            cliente.Show();
         }
     }
 }
