@@ -20,6 +20,7 @@ namespace Interface
         string comida = "";
         byte estado = 0;
         int unaPocision = -1;
+        int unTelefono;
 
         public agregarPedido(Restaurante unRestaurante ,int posicion)
         {
