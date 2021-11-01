@@ -85,7 +85,6 @@ namespace Interface
                     restaurante.agregarPedido(aux.Cells[0].Value.ToString(), cantidadAux, estado, numeroDeOrdenAux, codigoAux, unCodigo_producto, direccionAux,123); // cambiar telefono Y DIRECCION NO FUNCIONA!
                    
                     dataPedido.Rows.RemoveAt(0);
-             
                 }
             }
         }
