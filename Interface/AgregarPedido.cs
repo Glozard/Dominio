@@ -64,7 +64,7 @@ namespace Interface
             unNumero_orden =unNumero_orden +1;
             unCodigo = unCodigo +1;
 
-            dataPedido.Rows.Add(comida, unaCantidad, estado, unNumero_orden, unCodigo, unCodigo_producto, unaDireccion);
+            dataPedido.Rows.Add(comida, unaCantidad, unaDireccion, unNumero_orden, unCodigo, unCodigo_producto, estado);
             txtCantidad.Text = "";
             txtDireccion.Text = "";
             listaPizza.SelectedIndex = -1;
