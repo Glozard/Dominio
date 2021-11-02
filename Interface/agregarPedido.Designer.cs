@@ -31,7 +31,9 @@ namespace Interface
         {
             this.lblProducto = new System.Windows.Forms.Label();
             this.dataPedido = new System.Windows.Forms.DataGridView();
-<<<<<<< HEAD
+
+
+
             this.Comida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dirección = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,8 +41,9 @@ namespace Interface
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-=======
->>>>>>> 28690c258456c2458aefe44d6008616ebec207b3
+
+
+
             this.tablaComida = new System.Windows.Forms.TabControl();
             this.Pizza = new System.Windows.Forms.TabPage();
             this.lblNoDisponible = new System.Windows.Forms.Label();
@@ -61,8 +64,8 @@ namespace Interface
             this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
-<<<<<<< HEAD
-=======
+
+
             this.Comida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dirección = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,7 +73,9 @@ namespace Interface
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
->>>>>>> 28690c258456c2458aefe44d6008616ebec207b3
+
+
+
             ((System.ComponentModel.ISupportInitialize)(this.dataPedido)).BeginInit();
             this.tablaComida.SuspendLayout();
             this.Pizza.SuspendLayout();
@@ -101,7 +106,9 @@ namespace Interface
             this.dataPedido.Name = "dataPedido";
             this.dataPedido.RowHeadersWidth = 51;
             this.dataPedido.RowTemplate.Height = 29;
-<<<<<<< HEAD
+
+
+
             this.dataPedido.Size = new System.Drawing.Size(930, 184);
             this.dataPedido.TabIndex = 26;
             this.dataPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -155,12 +162,15 @@ namespace Interface
             this.Telefono.Name = "Telefono";
             this.Telefono.Width = 125;
             // 
-=======
+
+
+
             this.dataPedido.Size = new System.Drawing.Size(114, 184);
             this.dataPedido.TabIndex = 26;
             this.dataPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
->>>>>>> 28690c258456c2458aefe44d6008616ebec207b3
+
+
             // tablaComida
             // 
             this.tablaComida.Controls.Add(this.Pizza);
@@ -180,11 +190,16 @@ namespace Interface
             this.Pizza.Controls.Add(this.listaPizza);
             this.Pizza.Location = new System.Drawing.Point(4, 29);
             this.Pizza.Name = "Pizza";
-<<<<<<< HEAD
+
+
+
             this.Pizza.Padding = new System.Windows.Forms.Padding(3);
-=======
+
+
+
             this.Pizza.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
->>>>>>> 28690c258456c2458aefe44d6008616ebec207b3
+
+
             this.Pizza.Size = new System.Drawing.Size(799, 210);
             this.Pizza.TabIndex = 1;
             this.Pizza.Text = "Pizza";
@@ -233,11 +248,17 @@ namespace Interface
             this.Hamburguesa.Controls.Add(this.listaHamburguesa);
             this.Hamburguesa.Location = new System.Drawing.Point(4, 29);
             this.Hamburguesa.Name = "Hamburguesa";
-<<<<<<< HEAD
+
+
+
             this.Hamburguesa.Padding = new System.Windows.Forms.Padding(3);
-=======
+
+
+
             this.Hamburguesa.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
->>>>>>> 28690c258456c2458aefe44d6008616ebec207b3
+
+
+
             this.Hamburguesa.Size = new System.Drawing.Size(799, 210);
             this.Hamburguesa.TabIndex = 2;
             this.Hamburguesa.Text = "Hamburguesa";
@@ -365,8 +386,9 @@ namespace Interface
             this.lblTelefono.TabIndex = 37;
             this.lblTelefono.Text = "Telefono";
             // 
-<<<<<<< HEAD
-=======
+
+
+
             // Comida
             // 
             this.Comida.HeaderText = "Comida";
@@ -416,7 +438,9 @@ namespace Interface
             this.Telefono.Name = "Telefono";
             this.Telefono.Width = 125;
             // 
->>>>>>> 28690c258456c2458aefe44d6008616ebec207b3
+
+
+
             // agregarPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);

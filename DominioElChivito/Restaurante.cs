@@ -40,10 +40,11 @@ namespace DominioElChivito
             empleados.Add(e);
         }
 
-        public void agregarCliente(string direccion, string nombre, string apellido, int ci, int telefono)
+        public bool agregarCliente(string direccion, string nombre, string apellido, int ci, int telefono)
         {
             Cliente c = new Cliente(direccion, nombre, apellido, ci, telefono);
             clientes.Add(c);
+            return restaurantebd.GuardarCliente(new ClienteElevador(ci, nombre, apellido, direccion, telefono));
         }
         public string devolverRol(byte rol)
         {

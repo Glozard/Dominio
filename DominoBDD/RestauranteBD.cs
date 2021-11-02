@@ -8,6 +8,7 @@ namespace DominoBDD
     {
 
         PedidoBD pedidobd;
+        ClienteBD clientebd;
         public RestauranteBD()
         {
 
@@ -22,6 +23,9 @@ namespace DominoBDD
 
         }
 
-
+        public bool GuardarCliente(ClienteElevador c)
+        {
+            return clientebd.GuardarCliente(c);
+        }
     }
 }
