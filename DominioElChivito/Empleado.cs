@@ -1,18 +1,50 @@
-﻿using System;
+﻿using Elevador;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DominioElChivito
 {
-    class Empleado : Persona
+    public class Empleado : Persona
     {
-        byte rol;
+       private byte rol;
+       private string direccion;
+       
 
-        public Empleado(byte rol ,string nombre, string apellido, int ci, int telefono) : base(nombre, apellido, ci, telefono)
+        public Empleado(byte rol, string nombre, string apellido, int ci, int telefono , string direccion) : base(nombre, apellido, ci, telefono)
         {
-           
+            this.rol = rol;
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.ci = ci;
+            this.telefono = telefono;
+            this.direccion = direccion;
+        }
+        public Empleado() : base() { }
+        public Empleado(string nombre , int ci) : base(nombre , ci) 
+        {
+            this.ci = ci;
+            this.nombre = nombre;
         }
 
+    
+
+        public EmpleadoElevador GetE()
+        {
+            EmpleadoElevador empleadoElevador = new EmpleadoElevador();
+            empleadoElevador.Ci = this.Ci ;
+            empleadoElevador.Nombre= this.Nombre;
+            empleadoElevador.Apellido = this.Apellido;
+            empleadoElevador.Direccion = this.Direccion;
+            empleadoElevador.Telefono = this.Telefono;
+            empleadoElevador.Rol = this.Rol;
+
+            return empleadoElevador;
+        }
+
+
+
         public byte Rol { get => rol; set => rol = value; }
+        public string Direccion { get => direccion; set => direccion = value; }
     }
 }

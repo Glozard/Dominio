@@ -14,10 +14,11 @@ namespace DominioElChivito
         List<Cliente> clientes;
         List<Empleado> empleados;
         List<Pedido> pedidos;
-
+        Empleado empleadoLogeado;
 
         public Restaurante()
         {
+            empleadoLogeado = new Empleado();
             restaurantebd = new RestauranteBD();
             clientes = new List<Cliente>();
             empleados = new List<Empleado>();
@@ -34,10 +35,11 @@ namespace DominioElChivito
 
         }
 
-        public void agregarEmpleado(byte rol, string nombre, string apellido, int ci, int telefono)
+        public bool agregarEmpleado(byte rol, string nombre, string apellido, int ci, int telefono ,string direccion)
         {
-            Empleado e = new Empleado(rol, nombre, apellido, ci, telefono);
+            Empleado e = new Empleado(rol, nombre, apellido, ci, telefono , direccion);
             empleados.Add(e);
+            return restaurantebd.GuardarEmpleado(new EmpleadoElevador(rol, nombre, apellido, ci, telefono, direccion));
         }
 
         public bool agregarCliente(string direccion, string nombre, string apellido, int ci, int telefono)
@@ -46,6 +48,20 @@ namespace DominioElChivito
             clientes.Add(c);
             return restaurantebd.GuardarCliente(new ClienteElevador(ci, nombre, apellido, direccion, telefono));
         }
+
+        public bool Login(string nombre , int ci )
+        {
+            Empleado empleado = new Empleado(nombre, ci);
+
+            bool resp = restaurantebd.Login(empleado);
+            if (resp)
+            {
+                empleadoLogeado = empleado;
+                    return true;
+            }
+            
+        }
+
         public string devolverRol(byte rol)
         {
             string respuesta = "";

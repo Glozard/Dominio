@@ -33,7 +33,7 @@ namespace Interface
             string unApellido = txtApellido.Text;
             int unaCi = Convert.ToInt32(txtCi.Text);
             int unTelefono = Convert.ToInt32(txtTelefono.Text);
-            restaurante.agregarEmpleado(unRol, unNombre, unApellido, unaCi, unTelefono);
+            restaurante.agregarEmpleado(unRol, unNombre, unApellido, unaCi, unTelefono , unaDireccion);
             
             listaEmpleado.Items.Add(txtNombre.Text);
             listaEmpleado.Items.Add(txtApellido.Text);

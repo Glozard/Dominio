@@ -11,6 +11,7 @@ namespace DominioElChivito
        public string apellido;
        public int ci;
        public int telefono;
+      
 
         public Persona(string nombre, string apellido, int ci, int telefono)
         {
@@ -20,6 +21,12 @@ namespace DominioElChivito
             this.telefono = telefono;
         }
 
+        public Persona(string nombre, int ci)
+        {
+            this.ci = ci;
+            this.nombre = nombre;
+        }
+        public Persona() { }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
         public int Ci { get => ci; set => ci = value; }

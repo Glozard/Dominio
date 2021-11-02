@@ -4,9 +4,9 @@ using System.Text;
 
 namespace DominioElChivito
 {
-    class Cocinero : Empleado
+    public class Cocinero : Empleado
     {
-        public Cocinero(byte rol, string nombre, string apellido, int ci, int telefono) : base(rol, nombre, apellido, ci, telefono)
+        public Cocinero(byte rol, string nombre, string apellido, int ci, int telefono , string direccion) : base(rol, nombre, apellido, ci, telefono, direccion)
         {
             rol = 2;
         }

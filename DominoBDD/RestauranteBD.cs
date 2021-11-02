@@ -9,23 +9,34 @@ namespace DominoBDD
 
         PedidoBD pedidobd;
         ClienteBD clientebd;
+        EmpleadoBD empleadobd;
         public RestauranteBD()
         {
 
+            empleadobd = new EmpleadoBD();
+            clientebd = new ClienteBD();
             pedidobd = new PedidoBD();
 
         }
 
         public bool GuardarPedido(PedidoElevador e)
         {
-
             return pedidobd.GuardarPedido(e);
-
         }
 
         public bool GuardarCliente(ClienteElevador c)
         {
             return clientebd.GuardarCliente(c); 
+        }
+
+        public bool GuardarEmpleado(EmpleadoElevador e)
+        {
+            return empleadobd.GuardarEmpleado(e);
+        }
+
+        public EmpleadoElevador Login(EmpleadoElevador empleado)
+        {
+            return empleadobd.Login(empleado);
         }
     }
 }

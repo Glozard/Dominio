@@ -4,9 +4,9 @@ using System.Text;
 
 namespace DominioElChivito
 {
-    class Recepcionista : Empleado
+    public class Recepcionista : Empleado
     {
-        public Recepcionista(byte rol, string nombre, string apellido, int ci, int telefono) : base(rol, nombre, apellido, ci, telefono)
+        public Recepcionista(byte rol, string nombre, string apellido, int ci, int telefono, string direccion) : base(rol, nombre, apellido, ci, telefono, direccion)
         {
             rol = 1;
         }
