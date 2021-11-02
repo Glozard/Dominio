@@ -34,9 +34,9 @@ namespace DominoBDD
             return empleadobd.GuardarEmpleado(e);
         }
 
-        public EmpleadoElevador Login(EmpleadoElevador empleado)
+        public EmpleadoElevador LoginBD(string nombre, int ci)
         {
-            return empleadobd.Login(empleado);
+            return empleadobd.Login(nombre, ci);
         }
     }
 }

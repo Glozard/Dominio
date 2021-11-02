@@ -51,11 +51,11 @@ namespace DominioElChivito
 
         public bool Login(string nombre , int ci )
         {
-            Empleado empleado = new Empleado(nombre, ci);
-
-            bool resp = restaurantebd.Login(new  (empleado));
+            EmpleadoElevador empleado;
+            bool resp = restaurantebd.LoginBD(new EmpleadoElevador(nombre, ci));
             if (resp)
             {
+           
                 empleadoLogeado = empleado;
                     return true;
             }
