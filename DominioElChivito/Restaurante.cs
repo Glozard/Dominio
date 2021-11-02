@@ -53,13 +53,13 @@ namespace DominioElChivito
         {
             Empleado empleado = new Empleado(nombre, ci);
 
-            bool resp = restaurantebd.Login(empleado);
+            bool resp = restaurantebd.Login(new  (empleado));
             if (resp)
             {
                 empleadoLogeado = empleado;
                     return true;
             }
-            
+            //coso
         }
 
         public string devolverRol(byte rol)
