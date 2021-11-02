@@ -64,8 +64,9 @@ namespace Interface
             unaCantidad = Convert.ToInt32(txtCantidad.Text);
             unNumero_orden =unNumero_orden +1;
             unCodigo = unCodigo +1;
+            unTelefono = Convert.ToInt32(txtTelefono);
 
-            dataPedido.Rows.Add(comida, unaCantidad, unaDireccion, unNumero_orden, unCodigo, unCodigo_producto, estado);
+            dataPedido.Rows.Add(comida, unaCantidad, unaDireccion, unNumero_orden, unCodigo, unTelefono);
             txtCantidad.Text = "";
             txtDireccion.Text = "";
             listaPizza.SelectedIndex = -1;
@@ -82,9 +83,10 @@ namespace Interface
                     int codigoAux = Convert.ToInt32(aux.Cells[5].Value);
                     int numeroDeOrdenAux = Convert.ToInt32(aux.Cells[4].Value);
                     string direccionAux = aux.Cells[2].Value.ToString();
+                    int telefono = Convert.ToInt32(aux.Cells[6].Value);
 
-                    restaurante.agregarPedido(aux.Cells[0].Value.ToString(), cantidadAux, estado, numeroDeOrdenAux, codigoAux, unCodigo_producto, direccionAux,123); // cambiar telefono Y DIRECCION NO FUNCIONA!
-                   
+                    restaurante.agregarPedido(aux.Cells[0].Value.ToString(), cantidadAux, estado, numeroDeOrdenAux, codigoAux, unCodigo_producto, direccionAux,telefono);
+                    
                     dataPedido.Rows.RemoveAt(0);
                 }
             }
