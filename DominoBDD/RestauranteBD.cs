@@ -25,7 +25,7 @@ namespace DominoBDD
 
         public bool GuardarCliente(ClienteElevador c)
         {
-            return clientebd.GuardarCliente(c);
+            return clientebd.GuardarCliente(c); 
         }
     }
 }
