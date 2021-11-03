@@ -48,7 +48,6 @@ namespace Interface
     
         private void lblAgregar_Click(object sender, EventArgs e)
         {
-      
             if (listaPizza.SelectedIndex != -1)
             {
                 comida = listaPizza.SelectedItem.ToString();
@@ -64,14 +63,13 @@ namespace Interface
             unaCantidad = Convert.ToInt32(txtCantidad.Text);
             unNumero_orden =unNumero_orden +1;
             unCodigo = unCodigo +1;
-            unTelefono = Convert.ToInt32(txtTelefono);
+            unTelefono = Convert.ToInt32(txtTelefono.Text);
 
             dataPedido.Rows.Add(comida, unaCantidad, unaDireccion, unNumero_orden, unCodigo, unTelefono);
             txtCantidad.Text = "";
             txtDireccion.Text = "";
             listaPizza.SelectedIndex = -1;
             listaHamburguesa.SelectedIndex = -1;
-
         }
 
         private void btnEnviar_Click(object sender, EventArgs e)
@@ -80,13 +78,11 @@ namespace Interface
                 if (aux.Cells[0].Value != null)
                 {
                     int cantidadAux = Convert.ToInt32(aux.Cells[1].Value);
-                    int codigoAux = Convert.ToInt32(aux.Cells[5].Value);
-                    int numeroDeOrdenAux = Convert.ToInt32(aux.Cells[4].Value);
+                    int codigoAux = Convert.ToInt32(aux.Cells[4].Value);
+                    int numeroDeOrdenAux = Convert.ToInt32(aux.Cells[3].Value);
                     string direccionAux = aux.Cells[2].Value.ToString();
-                    int telefono = Convert.ToInt32(aux.Cells[6].Value);
-
-                    restaurante.agregarPedido(aux.Cells[0].Value.ToString(), cantidadAux, estado, numeroDeOrdenAux, codigoAux, unCodigo_producto, direccionAux,telefono);
-                    
+                    int telefono = Convert.ToInt32(aux.Cells[5].Value);
+                    restaurante.agregarPedido(aux.Cells[0].Value.ToString(), cantidadAux, estado, numeroDeOrdenAux, unCodigo, unCodigo_producto, direccionAux,telefono);  
                     dataPedido.Rows.RemoveAt(0);
                 }
             }

@@ -27,12 +27,17 @@ namespace Interface
         {
             unNombre = txtNombre.Text;
             unaContraseña = Convert.ToInt32(txtContraseña.Text);
+            unRol = (byte)comboRol.SelectedIndex;
             
 
-            bool resp = restaurante.Login(unNombre , unaContraseña );
+            bool resp = restaurante.Login(unNombre , unaContraseña , unRol);
             if (resp)
-            {
-                if (AccessibleRole == 0) { } //coso
+            { 
+               if(unRol == 0)
+                {
+                    MenuPrincipal menu = new MenuPrincipal(restaurante);
+                    menu.Show();
+                }
             }
             else
             {

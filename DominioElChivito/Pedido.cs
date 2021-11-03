@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Elevador;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -26,7 +27,17 @@ namespace DominioElChivito
             this.direccion = direccion;
             this.Telefono = telefono;
         }
-
+        public Pedido(PedidoElevador e) 
+        {
+            this.comida = e.Comida;
+            this.cantidad = e.Cantidad;
+            this.estado = e.Estado;
+            this.numero_orden = e.Numero_orden;
+            this.codigo = e.Codigo;
+            this.codigo_producto = e.Codigo_producto;
+            this.direccion = e.Direccion;
+            this.Telefono = e.Telefono;
+        }
         public string Comida { get => comida; set => comida = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
         public byte Estado { get => estado; set => estado = value; }

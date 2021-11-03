@@ -33,7 +33,7 @@ namespace DominoBDD
 
         }
 
-        public EmpleadoElevador Login(string nombre, int ci)
+        public EmpleadoElevador Login(string nombre, int ci , byte rol)
         {
             EmpleadoElevador e = null;
             using (MySqlConnection conexion = ConexionBD.ObtenerConexion())
@@ -41,6 +41,7 @@ namespace DominoBDD
                 MySqlCommand cmd = new MySqlCommand("SELECT ci , rol , telefono , nombre , apellido , direccion FROM empleado WHERE nombre=@nombre and ci=@ci", ConexionBD.ObtenerConexion());
                 cmd.Parameters.AddWithValue("nombre", nombre);
                 cmd.Parameters.AddWithValue("ci", ci);
+                cmd.Parameters.AddWithValue("rol", rol);
                 MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);

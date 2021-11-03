@@ -29,15 +29,12 @@ namespace DominioElChivito
 
         public bool agregarPedido(string comida, int cantidad, byte estado, int numero_orden, int codigo, int codigo_producto, string direccion , int telefono)
         {
-            Pedido p = new Pedido(comida, cantidad, estado, numero_orden, codigo, codigo_producto, direccion , telefono);
+
+            PedidoElevador pe = new PedidoElevador(cantidad, estado, numero_orden, codigo, codigo_producto, direccion, telefono, comida);
+            bool resp = restaurantebd.GuardarPedido(pe);
+            Pedido p = new Pedido(pe);
             pedidos.Add(p);
-            return restaurantebd.GuardarPedido(new PedidoElevador(comida, cantidad, estado, numero_orden, codigo, codigo_producto, direccion , telefono));
-
-        }
-
-        public bool Login(string unNombre, int unaContraseña)
-        {
-            throw new NotImplementedException();
+            return resp;
         }
 
         public bool agregarEmpleado(byte rol, string nombre, string apellido, int ci, int telefono ,string direccion)
@@ -56,29 +53,27 @@ namespace DominioElChivito
 
         public List<Pedido> CargarPedidos()
         {
-            List<PedidoElevador> ll = new List<PedidoElevador>();
-            ll = restaurantebd.CargarPedidos();
+            List<PedidoElevador> ll = restaurantebd.CargarPedidos();
             List<Pedido> lista = new List<Pedido>();
-            foreach (Pedido aux in lista)
+            foreach (PedidoElevador aux in ll)
             {
-           
+                Pedido pedidos = new Pedido(aux);
+                lista.Add(pedidos);
             }
-
             return lista;
-
         }
 
-        //public bool Login(string nombre , int ci )
-        //{
-        //    EmpleadoElevador empleado = empleadoLogeado;
-        //    if (resp)
-        //    {
-           
-        //        empleadoLogeado = empleado;
-        //            return true;
-        //    }
-        //    //coso
-        //}
+        public bool Login(string nombre, int ci , byte rol)
+        {
+            EmpleadoElevador empleado = restaurantebd.LoginBD(nombre, ci , rol);
+            if (empleado != null)
+            {
+                Empleado empleado1 = new Empleado(empleado);
+                empleadoLogeado = empleado1;
+                return true;
+            }
+            else return false;
+        }
 
         public string devolverRol(byte rol)
         {

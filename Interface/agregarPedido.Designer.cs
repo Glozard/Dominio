@@ -31,19 +31,6 @@ namespace Interface
         {
             this.lblProducto = new System.Windows.Forms.Label();
             this.dataPedido = new System.Windows.Forms.DataGridView();
-
-
-
-            this.Comida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dirección = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numero_de_Orden = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-
-
-
             this.tablaComida = new System.Windows.Forms.TabControl();
             this.Pizza = new System.Windows.Forms.TabPage();
             this.lblNoDisponible = new System.Windows.Forms.Label();
@@ -64,18 +51,13 @@ namespace Interface
             this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
-
-
-            this.Comida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dirección = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numero_de_Orden = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-
-
-
+            this.ComidaRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DireccionRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroOrdenRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodigoRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TelefonoRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClienteRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataPedido)).BeginInit();
             this.tablaComida.SuspendLayout();
             this.Pizza.SuspendLayout();
@@ -95,82 +77,21 @@ namespace Interface
             // 
             this.dataPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Comida,
-            this.Cantidad,
-            this.Dirección,
-            this.Numero_de_Orden,
-            this.Codigo,
-            this.Cliente,
-            this.Telefono});
+            this.ComidaRow,
+            this.CantidadRow,
+            this.DireccionRow,
+            this.NumeroOrdenRow,
+            this.CodigoRow,
+            this.TelefonoRow,
+            this.ClienteRow});
             this.dataPedido.Location = new System.Drawing.Point(35, 369);
             this.dataPedido.Name = "dataPedido";
             this.dataPedido.RowHeadersWidth = 51;
             this.dataPedido.RowTemplate.Height = 29;
-
-
-
-            this.dataPedido.Size = new System.Drawing.Size(930, 184);
+            this.dataPedido.Size = new System.Drawing.Size(934, 184);
             this.dataPedido.TabIndex = 26;
             this.dataPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Comida
-            // 
-            this.Comida.HeaderText = "Comida";
-            this.Comida.MinimumWidth = 6;
-            this.Comida.Name = "Comida";
-            this.Comida.Width = 125;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.Width = 125;
-            // 
-            // Dirección
-            // 
-            this.Dirección.HeaderText = "Dirección";
-            this.Dirección.MinimumWidth = 6;
-            this.Dirección.Name = "Dirección";
-            this.Dirección.Width = 125;
-            // 
-            // Numero_de_Orden
-            // 
-            this.Numero_de_Orden.HeaderText = "Numero de Orden";
-            this.Numero_de_Orden.MinimumWidth = 6;
-            this.Numero_de_Orden.Name = "Numero_de_Orden";
-            this.Numero_de_Orden.Width = 125;
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.MinimumWidth = 6;
-            this.Codigo.Name = "Codigo";
-            this.Codigo.Width = 125;
-            // 
-            // Cliente
-            // 
-            this.Cliente.HeaderText = "Cliente";
-            this.Cliente.MinimumWidth = 6;
-            this.Cliente.Name = "Cliente";
-            this.Cliente.Width = 125;
-            // 
-            // Telefono
-            // 
-            this.Telefono.HeaderText = "Telefono";
-            this.Telefono.MinimumWidth = 6;
-            this.Telefono.Name = "Telefono";
-            this.Telefono.Width = 125;
-            // 
-
-
-
-            this.dataPedido.Size = new System.Drawing.Size(114, 184);
-            this.dataPedido.TabIndex = 26;
-            this.dataPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-
-
             // tablaComida
             // 
             this.tablaComida.Controls.Add(this.Pizza);
@@ -190,16 +111,7 @@ namespace Interface
             this.Pizza.Controls.Add(this.listaPizza);
             this.Pizza.Location = new System.Drawing.Point(4, 29);
             this.Pizza.Name = "Pizza";
-
-
-
             this.Pizza.Padding = new System.Windows.Forms.Padding(3);
-
-
-
-            this.Pizza.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-
-
             this.Pizza.Size = new System.Drawing.Size(799, 210);
             this.Pizza.TabIndex = 1;
             this.Pizza.Text = "Pizza";
@@ -248,17 +160,7 @@ namespace Interface
             this.Hamburguesa.Controls.Add(this.listaHamburguesa);
             this.Hamburguesa.Location = new System.Drawing.Point(4, 29);
             this.Hamburguesa.Name = "Hamburguesa";
-
-
-
             this.Hamburguesa.Padding = new System.Windows.Forms.Padding(3);
-
-
-
-            this.Hamburguesa.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-
-
-
             this.Hamburguesa.Size = new System.Drawing.Size(799, 210);
             this.Hamburguesa.TabIndex = 2;
             this.Hamburguesa.Text = "Hamburguesa";
@@ -386,61 +288,55 @@ namespace Interface
             this.lblTelefono.TabIndex = 37;
             this.lblTelefono.Text = "Telefono";
             // 
-
-
-
-            // Comida
+            // ComidaRow
             // 
-            this.Comida.HeaderText = "Comida";
-            this.Comida.MinimumWidth = 6;
-            this.Comida.Name = "Comida";
-            this.Comida.Width = 125;
+            this.ComidaRow.HeaderText = "Comida";
+            this.ComidaRow.MinimumWidth = 6;
+            this.ComidaRow.Name = "ComidaRow";
+            this.ComidaRow.Width = 125;
             // 
-            // Cantidad
+            // CantidadRow
             // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.Width = 125;
+            this.CantidadRow.HeaderText = "Cantidad";
+            this.CantidadRow.MinimumWidth = 6;
+            this.CantidadRow.Name = "CantidadRow";
+            this.CantidadRow.Width = 125;
             // 
-            // Dirección
+            // DireccionRow
             // 
-            this.Dirección.HeaderText = "Dirección";
-            this.Dirección.MinimumWidth = 6;
-            this.Dirección.Name = "Dirección";
-            this.Dirección.Width = 125;
+            this.DireccionRow.HeaderText = "Direccion";
+            this.DireccionRow.MinimumWidth = 6;
+            this.DireccionRow.Name = "DireccionRow";
+            this.DireccionRow.Width = 125;
             // 
-            // Numero_de_Orden
+            // NumeroOrdenRow
             // 
-            this.Numero_de_Orden.HeaderText = "Numero de Orden";
-            this.Numero_de_Orden.MinimumWidth = 6;
-            this.Numero_de_Orden.Name = "Numero_de_Orden";
-            this.Numero_de_Orden.Width = 125;
+            this.NumeroOrdenRow.HeaderText = "Numero de oreden";
+            this.NumeroOrdenRow.MinimumWidth = 6;
+            this.NumeroOrdenRow.Name = "NumeroOrdenRow";
+            this.NumeroOrdenRow.Width = 125;
             // 
-            // Codigo
+            // CodigoRow
             // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.MinimumWidth = 6;
-            this.Codigo.Name = "Codigo";
-            this.Codigo.Width = 125;
+            this.CodigoRow.HeaderText = "Codigo";
+            this.CodigoRow.MinimumWidth = 6;
+            this.CodigoRow.Name = "CodigoRow";
+            this.CodigoRow.Width = 125;
             // 
-            // Cliente
+            // TelefonoRow
             // 
-            this.Cliente.HeaderText = "Cliente";
-            this.Cliente.MinimumWidth = 6;
-            this.Cliente.Name = "Cliente";
-            this.Cliente.Width = 125;
+            this.TelefonoRow.HeaderText = "Telefono";
+            this.TelefonoRow.MinimumWidth = 6;
+            this.TelefonoRow.Name = "TelefonoRow";
+            this.TelefonoRow.Width = 125;
             // 
-            // Telefono
+            // ClienteRow
             // 
-            this.Telefono.HeaderText = "Telefono";
-            this.Telefono.MinimumWidth = 6;
-            this.Telefono.Name = "Telefono";
-            this.Telefono.Width = 125;
+            this.ClienteRow.HeaderText = "Cliente";
+            this.ClienteRow.MinimumWidth = 6;
+            this.ClienteRow.Name = "ClienteRow";
+            this.ClienteRow.Width = 125;
             // 
-
-
-
             // agregarPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -496,12 +392,12 @@ namespace Interface
         private System.Windows.Forms.Button btnAgregarCliente;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblTelefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Comida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dirección;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Numero_de_Orden;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ComidaRow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadRow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DireccionRow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroOrdenRow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoRow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TelefonoRow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClienteRow;
     }
 }

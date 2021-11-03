@@ -42,6 +42,17 @@ namespace DominioElChivito
             return empleadoElevador;
         }
 
+        public Empleado (EmpleadoElevador empleado)
+        {
+            this.ci = empleado.Ci;
+            this.nombre = empleado.Nombre;
+            this.apellido = empleado.Apellido;
+            this.direccion = empleado.Direccion;
+            this.telefono = empleado.Telefono;
+            this.rol = (byte)empleado.Rol;
+
+        }
+
 
 
         public byte Rol { get => rol; set => rol = value; }

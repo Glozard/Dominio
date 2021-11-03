@@ -12,11 +12,9 @@ namespace DominoBDD
         EmpleadoBD empleadobd;
         public RestauranteBD()
         {
-
             empleadobd = new EmpleadoBD();
             clientebd = new ClienteBD();
             pedidobd = new PedidoBD();
-
         }
 
         public bool GuardarPedido(PedidoElevador e)
@@ -34,9 +32,9 @@ namespace DominoBDD
             return empleadobd.GuardarEmpleado(e);
         }
 
-        public EmpleadoElevador LoginBD(string nombre, int ci)
+        public EmpleadoElevador LoginBD(string nombre, int ci , byte rol)
         {
-            return empleadobd.Login(nombre, ci);
+            return empleadobd.Login(nombre, ci , rol);
             
         }
 
