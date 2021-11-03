@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using Elevador;
 using MySql.Data.MySqlClient;
@@ -32,6 +33,36 @@ namespace DominoBDD
 
         }
 
+        public List<PedidoElevador> CargarPedidos()
+        {
+            List<PedidoElevador> lista = new List<PedidoElevador>();
+            using (MySqlConnection conexion = ConexionBD.ObtenerConexion())
+            {
+                string query = @"SELECT * From pedido";
+               
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Connection = conexion;
+                MySqlDataReader reader = cmd.ExecuteReader();
+                PedidoElevador pedido = new PedidoElevador();
+
+
+                while (reader.Read()== true)
+                {
+                    pedido.Codigo = reader.GetInt32(0);
+                    pedido.Direccion = reader.GetString(1);
+                    pedido.Numero_orden = reader.GetInt32(2);
+                    pedido.Codigo_producto = reader.GetInt32(3);
+                    pedido.Cantidad = reader.GetInt32(4);
+                    pedido.Telefono = reader.GetInt32(6);
+
+                    lista.Add(pedido);
+                }
+                
+            }
+            return lista;
+
+        }
+       
 
     }
 }

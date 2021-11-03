@@ -28,6 +28,8 @@ namespace Elevador
             this.telefono = telefono;
         }
 
+        public PedidoElevador() { }
+
         public string Comida { get => comida; set => comida = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
         public byte Estado { get => estado; set => estado = value; }

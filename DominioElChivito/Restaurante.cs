@@ -35,6 +35,11 @@ namespace DominioElChivito
 
         }
 
+        public bool Login(string unNombre, int unaContraseña)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool agregarEmpleado(byte rol, string nombre, string apellido, int ci, int telefono ,string direccion)
         {
             Empleado e = new Empleado(rol, nombre, apellido, ci, telefono , direccion);
@@ -49,18 +54,31 @@ namespace DominioElChivito
             return restaurantebd.GuardarCliente(new ClienteElevador(ci, nombre, apellido, direccion, telefono));
         }
 
-        public bool Login(string nombre , int ci )
+        public List<Pedido> CargarPedidos()
         {
-            EmpleadoElevador empleado;
-            bool resp = restaurantebd.LoginBD(new EmpleadoElevador(nombre, ci));
-            if (resp)
+            List<PedidoElevador> ll = new List<PedidoElevador>();
+            ll = restaurantebd.CargarPedidos();
+            List<Pedido> lista = new List<Pedido>();
+            foreach (Pedido aux in lista)
             {
            
-                empleadoLogeado = empleado;
-                    return true;
             }
-            //coso
+
+            return lista;
+
         }
+
+        //public bool Login(string nombre , int ci )
+        //{
+        //    EmpleadoElevador empleado = empleadoLogeado;
+        //    if (resp)
+        //    {
+           
+        //        empleadoLogeado = empleado;
+        //            return true;
+        //    }
+        //    //coso
+        //}
 
         public string devolverRol(byte rol)
         {

@@ -37,6 +37,12 @@ namespace DominoBDD
         public EmpleadoElevador LoginBD(string nombre, int ci)
         {
             return empleadobd.Login(nombre, ci);
+            
+        }
+
+        public List<PedidoElevador> CargarPedidos()
+        {
+            return pedidobd.CargarPedidos();
         }
     }
 }

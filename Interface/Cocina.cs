@@ -23,7 +23,6 @@ namespace Interface
             InitializeComponent();
             btnTerminado.Enabled = false;
             cargarListaPedidos();
-
         }
         public void cargarListaPedidos()
         {

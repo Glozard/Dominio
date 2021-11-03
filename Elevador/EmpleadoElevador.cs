@@ -37,5 +37,6 @@ namespace Elevador
         public int Ci { get => ci; set => ci = value; }
         public int Telefono { get => telefono; set => telefono = value; }
         public string Direccion { get => direccion; set => direccion = value; }
+
     }
 }
