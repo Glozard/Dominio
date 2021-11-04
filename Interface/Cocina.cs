@@ -26,7 +26,7 @@ namespace Interface
         }
         public void cargarListaPedidos()
         {
-            foreach (Pedido aux in restaurante.CargarPedidos())
+            foreach (Pedido aux in restaurante.levantarPedido())
             {
                 int indice = dataListaPedidos.Rows.Add();
                 dataListaPedidos.Rows[indice].Cells[0].Value = aux.Comida;

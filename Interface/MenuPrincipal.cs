@@ -47,5 +47,11 @@ namespace Interface
             Cocina cocina = new Cocina(restaurante);
             cocina.Show();
         }
+
+        private void btnPedidos_Click(object sender, EventArgs e)
+        {
+            ListaDePedidos pedidos = new ListaDePedidos(restaurante);
+            pedidos.Show();
+        }
     }
 }

@@ -34,6 +34,7 @@ namespace Interface
             this.button2 = new System.Windows.Forms.Button();
             this.btnAgreagrProducto = new System.Windows.Forms.Button();
             this.btnCocina = new System.Windows.Forms.Button();
+            this.btnPedidos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -85,11 +86,22 @@ namespace Interface
             this.btnCocina.UseVisualStyleBackColor = true;
             this.btnCocina.Click += new System.EventHandler(this.btnCocina_Click);
             // 
+            // btnPedidos
+            // 
+            this.btnPedidos.Location = new System.Drawing.Point(424, 121);
+            this.btnPedidos.Name = "btnPedidos";
+            this.btnPedidos.Size = new System.Drawing.Size(142, 29);
+            this.btnPedidos.TabIndex = 5;
+            this.btnPedidos.Text = "Lista de pedidos";
+            this.btnPedidos.UseVisualStyleBackColor = true;
+            this.btnPedidos.Click += new System.EventHandler(this.btnPedidos_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 496);
+            this.Controls.Add(this.btnPedidos);
             this.Controls.Add(this.btnCocina);
             this.Controls.Add(this.btnAgreagrProducto);
             this.Controls.Add(this.button2);
@@ -109,5 +121,6 @@ namespace Interface
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnAgreagrProducto;
         private System.Windows.Forms.Button btnCocina;
+        private System.Windows.Forms.Button btnPedidos;
     }
 }
