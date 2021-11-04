@@ -52,18 +52,6 @@ namespace DominioElChivito
             return restaurantebd.GuardarCliente(new ClienteElevador(ci, nombre, apellido, direccion, telefono));
         }
 
-        //public List<Pedido> CargarPedidos()
-        //{
-        //    List<PedidoElevador> ll = restaurantebd.CargarPedidos();
-        //    List<Pedido> lista = new List<Pedido>();
-        //    foreach (PedidoElevador aux in ll)
-        //    {
-        //        Pedido pedidos = new Pedido(aux);
-        //        lista.Add(pedidos);
-        //    }
-        //    return lista;
-        //}
-
         public DataTable CargarPedidos()
         {
             DataTable pedidos = new DataTable();
@@ -91,6 +79,12 @@ namespace DominioElChivito
                 empleados.Add(cl);
             }
             return empleados;
+        }
+
+        public bool ModificarEmpleado(int ci , int rol , int telefono, string nombre ,string apellido, string direccion)
+        {
+            EmpleadoElevador empleado = new EmpleadoElevador(rol, nombre , apellido , ci , telefono , direccion);
+            return restaurantebd.ModificarEmpleado(empleado);
         }
 
 

@@ -53,7 +53,7 @@ namespace Interface
             ListaDePedidos pedidos = new ListaDePedidos(restaurante);
             pedidos.Show();
         }
-
+           
         private void btnListaEmpleados_Click(object sender, EventArgs e)
         {
             ListaDeEmpleados empleados = new ListaDeEmpleados(restaurante);

@@ -12,6 +12,8 @@ namespace Interface
     public partial class ListaDeEmpleados : Form
     {
         Restaurante restaurante;
+
+
         public ListaDeEmpleados(Restaurante unRestaurante)
         {
             this.restaurante = unRestaurante;
@@ -39,6 +41,26 @@ namespace Interface
                 dataEmpleados.Rows[indice].Cells[4].Value = aux.Apellido;
                 dataEmpleados.Rows[indice].Cells[5].Value = aux.Direccion;
             }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+            int unRol = comboRol.SelectedIndex;
+            string unaDireccion = txtDireccion.Text;
+            string unNombre = txtNombre.Text;
+            string unApellido = txtApellido.Text;
+            int unaCi = Convert.ToInt32(txtCi.Text);
+            int unTelefono = Convert.ToInt32(txtTelefono.Text);
+
+            restaurante.ModificarEmpleado(unaCi , unRol , unTelefono , unNombre , unApellido , unaDireccion);
+
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

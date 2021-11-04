@@ -52,5 +52,9 @@ namespace DominoBDD
         {
             return empleadobd.CargarEmpleado();
         }
+        public bool ModificarEmpleado(EmpleadoElevador e)
+        {
+            return empleadobd.ModificarEmpleado(e);
+        }
     }
 }
