@@ -42,9 +42,6 @@ namespace Interface
                 comboClientes.Items.Add(auxDos);
             }
         }
-
-      
-
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -52,9 +49,7 @@ namespace Interface
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-        }
-
-    
+        }  
         private void lblAgregar_Click(object sender, EventArgs e)
         {
             if (listaPizza.SelectedIndex != -1)
@@ -122,13 +117,11 @@ namespace Interface
             listaPizza.Items.Add(listaPizzaNoDisponible.SelectedItem);
             listaPizzaNoDisponible.Items.Remove(listaPizzaNoDisponible.SelectedItem);
         }
-
         private void btnNoDisponble_Click(object sender, EventArgs e)
         {
             listaPizzaNoDisponible.Items.Add(listaPizza.SelectedItem);
             listaPizza.Items.Remove(listaPizza.SelectedItem);
         }
-
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
             AgregarCliente cliente = new AgregarCliente(restaurante);

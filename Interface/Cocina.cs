@@ -37,12 +37,8 @@ namespace Interface
             }
         }
 
-
-
         private void dataListaPedidos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-            
+        {      
         }
 
         private void Cocina_Load(object sender, EventArgs e)

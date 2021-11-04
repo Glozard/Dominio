@@ -9,7 +9,6 @@ namespace DominoBDD
 {
     public class ClienteBD
     {
-
         public bool GuardarCliente(ClienteElevador c)
         {
 
@@ -54,7 +53,5 @@ namespace DominoBDD
             }
             return listaClientes;
         }
-
-
     }
 }

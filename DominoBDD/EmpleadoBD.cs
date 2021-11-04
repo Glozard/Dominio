@@ -62,5 +62,30 @@ namespace DominoBDD
                 return e;
             }
         }
+         public List<EmpleadoElevador> CargarEmpleado()
+        {
+            List<DataTable> lista = new List<DataTable>();
+            List<EmpleadoElevador> listaEmpleados = new List<EmpleadoElevador>();
+            using (MySqlConnection conexion = ConexionBD.ObtenerConexion())
+            {
+                MySqlDataAdapter da = new MySqlDataAdapter("SELECT * From empleado", conexion);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    EmpleadoElevador e = new EmpleadoElevador();
+                    e.Ci = Convert.ToInt32(dt.Rows[i]["ci"]);
+                    e.Rol = Convert.ToInt32(dt.Rows[i]["rol"]);
+                    e.Telefono = Convert.ToInt32(dt.Rows[i]["telefono"]);
+                    e.Nombre = dt.Rows[i]["nombre"].ToString();
+                    e.Apellido = dt.Rows[i]["apellido"].ToString();
+                    e.Direccion = dt.Rows[i]["direccion"].ToString();  
+                    listaEmpleados.Add(e);
+                }
+            }
+            return listaEmpleados;
+        }
     }
 }

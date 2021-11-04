@@ -81,6 +81,17 @@ namespace DominioElChivito
             }
             return clientes;
         }
+        public List<Empleado> CargarEmpleados()
+        {
+            List<EmpleadoElevador> empleadoElevador = restaurantebd.CargarEmpleados();
+            List<Empleado> empleados = new List<Empleado>();
+            foreach (EmpleadoElevador aux in empleadoElevador)
+            {
+                Empleado cl = new Empleado(aux);
+                empleados.Add(cl);
+            }
+            return empleados;
+        }
 
 
 

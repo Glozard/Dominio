@@ -48,5 +48,9 @@ namespace DominoBDD
         {
             return clientebd.CargarClientes();
         }
+        public List<EmpleadoElevador> CargarEmpleados()
+        {
+            return empleadobd.CargarEmpleado();
+        }
     }
 }

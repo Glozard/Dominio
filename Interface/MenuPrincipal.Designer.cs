@@ -32,7 +32,7 @@ namespace Interface
             this.button1 = new System.Windows.Forms.Button();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnAgreagrProducto = new System.Windows.Forms.Button();
+            this.btnListaEmpleados = new System.Windows.Forms.Button();
             this.btnCocina = new System.Windows.Forms.Button();
             this.btnPedidos = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -67,14 +67,15 @@ namespace Interface
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // btnAgreagrProducto
+            // btnListaEmpleados
             // 
-            this.btnAgreagrProducto.Location = new System.Drawing.Point(100, 270);
-            this.btnAgreagrProducto.Name = "btnAgreagrProducto";
-            this.btnAgreagrProducto.Size = new System.Drawing.Size(142, 29);
-            this.btnAgreagrProducto.TabIndex = 3;
-            this.btnAgreagrProducto.Text = "Agregar Producto";
-            this.btnAgreagrProducto.UseVisualStyleBackColor = true;
+            this.btnListaEmpleados.Location = new System.Drawing.Point(100, 270);
+            this.btnListaEmpleados.Name = "btnListaEmpleados";
+            this.btnListaEmpleados.Size = new System.Drawing.Size(142, 29);
+            this.btnListaEmpleados.TabIndex = 3;
+            this.btnListaEmpleados.Text = "Lista Empleados";
+            this.btnListaEmpleados.UseVisualStyleBackColor = true;
+            this.btnListaEmpleados.Click += new System.EventHandler(this.btnListaEmpleados_Click);
             // 
             // btnCocina
             // 
@@ -103,7 +104,7 @@ namespace Interface
             this.ClientSize = new System.Drawing.Size(877, 496);
             this.Controls.Add(this.btnPedidos);
             this.Controls.Add(this.btnCocina);
-            this.Controls.Add(this.btnAgreagrProducto);
+            this.Controls.Add(this.btnListaEmpleados);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnAgregarCliente);
             this.Controls.Add(this.button1);
@@ -119,7 +120,7 @@ namespace Interface
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnAgregarCliente;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnAgreagrProducto;
+        private System.Windows.Forms.Button btnListaEmpleados;
         private System.Windows.Forms.Button btnCocina;
         private System.Windows.Forms.Button btnPedidos;
     }
