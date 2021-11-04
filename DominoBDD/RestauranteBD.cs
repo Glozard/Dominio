@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using Elevador;
 namespace DominoBDD
@@ -38,9 +39,14 @@ namespace DominoBDD
             
         }
 
-        public List<PedidoElevador> CargarPedidos()
+        public DataTable CargarPedidos()
         {
             return pedidobd.CargarPedidos();
+        }
+
+        public List<ClienteElevador> CargarClientes()
+        {
+            return clientebd.CargarClientes();
         }
     }
 }

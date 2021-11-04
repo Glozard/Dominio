@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using DominoBDD;
 using Elevador;
@@ -27,10 +28,10 @@ namespace DominioElChivito
         }
         
 
-        public bool agregarPedido(string comida, int cantidad, byte estado, int numero_orden, int codigo, int codigo_producto, string direccion , int telefono)
+        public bool agregarPedido(string comida, int cantidad, byte estado, int numero_orden, int codigo, int codigo_producto, string direccion , int telefono , string cliente)
         {
 
-            PedidoElevador pe = new PedidoElevador(cantidad, estado, numero_orden, codigo, codigo_producto, direccion, telefono, comida);
+            PedidoElevador pe = new PedidoElevador(cantidad, estado, numero_orden, codigo, codigo_producto, direccion, telefono, comida , cliente);
             bool resp = restaurantebd.GuardarPedido(pe);
             Pedido p = new Pedido(pe);
             pedidos.Add(p);
@@ -51,17 +52,37 @@ namespace DominioElChivito
             return restaurantebd.GuardarCliente(new ClienteElevador(ci, nombre, apellido, direccion, telefono));
         }
 
-        public List<Pedido> CargarPedidos()
+        //public List<Pedido> CargarPedidos()
+        //{
+        //    List<PedidoElevador> ll = restaurantebd.CargarPedidos();
+        //    List<Pedido> lista = new List<Pedido>();
+        //    foreach (PedidoElevador aux in ll)
+        //    {
+        //        Pedido pedidos = new Pedido(aux);
+        //        lista.Add(pedidos);
+        //    }
+        //    return lista;
+        //}
+
+        public DataTable CargarPedidos()
         {
-            List<PedidoElevador> ll = restaurantebd.CargarPedidos();
-            List<Pedido> lista = new List<Pedido>();
-            foreach (PedidoElevador aux in ll)
-            {
-                Pedido pedidos = new Pedido(aux);
-                lista.Add(pedidos);
-            }
-            return lista;
+            DataTable pedidos = new DataTable();
+            pedidos = restaurantebd.CargarPedidos();
+            return pedidos;
         }
+        public List<Cliente> CargarClientes()
+        {
+            List<ClienteElevador> clientesElevador = restaurantebd.CargarClientes();
+            List<Cliente> clientes = new List<Cliente>();
+            foreach (ClienteElevador aux in clientesElevador)
+            {
+                Cliente cl = new Cliente(aux);
+                clientes.Add(cl);
+            }
+            return clientes;
+        }
+
+
 
         public bool Login(string nombre, int ci , byte rol)
         {

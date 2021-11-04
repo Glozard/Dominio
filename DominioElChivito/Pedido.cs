@@ -15,6 +15,7 @@ namespace DominioElChivito
         int codigo_producto; 
         string direccion;
         int telefono;
+        string cliente;
 
         public Pedido(string comida, int cantidad, byte estado, int numero_orden, int codigo, int codigo_producto, string direccion , int telefono)
         {
@@ -37,6 +38,7 @@ namespace DominioElChivito
             this.codigo_producto = e.Codigo_producto;
             this.direccion = e.Direccion;
             this.Telefono = e.Telefono;
+            this.cliente = e.Cliente;
         }
         public string Comida { get => comida; set => comida = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using Elevador;
 using MySql.Data.MySqlClient;
@@ -28,6 +29,30 @@ namespace DominoBDD
                 else return true;
 
             }
+        }
+        public List<ClienteElevador> CargarClientes()
+        {
+            List<DataTable> lista = new List<DataTable>();
+            List<ClienteElevador> listaClientes = new List<ClienteElevador>();
+            using (MySqlConnection conexion = ConexionBD.ObtenerConexion())
+            {
+                MySqlDataAdapter da = new MySqlDataAdapter("SELECT * From cliente", conexion);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    ClienteElevador c = new ClienteElevador();
+                    c.Ci = Convert.ToInt32(dt.Rows[i]["ci"]);
+                    c.Nombre = dt.Rows[i]["nombre"].ToString();
+                    c.Apellido = dt.Rows[i]["apellido"].ToString();
+                    c.Direccion = dt.Rows[i]["direccion"].ToString();
+                    c.Telefono = Convert.ToInt32(dt.Rows[i]["telefono"]);
+                    listaClientes.Add(c);
+                }
+            }
+            return listaClientes;
         }
 
 

@@ -31,6 +31,13 @@ namespace Interface
         {
             this.lblProducto = new System.Windows.Forms.Label();
             this.dataPedido = new System.Windows.Forms.DataGridView();
+            this.ComidaRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DireccionRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroOrdenRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodigoRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TelefonoRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClienteRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tablaComida = new System.Windows.Forms.TabControl();
             this.Pizza = new System.Windows.Forms.TabPage();
             this.lblNoDisponible = new System.Windows.Forms.Label();
@@ -51,13 +58,8 @@ namespace Interface
             this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
-            this.ComidaRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantidadRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DireccionRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumeroOrdenRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CodigoRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TelefonoRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClienteRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboClientes = new System.Windows.Forms.ComboBox();
+            this.lblClientes = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataPedido)).BeginInit();
             this.tablaComida.SuspendLayout();
             this.Pizza.SuspendLayout();
@@ -91,6 +93,55 @@ namespace Interface
             this.dataPedido.Size = new System.Drawing.Size(934, 184);
             this.dataPedido.TabIndex = 26;
             this.dataPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // ComidaRow
+            // 
+            this.ComidaRow.HeaderText = "Comida";
+            this.ComidaRow.MinimumWidth = 6;
+            this.ComidaRow.Name = "ComidaRow";
+            this.ComidaRow.Width = 125;
+            // 
+            // CantidadRow
+            // 
+            this.CantidadRow.HeaderText = "Cantidad";
+            this.CantidadRow.MinimumWidth = 6;
+            this.CantidadRow.Name = "CantidadRow";
+            this.CantidadRow.Width = 125;
+            // 
+            // DireccionRow
+            // 
+            this.DireccionRow.HeaderText = "Direccion";
+            this.DireccionRow.MinimumWidth = 6;
+            this.DireccionRow.Name = "DireccionRow";
+            this.DireccionRow.Width = 125;
+            // 
+            // NumeroOrdenRow
+            // 
+            this.NumeroOrdenRow.HeaderText = "Numero de oreden";
+            this.NumeroOrdenRow.MinimumWidth = 6;
+            this.NumeroOrdenRow.Name = "NumeroOrdenRow";
+            this.NumeroOrdenRow.Width = 125;
+            // 
+            // CodigoRow
+            // 
+            this.CodigoRow.HeaderText = "Codigo";
+            this.CodigoRow.MinimumWidth = 6;
+            this.CodigoRow.Name = "CodigoRow";
+            this.CodigoRow.Width = 125;
+            // 
+            // TelefonoRow
+            // 
+            this.TelefonoRow.HeaderText = "Telefono";
+            this.TelefonoRow.MinimumWidth = 6;
+            this.TelefonoRow.Name = "TelefonoRow";
+            this.TelefonoRow.Width = 125;
+            // 
+            // ClienteRow
+            // 
+            this.ClienteRow.HeaderText = "Cliente";
+            this.ClienteRow.MinimumWidth = 6;
+            this.ClienteRow.Name = "ClienteRow";
+            this.ClienteRow.Width = 125;
             // 
             // tablaComida
             // 
@@ -223,7 +274,7 @@ namespace Interface
             // lblAgregar
             // 
             this.lblAgregar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAgregar.Location = new System.Drawing.Point(974, 283);
+            this.lblAgregar.Location = new System.Drawing.Point(975, 369);
             this.lblAgregar.Name = "lblAgregar";
             this.lblAgregar.Size = new System.Drawing.Size(194, 45);
             this.lblAgregar.TabIndex = 32;
@@ -234,7 +285,7 @@ namespace Interface
             // btnEnviar
             // 
             this.btnEnviar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEnviar.Location = new System.Drawing.Point(1000, 346);
+            this.btnEnviar.Location = new System.Drawing.Point(1001, 432);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(137, 41);
             this.btnEnviar.TabIndex = 33;
@@ -288,60 +339,30 @@ namespace Interface
             this.lblTelefono.TabIndex = 37;
             this.lblTelefono.Text = "Telefono";
             // 
-            // ComidaRow
+            // comboClientes
             // 
-            this.ComidaRow.HeaderText = "Comida";
-            this.ComidaRow.MinimumWidth = 6;
-            this.ComidaRow.Name = "ComidaRow";
-            this.ComidaRow.Width = 125;
+            this.comboClientes.FormattingEnabled = true;
+            this.comboClientes.Location = new System.Drawing.Point(974, 288);
+            this.comboClientes.Name = "comboClientes";
+            this.comboClientes.Size = new System.Drawing.Size(151, 28);
+            this.comboClientes.TabIndex = 39;
             // 
-            // CantidadRow
+            // lblClientes
             // 
-            this.CantidadRow.HeaderText = "Cantidad";
-            this.CantidadRow.MinimumWidth = 6;
-            this.CantidadRow.Name = "CantidadRow";
-            this.CantidadRow.Width = 125;
-            // 
-            // DireccionRow
-            // 
-            this.DireccionRow.HeaderText = "Direccion";
-            this.DireccionRow.MinimumWidth = 6;
-            this.DireccionRow.Name = "DireccionRow";
-            this.DireccionRow.Width = 125;
-            // 
-            // NumeroOrdenRow
-            // 
-            this.NumeroOrdenRow.HeaderText = "Numero de oreden";
-            this.NumeroOrdenRow.MinimumWidth = 6;
-            this.NumeroOrdenRow.Name = "NumeroOrdenRow";
-            this.NumeroOrdenRow.Width = 125;
-            // 
-            // CodigoRow
-            // 
-            this.CodigoRow.HeaderText = "Codigo";
-            this.CodigoRow.MinimumWidth = 6;
-            this.CodigoRow.Name = "CodigoRow";
-            this.CodigoRow.Width = 125;
-            // 
-            // TelefonoRow
-            // 
-            this.TelefonoRow.HeaderText = "Telefono";
-            this.TelefonoRow.MinimumWidth = 6;
-            this.TelefonoRow.Name = "TelefonoRow";
-            this.TelefonoRow.Width = 125;
-            // 
-            // ClienteRow
-            // 
-            this.ClienteRow.HeaderText = "Cliente";
-            this.ClienteRow.MinimumWidth = 6;
-            this.ClienteRow.Name = "ClienteRow";
-            this.ClienteRow.Width = 125;
+            this.lblClientes.AutoSize = true;
+            this.lblClientes.Location = new System.Drawing.Point(1134, 291);
+            this.lblClientes.Name = "lblClientes";
+            this.lblClientes.Size = new System.Drawing.Size(61, 20);
+            this.lblClientes.TabIndex = 40;
+            this.lblClientes.Text = "Clientes";
             // 
             // agregarPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1307, 619);
+            this.Controls.Add(this.lblClientes);
+            this.Controls.Add(this.comboClientes);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.lblTelefono);
             this.Controls.Add(this.btnAgregarCliente);
@@ -399,5 +420,7 @@ namespace Interface
         private System.Windows.Forms.DataGridViewTextBoxColumn CodigoRow;
         private System.Windows.Forms.DataGridViewTextBoxColumn TelefonoRow;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClienteRow;
+        private System.Windows.Forms.ComboBox comboClientes;
+        private System.Windows.Forms.Label lblClientes;
     }
 }

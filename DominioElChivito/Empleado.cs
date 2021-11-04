@@ -27,20 +27,6 @@ namespace DominioElChivito
             this.nombre = nombre;
         }
 
-    
-
-        public EmpleadoElevador GetE()
-        {
-            EmpleadoElevador empleadoElevador = new EmpleadoElevador();
-            empleadoElevador.Ci = this.Ci ;
-            empleadoElevador.Nombre= this.Nombre;
-            empleadoElevador.Apellido = this.Apellido;
-            empleadoElevador.Direccion = this.Direccion;
-            empleadoElevador.Telefono = this.Telefono;
-            empleadoElevador.Rol = this.Rol;
-
-            return empleadoElevador;
-        }
 
         public Empleado (EmpleadoElevador empleado)
         {

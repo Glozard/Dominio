@@ -21,6 +21,7 @@ namespace Interface
         byte estado = 0;
         int unaPocision = -1;
         int unTelefono;
+        string unCliente = "";
 
         public agregarPedido(Restaurante unRestaurante ,int posicion)
         {
@@ -30,9 +31,17 @@ namespace Interface
             btnDisponible.Visible = false;
             btnNoDisponble.Visible = false;
             unaPocision = posicion;
+            LevantarClientes();
 
         }
-     
+        private void LevantarClientes() 
+        {
+            foreach (Cliente aux in restaurante.CargarClientes())
+            {
+                string auxDos = aux.Nombre +"-"+ aux.Ci;
+                comboClientes.Items.Add(auxDos);
+            }
+        }
 
       
 
@@ -64,8 +73,9 @@ namespace Interface
             unNumero_orden =unNumero_orden +1;
             unCodigo = unCodigo +1;
             unTelefono = Convert.ToInt32(txtTelefono.Text);
+            unCliente = comboClientes.SelectedItem.ToString();
 
-            dataPedido.Rows.Add(comida, unaCantidad, unaDireccion, unNumero_orden, unCodigo, unTelefono);
+            dataPedido.Rows.Add(comida, unaCantidad, unaDireccion, unNumero_orden, unCodigo, unTelefono , unCliente);
             txtCantidad.Text = "";
             txtDireccion.Text = "";
             listaPizza.SelectedIndex = -1;
@@ -82,16 +92,18 @@ namespace Interface
                     int numeroDeOrdenAux = Convert.ToInt32(aux.Cells[3].Value);
                     string direccionAux = aux.Cells[2].Value.ToString();
                     int telefono = Convert.ToInt32(aux.Cells[5].Value);
-                    restaurante.agregarPedido(aux.Cells[0].Value.ToString(), cantidadAux, estado, numeroDeOrdenAux, unCodigo, unCodigo_producto, direccionAux,telefono);  
+                    string cliente = aux.Cells[6].Value.ToString();
+                    restaurante.agregarPedido(aux.Cells[0].Value.ToString(), cantidadAux, estado, numeroDeOrdenAux, unCodigo, unCodigo_producto, direccionAux,telefono , cliente);  
                     dataPedido.Rows.RemoveAt(0);
                 }
             }
         }
-
         private void agregarPedido_Load(object sender, EventArgs e)
         {
             if (unaPocision == 0)
             {
+                lblClientes.Visible = false;
+                comboClientes.Visible = false;
                 btnEnviar.Visible = false;
                 lblAgregar.Visible = false;
                 txtCantidad.Visible = false;
@@ -103,7 +115,6 @@ namespace Interface
                 btnDisponible.Visible = true;
                 btnNoDisponble.Visible = true;
             }
-        
         }
 
         private void btnDisponible_Click(object sender, EventArgs e)

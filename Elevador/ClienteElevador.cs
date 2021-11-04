@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 
 namespace Elevador
@@ -11,6 +12,7 @@ namespace Elevador
         private int ci;
         private int telefono;
         private string direccion;
+        private DataRow aux;
 
         public ClienteElevador(int ci , string nombre , string apellido , string direccion , int telefono)
         {
@@ -19,6 +21,18 @@ namespace Elevador
             this.apellido = apellido;
             this.direccion = direccion;
             this.telefono = telefono;
+        }
+        public ClienteElevador(DataTable aux) 
+        {
+        }
+
+        public ClienteElevador(DataRow aux)
+        {
+            this.aux = aux;
+        }
+
+        public ClienteElevador()
+        {
         }
 
         public string Nombre { get => nombre; set => nombre = value; }
