@@ -14,7 +14,6 @@ namespace Interface
     {
         Stopwatch reloj = new Stopwatch();
         int posicion = 0;
-
         Restaurante restaurante;
         public Cocina(Restaurante unRestaurante )
 
@@ -23,16 +22,33 @@ namespace Interface
             InitializeComponent();
             btnTerminado.Enabled = false;
             cargarListaPedidos();
+
         }
         public void cargarListaPedidos()
         {
-            foreach (Pedido aux in restaurante.levantarPedido())
+            List<Pedido> pedidos = new List<Pedido>();
+            DataTable dt = new DataTable();
+            dt = restaurante.CargarPedidos();
+            for (int i = 0; i < restaurante.CargarPedidos().Rows.Count; i++)
+            {
+                Pedido p = new Pedido();
+                p.Codigo = (int)dt.Rows[i][0];
+                p.Comida = ((string)dt.Rows[i][7]);
+                p.Cantidad = (int)dt.Rows[i][4];
+                p.Numero_orden = (int)dt.Rows[i][2];
+                p.Estado = (string)dt.Rows[i][8];
+                if (p.Estado == "pendiente")
+                {
+                pedidos.Add(p);
+                }
+            }
+            foreach (Pedido aux in pedidos)
             {
                 int indice = dataListaPedidos.Rows.Add();
                 dataListaPedidos.Rows[indice].Cells[0].Value = aux.Comida;
                 dataListaPedidos.Rows[indice].Cells[1].Value = aux.Cantidad;
                 dataListaPedidos.Rows[indice].Cells[2].Value = aux.Codigo;
-                dataListaPedidos.Rows[indice].Cells[3].Value = aux.Codigo_producto;
+                dataListaPedidos.Rows[indice].Cells[3].Value = aux.Estado;
                 dataListaPedidos.Rows[indice].Cells[4].Value = aux.Numero_orden;
             }
         }
@@ -79,8 +95,8 @@ namespace Interface
             btnTerminado.Enabled = false;
             btnComenzar.Enabled = true;
 
-
-            restaurante.levantarPedido().RemoveAt(0);
+            int codigo= (int)dataListaPedidos[2, 0].Value;
+            restaurante.PedidoTerminado(codigo);
             dataListaPedidos.Rows.RemoveAt(0);
       
         }

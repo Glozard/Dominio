@@ -18,7 +18,7 @@ namespace Interface
         int unCodigo;
         int unCodigo_producto = -1;
         string comida = "";
-        byte estado = 0;
+        string estado = "pendiente";
         int unaPocision = -1;
         int unTelefono;
         string unCliente = "";

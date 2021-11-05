@@ -60,5 +60,9 @@ namespace DominoBDD
         {
             return empleadobd.EliminarEmpleado(ci);
         }
+        public bool PedidoTerminado(int codigo)
+        {
+            return pedidobd.PedidoTerminado(codigo);
+        }
     }
 }

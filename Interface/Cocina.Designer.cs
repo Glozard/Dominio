@@ -31,11 +31,6 @@ namespace Interface
         {
             this.components = new System.ComponentModel.Container();
             this.dataListaPedidos = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumCodigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumNumeroOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnComenzar = new System.Windows.Forms.Button();
             this.btnTerminado = new System.Windows.Forms.Button();
             this.txtSegundos = new System.Windows.Forms.TextBox();
@@ -49,6 +44,11 @@ namespace Interface
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumNumeroOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataListaPedidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,48 +59,21 @@ namespace Interface
             this.dataGridViewTextBoxColumn4,
             this.ColumCantidad,
             this.ColumCodigo,
-            this.ColumCodigoProducto,
+            this.EstadoRow,
             this.ColumNumeroOrden});
-            this.dataListaPedidos.Location = new System.Drawing.Point(10, 152);
-            this.dataListaPedidos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataListaPedidos.Location = new System.Drawing.Point(11, 203);
             this.dataListaPedidos.Name = "dataListaPedidos";
             this.dataListaPedidos.RowHeadersWidth = 51;
             this.dataListaPedidos.RowTemplate.Height = 29;
-            this.dataListaPedidos.Size = new System.Drawing.Size(558, 141);
+            this.dataListaPedidos.Size = new System.Drawing.Size(680, 188);
             this.dataListaPedidos.TabIndex = 0;
             this.dataListaPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListaPedidos_CellContentClick);
             // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Comida";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // ColumCantidad
-            // 
-            this.ColumCantidad.HeaderText = "Cantidad";
-            this.ColumCantidad.Name = "ColumCantidad";
-            // 
-            // ColumCodigo
-            // 
-            this.ColumCodigo.HeaderText = "Codigo";
-            this.ColumCodigo.Name = "ColumCodigo";
-            // 
-            // ColumCodigoProducto
-            // 
-            this.ColumCodigoProducto.HeaderText = "Codigo Producto";
-            this.ColumCodigoProducto.Name = "ColumCodigoProducto";
-            // 
-            // ColumNumeroOrden
-            // 
-            this.ColumNumeroOrden.HeaderText = "Numero de Orden";
-            this.ColumNumeroOrden.Name = "ColumNumeroOrden";
-            // 
             // btnComenzar
             // 
-            this.btnComenzar.Location = new System.Drawing.Point(29, 118);
-            this.btnComenzar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnComenzar.Location = new System.Drawing.Point(33, 157);
             this.btnComenzar.Name = "btnComenzar";
-            this.btnComenzar.Size = new System.Drawing.Size(82, 22);
+            this.btnComenzar.Size = new System.Drawing.Size(94, 29);
             this.btnComenzar.TabIndex = 1;
             this.btnComenzar.Text = "Comenzar";
             this.btnComenzar.UseVisualStyleBackColor = true;
@@ -108,10 +81,9 @@ namespace Interface
             // 
             // btnTerminado
             // 
-            this.btnTerminado.Location = new System.Drawing.Point(131, 118);
-            this.btnTerminado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTerminado.Location = new System.Drawing.Point(150, 157);
             this.btnTerminado.Name = "btnTerminado";
-            this.btnTerminado.Size = new System.Drawing.Size(82, 22);
+            this.btnTerminado.Size = new System.Drawing.Size(94, 29);
             this.btnTerminado.TabIndex = 2;
             this.btnTerminado.Text = "Terminado";
             this.btnTerminado.UseVisualStyleBackColor = true;
@@ -120,31 +92,28 @@ namespace Interface
             // txtSegundos
             // 
             this.txtSegundos.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSegundos.Location = new System.Drawing.Point(404, 53);
-            this.txtSegundos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSegundos.Location = new System.Drawing.Point(462, 71);
             this.txtSegundos.Name = "txtSegundos";
             this.txtSegundos.ReadOnly = true;
-            this.txtSegundos.Size = new System.Drawing.Size(68, 32);
+            this.txtSegundos.Size = new System.Drawing.Size(77, 39);
             this.txtSegundos.TabIndex = 3;
             // 
             // txtMinutos
             // 
             this.txtMinutos.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMinutos.Location = new System.Drawing.Point(331, 53);
-            this.txtMinutos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMinutos.Location = new System.Drawing.Point(378, 71);
             this.txtMinutos.Name = "txtMinutos";
             this.txtMinutos.ReadOnly = true;
-            this.txtMinutos.Size = new System.Drawing.Size(68, 32);
+            this.txtMinutos.Size = new System.Drawing.Size(77, 39);
             this.txtMinutos.TabIndex = 4;
             // 
             // txtHoras
             // 
             this.txtHoras.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtHoras.Location = new System.Drawing.Point(258, 53);
-            this.txtHoras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtHoras.Location = new System.Drawing.Point(295, 71);
             this.txtHoras.Name = "txtHoras";
             this.txtHoras.ReadOnly = true;
-            this.txtHoras.Size = new System.Drawing.Size(68, 32);
+            this.txtHoras.Size = new System.Drawing.Size(77, 39);
             this.txtHoras.TabIndex = 5;
             // 
             // timer
@@ -153,10 +122,9 @@ namespace Interface
             // 
             // btnListaDeProductos
             // 
-            this.btnListaDeProductos.Location = new System.Drawing.Point(18, 9);
-            this.btnListaDeProductos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnListaDeProductos.Location = new System.Drawing.Point(21, 12);
             this.btnListaDeProductos.Name = "btnListaDeProductos";
-            this.btnListaDeProductos.Size = new System.Drawing.Size(195, 29);
+            this.btnListaDeProductos.Size = new System.Drawing.Size(223, 39);
             this.btnListaDeProductos.TabIndex = 6;
             this.btnListaDeProductos.Text = "Modificar lista de productos";
             this.btnListaDeProductos.UseVisualStyleBackColor = true;
@@ -165,38 +133,85 @@ namespace Interface
             // Comida
             // 
             this.Comida.HeaderText = "Comida";
+            this.Comida.MinimumWidth = 6;
             this.Comida.Name = "Comida";
+            this.Comida.Width = 125;
             // 
             // Cantidad
             // 
             this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 6;
             this.Cantidad.Name = "Cantidad";
+            this.Cantidad.Width = 125;
             // 
             // Codigo
             // 
             this.Codigo.HeaderText = "Codigo";
+            this.Codigo.MinimumWidth = 6;
             this.Codigo.Name = "Codigo";
+            this.Codigo.Width = 125;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "Comida";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 125;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.HeaderText = "Cantidad";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 125;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.HeaderText = "Codigo";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Comida";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // ColumCantidad
+            // 
+            this.ColumCantidad.HeaderText = "Cantidad";
+            this.ColumCantidad.MinimumWidth = 6;
+            this.ColumCantidad.Name = "ColumCantidad";
+            this.ColumCantidad.Width = 125;
+            // 
+            // ColumCodigo
+            // 
+            this.ColumCodigo.HeaderText = "Codigo";
+            this.ColumCodigo.MinimumWidth = 6;
+            this.ColumCodigo.Name = "ColumCodigo";
+            this.ColumCodigo.Width = 125;
+            // 
+            // EstadoRow
+            // 
+            this.EstadoRow.HeaderText = "Estado";
+            this.EstadoRow.MinimumWidth = 6;
+            this.EstadoRow.Name = "EstadoRow";
+            this.EstadoRow.Width = 125;
+            // 
+            // ColumNumeroOrden
+            // 
+            this.ColumNumeroOrden.HeaderText = "Numero de Orden";
+            this.ColumNumeroOrden.MinimumWidth = 6;
+            this.ColumNumeroOrden.Name = "ColumNumeroOrden";
+            this.ColumNumeroOrden.Width = 125;
             // 
             // Cocina
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 338);
+            this.ClientSize = new System.Drawing.Size(820, 451);
             this.Controls.Add(this.btnListaDeProductos);
             this.Controls.Add(this.txtHoras);
             this.Controls.Add(this.txtMinutos);
@@ -204,7 +219,6 @@ namespace Interface
             this.Controls.Add(this.btnTerminado);
             this.Controls.Add(this.btnComenzar);
             this.Controls.Add(this.dataListaPedidos);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Cocina";
             this.Text = "Cocina";
             this.Load += new System.EventHandler(this.Cocina_Load);
@@ -233,7 +247,7 @@ namespace Interface
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumCodigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumCodigoProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoRow;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumNumeroOrden;
     }
 }

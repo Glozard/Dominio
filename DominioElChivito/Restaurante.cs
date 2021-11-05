@@ -15,6 +15,7 @@ namespace DominioElChivito
         List<Cliente> clientes;
         List<Empleado> empleados;
         List<Pedido> pedidos;
+
         Empleado empleadoLogeado;
 
         public Restaurante()
@@ -28,7 +29,7 @@ namespace DominioElChivito
         }
         
 
-        public bool agregarPedido(string comida, int cantidad, byte estado, int numero_orden, int codigo, int codigo_producto, string direccion , int telefono , string cliente)
+        public bool agregarPedido(string comida, int cantidad, string estado, int numero_orden, int codigo, int codigo_producto, string direccion , int telefono , string cliente)
         {
 
             PedidoElevador pe = new PedidoElevador(cantidad, estado, numero_orden, codigo, codigo_producto, direccion, telefono, comida , cliente);
@@ -90,6 +91,10 @@ namespace DominioElChivito
         { 
             return restaurantebd.EliminarEmpleado(ci);
         }
+        public bool PedidoTerminado(int codigo)
+        {
+            return restaurantebd.PedidoTerminado(codigo);
+        }
 
 
 
@@ -131,7 +136,7 @@ namespace DominioElChivito
 
             foreach (Pedido aux in pedidos)
             {
-                if (aux.Estado == 0)
+                if (aux.Estado == "pendiente")
                 {
                     resp.Add(aux);
                 }

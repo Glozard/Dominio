@@ -15,7 +15,6 @@ namespace DominoBDD
 
             using (MySqlConnection conexion = ConexionBD.ObtenerConexion())
             {
-
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conexion;
                 cmd.CommandText = "Insert into empleado(ci , rol , telefono , nombre , apellido , direccion)values(?ci , ?rol , ?telefono , ?nombre , ?apellido , ?direccion)";
@@ -28,7 +27,6 @@ namespace DominoBDD
                 int resp = cmd.ExecuteNonQuery();
                 if (resp != 1) return false;
                 else return true;
-
             }
 
         }
