@@ -92,19 +92,33 @@ namespace DominoBDD
         {
             using (MySqlConnection conexion = ConexionBD.ObtenerConexion())
             {
-                MySqlCommand cmd = new MySqlCommand(String.Format("Update empleado rol={ 0 }, telefono = {1}, nombre={2} , apellido={3} , direccion={4} where ci = {5}", e.Rol, e.Telefono, e.Nombre, e.Apellido, e.Direccion, e.Ci), ConexionBD.ObtenerConexion());
-                //cmd.Parameters.Add("?ci", MySqlDbType.Int32).Value = e.Ci;
-                //cmd.Parameters.Add("?rol", MySqlDbType.Int32).Value = e.Rol;
-                //cmd.Parameters.Add("?telefono", MySqlDbType.Int32).Value = e.Telefono;
-                //cmd.Parameters.Add("?nombre", MySqlDbType.VarChar).Value = e.Nombre;
-                //cmd.Parameters.Add("?apellido", MySqlDbType.VarChar).Value = e.Apellido;
-                //cmd.Parameters.Add("?direccion", MySqlDbType.VarChar).Value = e.Direccion;
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conexion;
+                cmd.CommandText = "Update empleado set rol=?rol, telefono=?telefono, nombre=?nombre , apellido=?apellido, direccion=?direccion where ci=?ci ;";
+                cmd.Parameters.Add("?ci", MySqlDbType.Int32).Value = e.Ci;
+                cmd.Parameters.Add("?rol", MySqlDbType.Int32).Value = e.Rol;
+                cmd.Parameters.Add("?telefono", MySqlDbType.Int32).Value = e.Telefono;
+                cmd.Parameters.Add("?nombre", MySqlDbType.VarChar).Value = e.Nombre;
+                cmd.Parameters.Add("?apellido", MySqlDbType.VarChar).Value = e.Apellido;
+                cmd.Parameters.Add("?direccion", MySqlDbType.VarChar).Value = e.Direccion;
                 int resp = cmd.ExecuteNonQuery();
                 if (resp != 1) return false;
                 else return true;
 
             }
         }
-
+        public bool EliminarEmpleado(int ci)
+        {
+            using (MySqlConnection conexion = ConexionBD.ObtenerConexion())
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conexion;
+                cmd.CommandText = "DELETE FROM empleado where ci=?ci";
+                cmd.Parameters.Add("?ci", MySqlDbType.Int32).Value = ci;
+                int resp = cmd.ExecuteNonQuery();
+                if (resp != 1) return false;
+                else return true;
+            }
+        }
     }
 }

@@ -9,12 +9,12 @@ using DominioElChivito;
 
 namespace Interface
 {
-    public partial class ListaDeEmpleados : Form
+    public partial class GestionarPersonal : Form
     {
         Restaurante restaurante;
 
 
-        public ListaDeEmpleados(Restaurante unRestaurante)
+        public GestionarPersonal(Restaurante unRestaurante)
         {
             this.restaurante = unRestaurante;
             InitializeComponent();
@@ -42,10 +42,18 @@ namespace Interface
                 dataEmpleados.Rows[indice].Cells[5].Value = aux.Direccion;
             }
         }
-
+        
+        void limpiar()
+        {
+            comboRol.SelectedItem = null;
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtTelefono.Text = "";
+            txtDireccion.Text = "";
+            txtCi.Text = "";
+        }
         private void btnModificar_Click(object sender, EventArgs e)
         {
-
             int unRol = comboRol.SelectedIndex;
             string unaDireccion = txtDireccion.Text;
             string unNombre = txtNombre.Text;
@@ -54,13 +62,46 @@ namespace Interface
             int unTelefono = Convert.ToInt32(txtTelefono.Text);
 
             restaurante.ModificarEmpleado(unaCi , unRol , unTelefono , unNombre , unApellido , unaDireccion);
-
-
+            limpiar();
+            dataEmpleados.Rows.Clear();
+            cargarListaEmpleados();
+            MessageBox.Show("Empleado modificado correctamente");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int posicion = -1;
+            txtCi.Text = "";
+            posicion = dataEmpleados.CurrentRow.Index;
+            txtCi.Text = dataEmpleados[0 , posicion].Value.ToString();
+  
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int ci = Convert.ToInt32(txtCi.Text);
+            restaurante.EliminarEmpleado(ci);
+            dataEmpleados.Rows.Clear();
+            cargarListaEmpleados();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            byte unRol = (byte)comboRol.SelectedIndex;
+            string unaDireccion = txtDireccion.Text;
+            string unNombre = txtNombre.Text;
+            string unApellido = txtApellido.Text;
+            int unaCi = Convert.ToInt32(txtCi.Text);
+            int unTelefono = Convert.ToInt32(txtTelefono.Text);
+            restaurante.agregarEmpleado(unRol, unNombre, unApellido, unaCi, unTelefono, unaDireccion);
+            dataEmpleados.Rows.Clear();
+            cargarListaEmpleados();
+            limpiar();
         }
     }
 }

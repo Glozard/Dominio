@@ -56,7 +56,7 @@ namespace Interface
            
         private void btnListaEmpleados_Click(object sender, EventArgs e)
         {
-            ListaDeEmpleados empleados = new ListaDeEmpleados(restaurante);
+            GestionarPersonal empleados = new GestionarPersonal(restaurante);
             empleados.Show(); 
         }
     }

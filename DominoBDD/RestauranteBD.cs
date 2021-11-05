@@ -25,7 +25,7 @@ namespace DominoBDD
 
         public bool GuardarCliente(ClienteElevador c)
         {
-            return clientebd.GuardarCliente(c); 
+            return clientebd.GuardarCliente(c);
         }
 
         public bool GuardarEmpleado(EmpleadoElevador e)
@@ -33,10 +33,10 @@ namespace DominoBDD
             return empleadobd.GuardarEmpleado(e);
         }
 
-        public EmpleadoElevador LoginBD(string nombre, int ci , byte rol)
+        public EmpleadoElevador LoginBD(string nombre, int ci, byte rol)
         {
-            return empleadobd.Login(nombre, ci , rol);
-            
+            return empleadobd.Login(nombre, ci, rol);
+
         }
 
         public DataTable CargarPedidos()
@@ -55,6 +55,10 @@ namespace DominoBDD
         public bool ModificarEmpleado(EmpleadoElevador e)
         {
             return empleadobd.ModificarEmpleado(e);
+        }
+        public bool EliminarEmpleado(int ci)
+        {
+            return empleadobd.EliminarEmpleado(ci);
         }
     }
 }

@@ -86,6 +86,10 @@ namespace DominioElChivito
             EmpleadoElevador empleado = new EmpleadoElevador(rol, nombre , apellido , ci , telefono , direccion);
             return restaurantebd.ModificarEmpleado(empleado);
         }
+        public bool EliminarEmpleado(int ci) 
+        { 
+            return restaurantebd.EliminarEmpleado(ci);
+        }
 
 
 

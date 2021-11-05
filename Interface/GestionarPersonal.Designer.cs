@@ -1,7 +1,7 @@
 ﻿
 namespace Interface
 {
-    partial class ListaDeEmpleados
+    partial class GestionarPersonal
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,12 @@ namespace Interface
         private void InitializeComponent()
         {
             this.dataEmpleados = new System.Windows.Forms.DataGridView();
+            this.CiRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RolRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TelefonoRows = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ApellidoRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DireccionRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnModificar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -41,14 +47,10 @@ namespace Interface
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.CiRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RolRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TelefonoRows = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ApellidoRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DireccionRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblRol = new System.Windows.Forms.Label();
             this.comboRol = new System.Windows.Forms.ComboBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +70,49 @@ namespace Interface
             this.dataEmpleados.RowTemplate.Height = 29;
             this.dataEmpleados.Size = new System.Drawing.Size(804, 245);
             this.dataEmpleados.TabIndex = 0;
+            this.dataEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataEmpleados_CellContentClick);
+            // 
+            // CiRow
+            // 
+            this.CiRow.HeaderText = "Ci";
+            this.CiRow.MinimumWidth = 6;
+            this.CiRow.Name = "CiRow";
+            this.CiRow.Width = 125;
+            // 
+            // RolRow
+            // 
+            this.RolRow.HeaderText = "Rol";
+            this.RolRow.MinimumWidth = 6;
+            this.RolRow.Name = "RolRow";
+            this.RolRow.Width = 125;
+            // 
+            // TelefonoRows
+            // 
+            this.TelefonoRows.HeaderText = "Telefono";
+            this.TelefonoRows.MinimumWidth = 6;
+            this.TelefonoRows.Name = "TelefonoRows";
+            this.TelefonoRows.Width = 125;
+            // 
+            // NombreRow
+            // 
+            this.NombreRow.HeaderText = "Nombre";
+            this.NombreRow.MinimumWidth = 6;
+            this.NombreRow.Name = "NombreRow";
+            this.NombreRow.Width = 125;
+            // 
+            // ApellidoRow
+            // 
+            this.ApellidoRow.HeaderText = "Apellido";
+            this.ApellidoRow.MinimumWidth = 6;
+            this.ApellidoRow.Name = "ApellidoRow";
+            this.ApellidoRow.Width = 125;
+            // 
+            // DireccionRow
+            // 
+            this.DireccionRow.HeaderText = "Direccion";
+            this.DireccionRow.MinimumWidth = 6;
+            this.DireccionRow.Name = "DireccionRow";
+            this.DireccionRow.Width = 125;
             // 
             // btnModificar
             // 
@@ -160,48 +205,6 @@ namespace Interface
             this.txtTelefono.Size = new System.Drawing.Size(125, 27);
             this.txtTelefono.TabIndex = 8;
             // 
-            // CiRow
-            // 
-            this.CiRow.HeaderText = "Ci";
-            this.CiRow.MinimumWidth = 6;
-            this.CiRow.Name = "CiRow";
-            this.CiRow.Width = 125;
-            // 
-            // RolRow
-            // 
-            this.RolRow.HeaderText = "Rol";
-            this.RolRow.MinimumWidth = 6;
-            this.RolRow.Name = "RolRow";
-            this.RolRow.Width = 125;
-            // 
-            // TelefonoRows
-            // 
-            this.TelefonoRows.HeaderText = "Telefono";
-            this.TelefonoRows.MinimumWidth = 6;
-            this.TelefonoRows.Name = "TelefonoRows";
-            this.TelefonoRows.Width = 125;
-            // 
-            // NombreRow
-            // 
-            this.NombreRow.HeaderText = "Nombre";
-            this.NombreRow.MinimumWidth = 6;
-            this.NombreRow.Name = "NombreRow";
-            this.NombreRow.Width = 125;
-            // 
-            // ApellidoRow
-            // 
-            this.ApellidoRow.HeaderText = "Apellido";
-            this.ApellidoRow.MinimumWidth = 6;
-            this.ApellidoRow.Name = "ApellidoRow";
-            this.ApellidoRow.Width = 125;
-            // 
-            // DireccionRow
-            // 
-            this.DireccionRow.HeaderText = "Direccion";
-            this.DireccionRow.MinimumWidth = 6;
-            this.DireccionRow.Name = "DireccionRow";
-            this.DireccionRow.Width = 125;
-            // 
             // lblRol
             // 
             this.lblRol.AutoSize = true;
@@ -227,11 +230,33 @@ namespace Interface
             this.comboRol.Size = new System.Drawing.Size(134, 28);
             this.comboRol.TabIndex = 25;
             // 
-            // ListaDeEmpleados
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(264, 420);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(94, 29);
+            this.btnEliminar.TabIndex = 26;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(553, 420);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(94, 29);
+            this.btnAgregar.TabIndex = 27;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // GestionarPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 461);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.comboRol);
             this.Controls.Add(this.lblRol);
             this.Controls.Add(this.lblDireccion);
@@ -246,8 +271,8 @@ namespace Interface
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.dataEmpleados);
-            this.Name = "ListaDeEmpleados";
-            this.Text = "ListaDeEmpleados";
+            this.Name = "GestionarPersonal";
+            this.Text = "Gestion de personal";
             this.Load += new System.EventHandler(this.ListaDeEmpleados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataEmpleados)).EndInit();
             this.ResumeLayout(false);
@@ -277,5 +302,7 @@ namespace Interface
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.ComboBox comboRol;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }
