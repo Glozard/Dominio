@@ -16,13 +16,11 @@ namespace Interface
         int posicion = 0;
         Restaurante restaurante;
         public Cocina(Restaurante unRestaurante )
-
         {
             this.restaurante = unRestaurante;
             InitializeComponent();
             btnTerminado.Enabled = false;
             cargarListaPedidos();
-
         }
         public void cargarListaPedidos()
         {

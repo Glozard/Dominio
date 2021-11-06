@@ -11,8 +11,10 @@ namespace DominoBDD
         PedidoBD pedidobd;
         ClienteBD clientebd;
         EmpleadoBD empleadobd;
+        ProductoBD productobd;
         public RestauranteBD()
         {
+            productobd = new ProductoBD();
             empleadobd = new EmpleadoBD();
             clientebd = new ClienteBD();
             pedidobd = new PedidoBD();
@@ -63,6 +65,19 @@ namespace DominoBDD
         public bool PedidoTerminado(int codigo)
         {
             return pedidobd.PedidoTerminado(codigo);
+        }
+        public DataTable CargarProductos() 
+        {
+            return productobd.CargarProductos();
+        }
+        public int CargarCodigo(string tipo_comida)
+        {
+           return productobd.CargarCodigo(tipo_comida);
+           
+        }
+        public bool ModificarEstadoProducto(string tipo_comida)
+        {
+            return productobd.ModificarEstadoProducto(tipo_comida);
         }
     }
 }

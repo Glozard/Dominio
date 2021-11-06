@@ -40,13 +40,11 @@ namespace Interface
             this.ClienteRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tablaComida = new System.Windows.Forms.TabControl();
             this.Pizza = new System.Windows.Forms.TabPage();
+            this.listaMilanesasNoDisponible = new System.Windows.Forms.ListBox();
+            this.listaMilanesasDisponible = new System.Windows.Forms.ListBox();
             this.lblNoDisponible = new System.Windows.Forms.Label();
             this.lblDisponible = new System.Windows.Forms.Label();
-            this.listaPizzaNoDisponible = new System.Windows.Forms.ListBox();
-            this.listaPizza = new System.Windows.Forms.ListBox();
             this.Hamburguesa = new System.Windows.Forms.TabPage();
-            this.listaHamburguesa = new System.Windows.Forms.ListBox();
-            this.tablaChivito = new System.Windows.Forms.TabPage();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
@@ -60,10 +58,32 @@ namespace Interface
             this.lblTelefono = new System.Windows.Forms.Label();
             this.comboClientes = new System.Windows.Forms.ComboBox();
             this.lblClientes = new System.Windows.Forms.Label();
+            this.listaHamburguesasNoDisponible = new System.Windows.Forms.ListBox();
+            this.listaHamburguesasDisponible = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.PapasFritas = new System.Windows.Forms.TabPage();
+            this.Bebida = new System.Windows.Forms.TabPage();
+            this.Cervezas = new System.Windows.Forms.TabPage();
+            this.listaPapasNoDisponible = new System.Windows.Forms.ListBox();
+            this.listaPapasDisponible = new System.Windows.Forms.ListBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.listaBebidasNoDisponible = new System.Windows.Forms.ListBox();
+            this.listaBebidasDisponible = new System.Windows.Forms.ListBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.listaCervezaNoDisponible = new System.Windows.Forms.ListBox();
+            this.listaCervezasDisponible = new System.Windows.Forms.ListBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataPedido)).BeginInit();
             this.tablaComida.SuspendLayout();
             this.Pizza.SuspendLayout();
             this.Hamburguesa.SuspendLayout();
+            this.PapasFritas.SuspendLayout();
+            this.Bebida.SuspendLayout();
+            this.Cervezas.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblProducto
@@ -147,26 +167,47 @@ namespace Interface
             // 
             this.tablaComida.Controls.Add(this.Pizza);
             this.tablaComida.Controls.Add(this.Hamburguesa);
-            this.tablaComida.Controls.Add(this.tablaChivito);
+            this.tablaComida.Controls.Add(this.PapasFritas);
+            this.tablaComida.Controls.Add(this.Bebida);
+            this.tablaComida.Controls.Add(this.Cervezas);
             this.tablaComida.Location = new System.Drawing.Point(31, 61);
             this.tablaComida.Name = "tablaComida";
             this.tablaComida.SelectedIndex = 0;
             this.tablaComida.Size = new System.Drawing.Size(807, 243);
             this.tablaComida.TabIndex = 27;
+            this.tablaComida.SelectedIndexChanged += new System.EventHandler(this.tablaComida_SelectedIndexChanged);
             // 
             // Pizza
             // 
+            this.Pizza.Controls.Add(this.listaMilanesasNoDisponible);
+            this.Pizza.Controls.Add(this.listaMilanesasDisponible);
             this.Pizza.Controls.Add(this.lblNoDisponible);
             this.Pizza.Controls.Add(this.lblDisponible);
-            this.Pizza.Controls.Add(this.listaPizzaNoDisponible);
-            this.Pizza.Controls.Add(this.listaPizza);
             this.Pizza.Location = new System.Drawing.Point(4, 29);
             this.Pizza.Name = "Pizza";
             this.Pizza.Padding = new System.Windows.Forms.Padding(3);
             this.Pizza.Size = new System.Drawing.Size(799, 210);
             this.Pizza.TabIndex = 1;
-            this.Pizza.Text = "Pizza";
+            this.Pizza.Text = "Milanesa";
             this.Pizza.UseVisualStyleBackColor = true;
+            // 
+            // listaMilanesasNoDisponible
+            // 
+            this.listaMilanesasNoDisponible.FormattingEnabled = true;
+            this.listaMilanesasNoDisponible.ItemHeight = 20;
+            this.listaMilanesasNoDisponible.Location = new System.Drawing.Point(407, 32);
+            this.listaMilanesasNoDisponible.Name = "listaMilanesasNoDisponible";
+            this.listaMilanesasNoDisponible.Size = new System.Drawing.Size(375, 164);
+            this.listaMilanesasNoDisponible.TabIndex = 39;
+            // 
+            // listaMilanesasDisponible
+            // 
+            this.listaMilanesasDisponible.FormattingEnabled = true;
+            this.listaMilanesasDisponible.ItemHeight = 20;
+            this.listaMilanesasDisponible.Location = new System.Drawing.Point(10, 32);
+            this.listaMilanesasDisponible.Name = "listaMilanesasDisponible";
+            this.listaMilanesasDisponible.Size = new System.Drawing.Size(375, 164);
+            this.listaMilanesasDisponible.TabIndex = 38;
             // 
             // lblNoDisponible
             // 
@@ -186,29 +227,12 @@ namespace Interface
             this.lblDisponible.TabIndex = 36;
             this.lblDisponible.Text = "Disponible";
             // 
-            // listaPizzaNoDisponible
-            // 
-            this.listaPizzaNoDisponible.FormattingEnabled = true;
-            this.listaPizzaNoDisponible.ItemHeight = 20;
-            this.listaPizzaNoDisponible.Location = new System.Drawing.Point(411, 32);
-            this.listaPizzaNoDisponible.Name = "listaPizzaNoDisponible";
-            this.listaPizzaNoDisponible.Size = new System.Drawing.Size(375, 164);
-            this.listaPizzaNoDisponible.TabIndex = 1;
-            // 
-            // listaPizza
-            // 
-            this.listaPizza.FormattingEnabled = true;
-            this.listaPizza.ItemHeight = 20;
-            this.listaPizza.Items.AddRange(new object[] {
-            "Pizza"});
-            this.listaPizza.Location = new System.Drawing.Point(16, 32);
-            this.listaPizza.Name = "listaPizza";
-            this.listaPizza.Size = new System.Drawing.Size(375, 164);
-            this.listaPizza.TabIndex = 0;
-            // 
             // Hamburguesa
             // 
-            this.Hamburguesa.Controls.Add(this.listaHamburguesa);
+            this.Hamburguesa.Controls.Add(this.listaHamburguesasNoDisponible);
+            this.Hamburguesa.Controls.Add(this.listaHamburguesasDisponible);
+            this.Hamburguesa.Controls.Add(this.label1);
+            this.Hamburguesa.Controls.Add(this.label2);
             this.Hamburguesa.Location = new System.Drawing.Point(4, 29);
             this.Hamburguesa.Name = "Hamburguesa";
             this.Hamburguesa.Padding = new System.Windows.Forms.Padding(3);
@@ -216,28 +240,6 @@ namespace Interface
             this.Hamburguesa.TabIndex = 2;
             this.Hamburguesa.Text = "Hamburguesa";
             this.Hamburguesa.UseVisualStyleBackColor = true;
-            // 
-            // listaHamburguesa
-            // 
-            this.listaHamburguesa.FormattingEnabled = true;
-            this.listaHamburguesa.ItemHeight = 20;
-            this.listaHamburguesa.Items.AddRange(new object[] {
-            "Hamburguesa"});
-            this.listaHamburguesa.Location = new System.Drawing.Point(19, 12);
-            this.listaHamburguesa.Name = "listaHamburguesa";
-            this.listaHamburguesa.Size = new System.Drawing.Size(764, 184);
-            this.listaHamburguesa.TabIndex = 0;
-            // 
-            // tablaChivito
-            // 
-            this.tablaChivito.Location = new System.Drawing.Point(4, 29);
-            this.tablaChivito.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tablaChivito.Name = "tablaChivito";
-            this.tablaChivito.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tablaChivito.Size = new System.Drawing.Size(799, 210);
-            this.tablaChivito.TabIndex = 3;
-            this.tablaChivito.Text = "Chivito";
-            this.tablaChivito.UseVisualStyleBackColor = true;
             // 
             // lblCantidad
             // 
@@ -356,6 +358,189 @@ namespace Interface
             this.lblClientes.TabIndex = 40;
             this.lblClientes.Text = "Clientes";
             // 
+            // listaHamburguesasNoDisponible
+            // 
+            this.listaHamburguesasNoDisponible.FormattingEnabled = true;
+            this.listaHamburguesasNoDisponible.ItemHeight = 20;
+            this.listaHamburguesasNoDisponible.Location = new System.Drawing.Point(410, 35);
+            this.listaHamburguesasNoDisponible.Name = "listaHamburguesasNoDisponible";
+            this.listaHamburguesasNoDisponible.Size = new System.Drawing.Size(375, 164);
+            this.listaHamburguesasNoDisponible.TabIndex = 43;
+            // 
+            // listaHamburguesasDisponible
+            // 
+            this.listaHamburguesasDisponible.FormattingEnabled = true;
+            this.listaHamburguesasDisponible.ItemHeight = 20;
+            this.listaHamburguesasDisponible.Location = new System.Drawing.Point(13, 35);
+            this.listaHamburguesasDisponible.Name = "listaHamburguesasDisponible";
+            this.listaHamburguesasDisponible.Size = new System.Drawing.Size(375, 164);
+            this.listaHamburguesasDisponible.TabIndex = 42;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(561, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 20);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "No disponible";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(140, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 20);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Disponible";
+            // 
+            // PapasFritas
+            // 
+            this.PapasFritas.Controls.Add(this.listaPapasNoDisponible);
+            this.PapasFritas.Controls.Add(this.listaPapasDisponible);
+            this.PapasFritas.Controls.Add(this.label3);
+            this.PapasFritas.Controls.Add(this.label4);
+            this.PapasFritas.Location = new System.Drawing.Point(4, 29);
+            this.PapasFritas.Name = "PapasFritas";
+            this.PapasFritas.Size = new System.Drawing.Size(799, 210);
+            this.PapasFritas.TabIndex = 3;
+            this.PapasFritas.Text = "Papas Fritas";
+            this.PapasFritas.UseVisualStyleBackColor = true;
+            // 
+            // Bebida
+            // 
+            this.Bebida.Controls.Add(this.listaBebidasNoDisponible);
+            this.Bebida.Controls.Add(this.listaBebidasDisponible);
+            this.Bebida.Controls.Add(this.label5);
+            this.Bebida.Controls.Add(this.label6);
+            this.Bebida.Location = new System.Drawing.Point(4, 29);
+            this.Bebida.Name = "Bebida";
+            this.Bebida.Size = new System.Drawing.Size(799, 210);
+            this.Bebida.TabIndex = 4;
+            this.Bebida.Text = "Bebidas";
+            this.Bebida.UseVisualStyleBackColor = true;
+            // 
+            // Cervezas
+            // 
+            this.Cervezas.Controls.Add(this.listaCervezaNoDisponible);
+            this.Cervezas.Controls.Add(this.listaCervezasDisponible);
+            this.Cervezas.Controls.Add(this.label7);
+            this.Cervezas.Controls.Add(this.label8);
+            this.Cervezas.Location = new System.Drawing.Point(4, 29);
+            this.Cervezas.Name = "Cervezas";
+            this.Cervezas.Size = new System.Drawing.Size(799, 210);
+            this.Cervezas.TabIndex = 5;
+            this.Cervezas.Text = "Cervezas";
+            this.Cervezas.UseVisualStyleBackColor = true;
+            // 
+            // listaPapasNoDisponible
+            // 
+            this.listaPapasNoDisponible.FormattingEnabled = true;
+            this.listaPapasNoDisponible.ItemHeight = 20;
+            this.listaPapasNoDisponible.Location = new System.Drawing.Point(410, 35);
+            this.listaPapasNoDisponible.Name = "listaPapasNoDisponible";
+            this.listaPapasNoDisponible.Size = new System.Drawing.Size(375, 164);
+            this.listaPapasNoDisponible.TabIndex = 43;
+            // 
+            // listaPapasDisponible
+            // 
+            this.listaPapasDisponible.FormattingEnabled = true;
+            this.listaPapasDisponible.ItemHeight = 20;
+            this.listaPapasDisponible.Location = new System.Drawing.Point(13, 35);
+            this.listaPapasDisponible.Name = "listaPapasDisponible";
+            this.listaPapasDisponible.Size = new System.Drawing.Size(375, 164);
+            this.listaPapasDisponible.TabIndex = 42;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(561, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(103, 20);
+            this.label3.TabIndex = 41;
+            this.label3.Text = "No disponible";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(140, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 20);
+            this.label4.TabIndex = 40;
+            this.label4.Text = "Disponible";
+            // 
+            // listaBebidasNoDisponible
+            // 
+            this.listaBebidasNoDisponible.FormattingEnabled = true;
+            this.listaBebidasNoDisponible.ItemHeight = 20;
+            this.listaBebidasNoDisponible.Location = new System.Drawing.Point(410, 35);
+            this.listaBebidasNoDisponible.Name = "listaBebidasNoDisponible";
+            this.listaBebidasNoDisponible.Size = new System.Drawing.Size(375, 164);
+            this.listaBebidasNoDisponible.TabIndex = 47;
+            // 
+            // listaBebidasDisponible
+            // 
+            this.listaBebidasDisponible.FormattingEnabled = true;
+            this.listaBebidasDisponible.ItemHeight = 20;
+            this.listaBebidasDisponible.Location = new System.Drawing.Point(13, 35);
+            this.listaBebidasDisponible.Name = "listaBebidasDisponible";
+            this.listaBebidasDisponible.Size = new System.Drawing.Size(375, 164);
+            this.listaBebidasDisponible.TabIndex = 46;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(561, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(103, 20);
+            this.label5.TabIndex = 45;
+            this.label5.Text = "No disponible";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(140, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 20);
+            this.label6.TabIndex = 44;
+            this.label6.Text = "Disponible";
+            // 
+            // listaCervezaNoDisponible
+            // 
+            this.listaCervezaNoDisponible.FormattingEnabled = true;
+            this.listaCervezaNoDisponible.ItemHeight = 20;
+            this.listaCervezaNoDisponible.Location = new System.Drawing.Point(410, 35);
+            this.listaCervezaNoDisponible.Name = "listaCervezaNoDisponible";
+            this.listaCervezaNoDisponible.Size = new System.Drawing.Size(375, 164);
+            this.listaCervezaNoDisponible.TabIndex = 51;
+            // 
+            // listaCervezasDisponible
+            // 
+            this.listaCervezasDisponible.FormattingEnabled = true;
+            this.listaCervezasDisponible.ItemHeight = 20;
+            this.listaCervezasDisponible.Location = new System.Drawing.Point(13, 35);
+            this.listaCervezasDisponible.Name = "listaCervezasDisponible";
+            this.listaCervezasDisponible.Size = new System.Drawing.Size(375, 164);
+            this.listaCervezasDisponible.TabIndex = 50;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(561, 12);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(103, 20);
+            this.label7.TabIndex = 49;
+            this.label7.Text = "No disponible";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(140, 12);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(81, 20);
+            this.label8.TabIndex = 48;
+            this.label8.Text = "Disponible";
+            // 
             // agregarPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -385,6 +570,13 @@ namespace Interface
             this.Pizza.ResumeLayout(false);
             this.Pizza.PerformLayout();
             this.Hamburguesa.ResumeLayout(false);
+            this.Hamburguesa.PerformLayout();
+            this.PapasFritas.ResumeLayout(false);
+            this.PapasFritas.PerformLayout();
+            this.Bebida.ResumeLayout(false);
+            this.Bebida.PerformLayout();
+            this.Cervezas.ResumeLayout(false);
+            this.Cervezas.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -395,21 +587,17 @@ namespace Interface
         private System.Windows.Forms.DataGridView dataPedido;
         private System.Windows.Forms.TabControl tablaComida;
         private System.Windows.Forms.TabPage Pizza;
-        private System.Windows.Forms.ListBox listaPizza;
         private System.Windows.Forms.TabPage Hamburguesa;
-        private System.Windows.Forms.ListBox listaHamburguesa;
         private System.Windows.Forms.Label lblCantidad;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.Button lblAgregar;
         private System.Windows.Forms.Button btnEnviar;
-        private System.Windows.Forms.TabPage tablaChivito;
         private System.Windows.Forms.Button btnNoDisponble;
         private System.Windows.Forms.Button btnDisponible;
         private System.Windows.Forms.Label lblNoDisponible;
         private System.Windows.Forms.Label lblDisponible;
-        private System.Windows.Forms.ListBox listaPizzaNoDisponible;
         private System.Windows.Forms.Button btnAgregarCliente;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblTelefono;
@@ -422,5 +610,26 @@ namespace Interface
         private System.Windows.Forms.DataGridViewTextBoxColumn ClienteRow;
         private System.Windows.Forms.ComboBox comboClientes;
         private System.Windows.Forms.Label lblClientes;
+        private System.Windows.Forms.ListBox listaMilanesasNoDisponible;
+        private System.Windows.Forms.ListBox listaMilanesasDisponible;
+        private System.Windows.Forms.ListBox listaHamburguesasNoDisponible;
+        private System.Windows.Forms.ListBox listaHamburguesasDisponible;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TabPage PapasFritas;
+        private System.Windows.Forms.ListBox listaPapasNoDisponible;
+        private System.Windows.Forms.ListBox listaPapasDisponible;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TabPage Bebida;
+        private System.Windows.Forms.ListBox listaBebidasNoDisponible;
+        private System.Windows.Forms.ListBox listaBebidasDisponible;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TabPage Cervezas;
+        private System.Windows.Forms.ListBox listaCervezaNoDisponible;
+        private System.Windows.Forms.ListBox listaCervezasDisponible;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }

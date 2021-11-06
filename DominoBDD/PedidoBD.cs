@@ -15,7 +15,6 @@ namespace DominoBDD
             MySqlCommand cmd = new MySqlCommand();
             using (MySqlConnection conexion = ConexionBD.ObtenerConexion())
             {
-
                 cmd.Connection = conexion;
                 cmd.CommandText = "Insert into pedido(codigo , direccion , numero_orden , codigo_producto , cantidad , fecha , telefono_cliente , comida , estado, cliente)values(null , ?direccion , ?numero_orden , ?codigo_producto , ?cantidad ,?fecha, ?telefono_cliente , ?comida , ?estado, ?cliente)";
                 //codigo toma el valor desde el last
