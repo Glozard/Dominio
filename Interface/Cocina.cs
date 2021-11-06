@@ -62,7 +62,6 @@ namespace Interface
 
         private void listaComidas_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void btnComenzar_Click(object sender, EventArgs e)

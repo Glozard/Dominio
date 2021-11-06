@@ -15,7 +15,6 @@ namespace DominioElChivito
         List<Cliente> clientes;
         List<Empleado> empleados;
         List<Pedido> pedidos;
-
         Empleado empleadoLogeado;
 
         public Restaurante()
@@ -112,16 +111,16 @@ namespace DominioElChivito
 
 
 
-        public bool Login(string nombre, int ci , byte rol)
+        public Empleado Login(string nombre, int ci , int rol)
         {
             EmpleadoElevador empleado = restaurantebd.LoginBD(nombre, ci , rol);
             if (empleado != null)
             {
                 Empleado empleado1 = new Empleado(empleado);
                 empleadoLogeado = empleado1;
-                return true;
+                return empleado1;
             }
-            else return false;
+            return empleado; // preguntar al profe
         }
 
 
@@ -145,19 +144,6 @@ namespace DominioElChivito
             return respuesta;
         }
 
-        public List<Pedido> levantarPedido()
-        {
-            List<Pedido> resp = new List<Pedido>();
-
-            foreach (Pedido aux in pedidos)
-            {
-                if (aux.Estado == "pendiente")
-                {
-                    resp.Add(aux);
-                }
-            }
-            return resp;
-        }
       
     }
 }

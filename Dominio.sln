@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DominioElChivito", "Dominio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elevador", "Elevador\Elevador.csproj", "{E4EC40A8-9132-40F4-9B8B-3EF629B40193}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DominoBDD", "DominoBDD\DominoBDD.csproj", "{563C9B1E-4286-4982-B3F8-2C506652EABF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DominoBDD", "DominoBDD\DominoBDD.csproj", "{563C9B1E-4286-4982-B3F8-2C506652EABF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

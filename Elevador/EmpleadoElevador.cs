@@ -23,13 +23,14 @@ namespace Elevador
             this.telefono = telefono;
             this.Direccion = direccion;
         }
-        public EmpleadoElevador() { }
-
-        public EmpleadoElevador(string nombre , int ci)
+        public EmpleadoElevador(string nombre, int ci)
         {
             this.nombre = nombre;
             this.ci = ci;
         }
+        public EmpleadoElevador() { }
+
+
        
         public int Rol { get => rol; set => rol = value; }
         public string Nombre { get => nombre; set => nombre = value; }

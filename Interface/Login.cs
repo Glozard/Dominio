@@ -13,7 +13,7 @@ namespace Interface
     {
         string unNombre = "";
         int unaContraseña;
-        byte unRol;
+        int unRol;
 
         Restaurante restaurante;
         public Login(Restaurante unRestaurante)
@@ -27,21 +27,22 @@ namespace Interface
         {
             unNombre = txtNombre.Text;
             unaContraseña = Convert.ToInt32(txtContraseña.Text);
-            unRol = (byte)comboRol.SelectedIndex;
-            
-
-            bool resp = restaurante.Login(unNombre , unaContraseña , unRol);
-            if (resp)
-            { 
-               if(unRol == 0)
+            unRol = (byte)comboRol.SelectedIndex;          
+            int rol = restaurante.Login(unNombre , unaContraseña , unRol).Rol;
+               if(rol == 0)
                 {
                     MenuPrincipal menu = new MenuPrincipal(restaurante);
                     menu.Show();
                 }
-            }
-            else
+                if (rol == 1)
+                  {
+                agregarPedido pedido = new agregarPedido(restaurante, 1);
+                pedido.Show();
+                  }
+            if (rol == 2)
             {
-                MessageBox.Show("Usuario Incorrecto");
+                Cocina cocina = new Cocina(restaurante);
+                cocina.Show();
             }
         }
     }

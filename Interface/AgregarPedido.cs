@@ -33,44 +33,37 @@ namespace Interface
             CargarProductos();
             SeleccionarListasNulo();
         }
-       
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+        }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int posicion = -1;
+            posicion = dataPedido.CurrentRow.Index;
+            if (posicion != -1)
+            {
+                dataPedido.Rows.RemoveAt(posicion);   //a preguntarle al profe
+            }
+            else MessageBox.Show("Debes seleccionar un pedido valido");
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-        }  
+            int posicion = -1;
+            posicion = dataPedido.CurrentRow.Index;
+            txtCantidad.Text = dataPedido[1, posicion].Value.ToString();
+            txtDireccion.Text = dataPedido[2, posicion].Value.ToString();
+            txtTelefono.Text = dataPedido[5, posicion].Value.ToString();
+        }
         private void lblAgregar_Click(object sender, EventArgs e)
         {
-            if (listaMilanesasDisponible.SelectedIndex != -1)
-            {
-                unCodigo_producto = listaMilanesasDisponible.SelectedIndex;
-            }
-            if (listaHamburguesasDisponible.SelectedIndex != -1)
-            {
-                unCodigo_producto = listaHamburguesasDisponible.SelectedIndex;
-            }
-            
-            unaDireccion = txtDireccion.Text;
-            unaCantidad = Convert.ToInt32(txtCantidad.Text);
-            unNumero_orden =unNumero_orden +1;
-            unCodigo = restaurante.CargarCodigo(ComidaSeleccionada());
-            unTelefono = Convert.ToInt32(txtTelefono.Text);
-            unCliente = comboClientes.SelectedItem.ToString();
-
-            dataPedido.Rows.Add(ComidaSeleccionada(), unaCantidad, unaDireccion, unNumero_orden, unCodigo, unTelefono , unCliente);
-            txtCantidad.Text = "";
-            txtDireccion.Text = "";
-            txtTelefono.Text = "";
-            comboClientes.SelectedIndex = -1;
-            SeleccionarListasNulo();
+            AgregarPedido();
         }
+
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow aux in dataPedido.Rows) {
+                foreach (DataGridViewRow aux in dataPedido.Rows)
+                {
                 if (aux.Cells[0].Value != null)
                 {
                     int cantidadAux = Convert.ToInt32(aux.Cells[1].Value);
@@ -79,10 +72,11 @@ namespace Interface
                     string direccionAux = aux.Cells[2].Value.ToString();
                     int telefono = Convert.ToInt32(aux.Cells[5].Value);
                     string cliente = aux.Cells[6].Value.ToString();
-                    restaurante.agregarPedido(aux.Cells[0].Value.ToString(), cantidadAux, estado, numeroDeOrdenAux, unCodigo, unCodigo_producto, direccionAux,telefono , cliente);  
+                    restaurante.agregarPedido(aux.Cells[0].Value.ToString(), cantidadAux, estado, numeroDeOrdenAux, unCodigo, unCodigo_producto, direccionAux, telefono, cliente);
                     dataPedido.Rows.RemoveAt(0);
                 }
-            }
+                else MessageBox.Show("No hay pedidos en cola para enviar");
+                }
         }
         private void agregarPedido_Load(object sender, EventArgs e)
         {
@@ -190,5 +184,53 @@ namespace Interface
                 comboClientes.Items.Add(auxDos);
             }
         }
+        void AgregarPedido()
+        {
+            if (comboClientes.SelectedIndex != -1) unCliente = comboClientes.SelectedItem.ToString();
+
+            try
+            {
+                unaDireccion = txtDireccion.Text;
+                unaCantidad = Convert.ToInt32(txtCantidad.Text);
+                unNumero_orden = unNumero_orden + 1;
+                unCodigo = restaurante.CargarCodigo(ComidaSeleccionada());
+                unTelefono = Convert.ToInt32(txtTelefono.Text);
+
+                dataPedido.Rows.Add(ComidaSeleccionada(), unaCantidad, unaDireccion, unNumero_orden, unCodigo, unTelefono, unCliente);
+                txtCantidad.Text = "";
+                txtDireccion.Text = "";
+                txtTelefono.Text = "";
+                comboClientes.SelectedIndex = -1;
+                SeleccionarListasNulo();
+            }
+            catch (Exception) { MessageBox.Show("Datos ingresados incorrectamente"); }
+        }
+
+        private void listaMilanesasNoDisponible_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listaMilanesasNoDisponible.SelectedIndex = -1;
+        }
+
+        private void listaHamburguesasNoDisponible_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listaHamburguesasNoDisponible.SelectedItem = -1;
+        }
+
+        private void listaPapasNoDisponible_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listaPapasNoDisponible.SelectedIndex = -1;
+        }
+
+        private void listaBebidasNoDisponible_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listaBebidasNoDisponible.SelectedIndex = -1;
+        }
+
+        private void listaCervezaNoDisponible_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listaBebidasNoDisponible.SelectedIndex = -1;
+        }
+
+
     }
 }

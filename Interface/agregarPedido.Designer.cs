@@ -45,6 +45,25 @@ namespace Interface
             this.lblNoDisponible = new System.Windows.Forms.Label();
             this.lblDisponible = new System.Windows.Forms.Label();
             this.Hamburguesa = new System.Windows.Forms.TabPage();
+            this.listaHamburguesasNoDisponible = new System.Windows.Forms.ListBox();
+            this.listaHamburguesasDisponible = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.PapasFritas = new System.Windows.Forms.TabPage();
+            this.listaPapasNoDisponible = new System.Windows.Forms.ListBox();
+            this.listaPapasDisponible = new System.Windows.Forms.ListBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Bebida = new System.Windows.Forms.TabPage();
+            this.listaBebidasNoDisponible = new System.Windows.Forms.ListBox();
+            this.listaBebidasDisponible = new System.Windows.Forms.ListBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Cervezas = new System.Windows.Forms.TabPage();
+            this.listaCervezaNoDisponible = new System.Windows.Forms.ListBox();
+            this.listaCervezasDisponible = new System.Windows.Forms.ListBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
@@ -58,25 +77,7 @@ namespace Interface
             this.lblTelefono = new System.Windows.Forms.Label();
             this.comboClientes = new System.Windows.Forms.ComboBox();
             this.lblClientes = new System.Windows.Forms.Label();
-            this.listaHamburguesasNoDisponible = new System.Windows.Forms.ListBox();
-            this.listaHamburguesasDisponible = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.PapasFritas = new System.Windows.Forms.TabPage();
-            this.Bebida = new System.Windows.Forms.TabPage();
-            this.Cervezas = new System.Windows.Forms.TabPage();
-            this.listaPapasNoDisponible = new System.Windows.Forms.ListBox();
-            this.listaPapasDisponible = new System.Windows.Forms.ListBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.listaBebidasNoDisponible = new System.Windows.Forms.ListBox();
-            this.listaBebidasDisponible = new System.Windows.Forms.ListBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.listaCervezaNoDisponible = new System.Windows.Forms.ListBox();
-            this.listaCervezasDisponible = new System.Windows.Forms.ListBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataPedido)).BeginInit();
             this.tablaComida.SuspendLayout();
             this.Pizza.SuspendLayout();
@@ -199,6 +200,7 @@ namespace Interface
             this.listaMilanesasNoDisponible.Name = "listaMilanesasNoDisponible";
             this.listaMilanesasNoDisponible.Size = new System.Drawing.Size(375, 164);
             this.listaMilanesasNoDisponible.TabIndex = 39;
+            this.listaMilanesasNoDisponible.SelectedIndexChanged += new System.EventHandler(this.listaMilanesasNoDisponible_SelectedIndexChanged);
             // 
             // listaMilanesasDisponible
             // 
@@ -240,6 +242,193 @@ namespace Interface
             this.Hamburguesa.TabIndex = 2;
             this.Hamburguesa.Text = "Hamburguesa";
             this.Hamburguesa.UseVisualStyleBackColor = true;
+            // 
+            // listaHamburguesasNoDisponible
+            // 
+            this.listaHamburguesasNoDisponible.FormattingEnabled = true;
+            this.listaHamburguesasNoDisponible.ItemHeight = 20;
+            this.listaHamburguesasNoDisponible.Location = new System.Drawing.Point(410, 35);
+            this.listaHamburguesasNoDisponible.Name = "listaHamburguesasNoDisponible";
+            this.listaHamburguesasNoDisponible.Size = new System.Drawing.Size(375, 164);
+            this.listaHamburguesasNoDisponible.TabIndex = 43;
+            this.listaHamburguesasNoDisponible.SelectedIndexChanged += new System.EventHandler(this.listaHamburguesasNoDisponible_SelectedIndexChanged);
+            // 
+            // listaHamburguesasDisponible
+            // 
+            this.listaHamburguesasDisponible.FormattingEnabled = true;
+            this.listaHamburguesasDisponible.ItemHeight = 20;
+            this.listaHamburguesasDisponible.Location = new System.Drawing.Point(13, 35);
+            this.listaHamburguesasDisponible.Name = "listaHamburguesasDisponible";
+            this.listaHamburguesasDisponible.Size = new System.Drawing.Size(375, 164);
+            this.listaHamburguesasDisponible.TabIndex = 42;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(561, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 20);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "No disponible";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(140, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 20);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Disponible";
+            // 
+            // PapasFritas
+            // 
+            this.PapasFritas.Controls.Add(this.listaPapasNoDisponible);
+            this.PapasFritas.Controls.Add(this.listaPapasDisponible);
+            this.PapasFritas.Controls.Add(this.label3);
+            this.PapasFritas.Controls.Add(this.label4);
+            this.PapasFritas.Location = new System.Drawing.Point(4, 29);
+            this.PapasFritas.Name = "PapasFritas";
+            this.PapasFritas.Size = new System.Drawing.Size(799, 210);
+            this.PapasFritas.TabIndex = 3;
+            this.PapasFritas.Text = "Papas Fritas";
+            this.PapasFritas.UseVisualStyleBackColor = true;
+            // 
+            // listaPapasNoDisponible
+            // 
+            this.listaPapasNoDisponible.FormattingEnabled = true;
+            this.listaPapasNoDisponible.ItemHeight = 20;
+            this.listaPapasNoDisponible.Location = new System.Drawing.Point(410, 35);
+            this.listaPapasNoDisponible.Name = "listaPapasNoDisponible";
+            this.listaPapasNoDisponible.Size = new System.Drawing.Size(375, 164);
+            this.listaPapasNoDisponible.TabIndex = 43;
+            this.listaPapasNoDisponible.SelectedIndexChanged += new System.EventHandler(this.listaPapasNoDisponible_SelectedIndexChanged);
+            // 
+            // listaPapasDisponible
+            // 
+            this.listaPapasDisponible.FormattingEnabled = true;
+            this.listaPapasDisponible.ItemHeight = 20;
+            this.listaPapasDisponible.Location = new System.Drawing.Point(13, 35);
+            this.listaPapasDisponible.Name = "listaPapasDisponible";
+            this.listaPapasDisponible.Size = new System.Drawing.Size(375, 164);
+            this.listaPapasDisponible.TabIndex = 42;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(561, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(103, 20);
+            this.label3.TabIndex = 41;
+            this.label3.Text = "No disponible";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(140, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 20);
+            this.label4.TabIndex = 40;
+            this.label4.Text = "Disponible";
+            // 
+            // Bebida
+            // 
+            this.Bebida.Controls.Add(this.listaBebidasNoDisponible);
+            this.Bebida.Controls.Add(this.listaBebidasDisponible);
+            this.Bebida.Controls.Add(this.label5);
+            this.Bebida.Controls.Add(this.label6);
+            this.Bebida.Location = new System.Drawing.Point(4, 29);
+            this.Bebida.Name = "Bebida";
+            this.Bebida.Size = new System.Drawing.Size(799, 210);
+            this.Bebida.TabIndex = 4;
+            this.Bebida.Text = "Bebidas";
+            this.Bebida.UseVisualStyleBackColor = true;
+            // 
+            // listaBebidasNoDisponible
+            // 
+            this.listaBebidasNoDisponible.FormattingEnabled = true;
+            this.listaBebidasNoDisponible.ItemHeight = 20;
+            this.listaBebidasNoDisponible.Location = new System.Drawing.Point(410, 35);
+            this.listaBebidasNoDisponible.Name = "listaBebidasNoDisponible";
+            this.listaBebidasNoDisponible.Size = new System.Drawing.Size(375, 164);
+            this.listaBebidasNoDisponible.TabIndex = 47;
+            this.listaBebidasNoDisponible.SelectedIndexChanged += new System.EventHandler(this.listaBebidasNoDisponible_SelectedIndexChanged);
+            // 
+            // listaBebidasDisponible
+            // 
+            this.listaBebidasDisponible.FormattingEnabled = true;
+            this.listaBebidasDisponible.ItemHeight = 20;
+            this.listaBebidasDisponible.Location = new System.Drawing.Point(13, 35);
+            this.listaBebidasDisponible.Name = "listaBebidasDisponible";
+            this.listaBebidasDisponible.Size = new System.Drawing.Size(375, 164);
+            this.listaBebidasDisponible.TabIndex = 46;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(561, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(103, 20);
+            this.label5.TabIndex = 45;
+            this.label5.Text = "No disponible";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(140, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 20);
+            this.label6.TabIndex = 44;
+            this.label6.Text = "Disponible";
+            // 
+            // Cervezas
+            // 
+            this.Cervezas.Controls.Add(this.listaCervezaNoDisponible);
+            this.Cervezas.Controls.Add(this.listaCervezasDisponible);
+            this.Cervezas.Controls.Add(this.label7);
+            this.Cervezas.Controls.Add(this.label8);
+            this.Cervezas.Location = new System.Drawing.Point(4, 29);
+            this.Cervezas.Name = "Cervezas";
+            this.Cervezas.Size = new System.Drawing.Size(799, 210);
+            this.Cervezas.TabIndex = 5;
+            this.Cervezas.Text = "Cervezas";
+            this.Cervezas.UseVisualStyleBackColor = true;
+            // 
+            // listaCervezaNoDisponible
+            // 
+            this.listaCervezaNoDisponible.FormattingEnabled = true;
+            this.listaCervezaNoDisponible.ItemHeight = 20;
+            this.listaCervezaNoDisponible.Location = new System.Drawing.Point(410, 35);
+            this.listaCervezaNoDisponible.Name = "listaCervezaNoDisponible";
+            this.listaCervezaNoDisponible.Size = new System.Drawing.Size(375, 164);
+            this.listaCervezaNoDisponible.TabIndex = 51;
+            this.listaCervezaNoDisponible.SelectedIndexChanged += new System.EventHandler(this.listaCervezaNoDisponible_SelectedIndexChanged);
+            // 
+            // listaCervezasDisponible
+            // 
+            this.listaCervezasDisponible.FormattingEnabled = true;
+            this.listaCervezasDisponible.ItemHeight = 20;
+            this.listaCervezasDisponible.Location = new System.Drawing.Point(13, 35);
+            this.listaCervezasDisponible.Name = "listaCervezasDisponible";
+            this.listaCervezasDisponible.Size = new System.Drawing.Size(375, 164);
+            this.listaCervezasDisponible.TabIndex = 50;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(561, 12);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(103, 20);
+            this.label7.TabIndex = 49;
+            this.label7.Text = "No disponible";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(140, 12);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(81, 20);
+            this.label8.TabIndex = 48;
+            this.label8.Text = "Disponible";
             // 
             // lblCantidad
             // 
@@ -358,194 +547,22 @@ namespace Interface
             this.lblClientes.TabIndex = 40;
             this.lblClientes.Text = "Clientes";
             // 
-            // listaHamburguesasNoDisponible
+            // btnEliminar
             // 
-            this.listaHamburguesasNoDisponible.FormattingEnabled = true;
-            this.listaHamburguesasNoDisponible.ItemHeight = 20;
-            this.listaHamburguesasNoDisponible.Location = new System.Drawing.Point(410, 35);
-            this.listaHamburguesasNoDisponible.Name = "listaHamburguesasNoDisponible";
-            this.listaHamburguesasNoDisponible.Size = new System.Drawing.Size(375, 164);
-            this.listaHamburguesasNoDisponible.TabIndex = 43;
-            // 
-            // listaHamburguesasDisponible
-            // 
-            this.listaHamburguesasDisponible.FormattingEnabled = true;
-            this.listaHamburguesasDisponible.ItemHeight = 20;
-            this.listaHamburguesasDisponible.Location = new System.Drawing.Point(13, 35);
-            this.listaHamburguesasDisponible.Name = "listaHamburguesasDisponible";
-            this.listaHamburguesasDisponible.Size = new System.Drawing.Size(375, 164);
-            this.listaHamburguesasDisponible.TabIndex = 42;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(561, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 20);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "No disponible";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(140, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 20);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Disponible";
-            // 
-            // PapasFritas
-            // 
-            this.PapasFritas.Controls.Add(this.listaPapasNoDisponible);
-            this.PapasFritas.Controls.Add(this.listaPapasDisponible);
-            this.PapasFritas.Controls.Add(this.label3);
-            this.PapasFritas.Controls.Add(this.label4);
-            this.PapasFritas.Location = new System.Drawing.Point(4, 29);
-            this.PapasFritas.Name = "PapasFritas";
-            this.PapasFritas.Size = new System.Drawing.Size(799, 210);
-            this.PapasFritas.TabIndex = 3;
-            this.PapasFritas.Text = "Papas Fritas";
-            this.PapasFritas.UseVisualStyleBackColor = true;
-            // 
-            // Bebida
-            // 
-            this.Bebida.Controls.Add(this.listaBebidasNoDisponible);
-            this.Bebida.Controls.Add(this.listaBebidasDisponible);
-            this.Bebida.Controls.Add(this.label5);
-            this.Bebida.Controls.Add(this.label6);
-            this.Bebida.Location = new System.Drawing.Point(4, 29);
-            this.Bebida.Name = "Bebida";
-            this.Bebida.Size = new System.Drawing.Size(799, 210);
-            this.Bebida.TabIndex = 4;
-            this.Bebida.Text = "Bebidas";
-            this.Bebida.UseVisualStyleBackColor = true;
-            // 
-            // Cervezas
-            // 
-            this.Cervezas.Controls.Add(this.listaCervezaNoDisponible);
-            this.Cervezas.Controls.Add(this.listaCervezasDisponible);
-            this.Cervezas.Controls.Add(this.label7);
-            this.Cervezas.Controls.Add(this.label8);
-            this.Cervezas.Location = new System.Drawing.Point(4, 29);
-            this.Cervezas.Name = "Cervezas";
-            this.Cervezas.Size = new System.Drawing.Size(799, 210);
-            this.Cervezas.TabIndex = 5;
-            this.Cervezas.Text = "Cervezas";
-            this.Cervezas.UseVisualStyleBackColor = true;
-            // 
-            // listaPapasNoDisponible
-            // 
-            this.listaPapasNoDisponible.FormattingEnabled = true;
-            this.listaPapasNoDisponible.ItemHeight = 20;
-            this.listaPapasNoDisponible.Location = new System.Drawing.Point(410, 35);
-            this.listaPapasNoDisponible.Name = "listaPapasNoDisponible";
-            this.listaPapasNoDisponible.Size = new System.Drawing.Size(375, 164);
-            this.listaPapasNoDisponible.TabIndex = 43;
-            // 
-            // listaPapasDisponible
-            // 
-            this.listaPapasDisponible.FormattingEnabled = true;
-            this.listaPapasDisponible.ItemHeight = 20;
-            this.listaPapasDisponible.Location = new System.Drawing.Point(13, 35);
-            this.listaPapasDisponible.Name = "listaPapasDisponible";
-            this.listaPapasDisponible.Size = new System.Drawing.Size(375, 164);
-            this.listaPapasDisponible.TabIndex = 42;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(561, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 20);
-            this.label3.TabIndex = 41;
-            this.label3.Text = "No disponible";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(140, 12);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 20);
-            this.label4.TabIndex = 40;
-            this.label4.Text = "Disponible";
-            // 
-            // listaBebidasNoDisponible
-            // 
-            this.listaBebidasNoDisponible.FormattingEnabled = true;
-            this.listaBebidasNoDisponible.ItemHeight = 20;
-            this.listaBebidasNoDisponible.Location = new System.Drawing.Point(410, 35);
-            this.listaBebidasNoDisponible.Name = "listaBebidasNoDisponible";
-            this.listaBebidasNoDisponible.Size = new System.Drawing.Size(375, 164);
-            this.listaBebidasNoDisponible.TabIndex = 47;
-            // 
-            // listaBebidasDisponible
-            // 
-            this.listaBebidasDisponible.FormattingEnabled = true;
-            this.listaBebidasDisponible.ItemHeight = 20;
-            this.listaBebidasDisponible.Location = new System.Drawing.Point(13, 35);
-            this.listaBebidasDisponible.Name = "listaBebidasDisponible";
-            this.listaBebidasDisponible.Size = new System.Drawing.Size(375, 164);
-            this.listaBebidasDisponible.TabIndex = 46;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(561, 12);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 20);
-            this.label5.TabIndex = 45;
-            this.label5.Text = "No disponible";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(140, 12);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 20);
-            this.label6.TabIndex = 44;
-            this.label6.Text = "Disponible";
-            // 
-            // listaCervezaNoDisponible
-            // 
-            this.listaCervezaNoDisponible.FormattingEnabled = true;
-            this.listaCervezaNoDisponible.ItemHeight = 20;
-            this.listaCervezaNoDisponible.Location = new System.Drawing.Point(410, 35);
-            this.listaCervezaNoDisponible.Name = "listaCervezaNoDisponible";
-            this.listaCervezaNoDisponible.Size = new System.Drawing.Size(375, 164);
-            this.listaCervezaNoDisponible.TabIndex = 51;
-            // 
-            // listaCervezasDisponible
-            // 
-            this.listaCervezasDisponible.FormattingEnabled = true;
-            this.listaCervezasDisponible.ItemHeight = 20;
-            this.listaCervezasDisponible.Location = new System.Drawing.Point(13, 35);
-            this.listaCervezasDisponible.Name = "listaCervezasDisponible";
-            this.listaCervezasDisponible.Size = new System.Drawing.Size(375, 164);
-            this.listaCervezasDisponible.TabIndex = 50;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(561, 12);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 20);
-            this.label7.TabIndex = 49;
-            this.label7.Text = "No disponible";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(140, 12);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 20);
-            this.label8.TabIndex = 48;
-            this.label8.Text = "Disponible";
+            this.btnEliminar.Location = new System.Drawing.Point(1190, 379);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(94, 29);
+            this.btnEliminar.TabIndex = 41;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // agregarPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1307, 619);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.lblClientes);
             this.Controls.Add(this.comboClientes);
             this.Controls.Add(this.txtTelefono);
@@ -631,5 +648,6 @@ namespace Interface
         private System.Windows.Forms.ListBox listaCervezasDisponible;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

@@ -31,12 +31,12 @@ namespace DominoBDD
 
         }
 
-        public EmpleadoElevador Login(string nombre, int ci , byte rol)
+        public EmpleadoElevador Login(string nombre, int ci , int rol)
         {
             EmpleadoElevador e = null;
             using (MySqlConnection conexion = ConexionBD.ObtenerConexion())
             {
-                MySqlCommand cmd = new MySqlCommand("SELECT ci , rol , telefono , nombre , apellido , direccion FROM empleado WHERE nombre=@nombre and ci=@ci", ConexionBD.ObtenerConexion());
+                MySqlCommand cmd = new MySqlCommand("SELECT ci , rol , telefono , nombre , apellido , direccion FROM empleado WHERE nombre=@nombre and ci=@ci and rol=@rol" , ConexionBD.ObtenerConexion());
                 cmd.Parameters.AddWithValue("nombre", nombre);
                 cmd.Parameters.AddWithValue("ci", ci);
                 cmd.Parameters.AddWithValue("rol", rol);

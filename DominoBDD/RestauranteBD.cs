@@ -38,7 +38,6 @@ namespace DominoBDD
         public EmpleadoElevador LoginBD(string nombre, int ci, byte rol)
         {
             return empleadobd.Login(nombre, ci, rol);
-
         }
 
         public DataTable CargarPedidos()
@@ -78,6 +77,11 @@ namespace DominoBDD
         public bool ModificarEstadoProducto(string tipo_comida)
         {
             return productobd.ModificarEstadoProducto(tipo_comida);
+        }
+
+        public EmpleadoElevador LoginBD(string nombre, int ci, int rol)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -12,8 +12,7 @@ namespace Interface
     public partial class GestionarPersonal : Form
     {
         Restaurante restaurante;
-
-
+        
         public GestionarPersonal(Restaurante unRestaurante)
         {
             this.restaurante = unRestaurante;
@@ -21,7 +20,7 @@ namespace Interface
             cargarListaEmpleados();
         }
 
-        private void ListaDeEmpleados_Load(object sender, EventArgs e)
+        public void ListaDeEmpleados_Load(object sender, EventArgs e)
         {
            
         }
@@ -42,8 +41,8 @@ namespace Interface
                 dataEmpleados.Rows[indice].Cells[5].Value = aux.Direccion;
             }
         }
-        
-        void limpiar()
+
+        public void limpiar()
         {
             comboRol.SelectedItem = null;
             txtNombre.Text = "";
@@ -52,7 +51,7 @@ namespace Interface
             txtDireccion.Text = "";
             txtCi.Text = "";
         }
-        private void btnModificar_Click(object sender, EventArgs e)
+        public void btnModificar_Click(object sender, EventArgs e)
         {
             int unRol = comboRol.SelectedIndex;
             string unaDireccion = txtDireccion.Text;
@@ -67,30 +66,41 @@ namespace Interface
             cargarListaEmpleados();
             MessageBox.Show("Empleado modificado correctamente");
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
+        public void RefrescarSeleccion()
+        {
+            txtCi.Text = "";
 
-        private void dataEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+            txtCi.Text = "";
+            comboRol.SelectedIndex = -1;
+            txtTelefono.Text = "";
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtDireccion.Text = "";
+        }
+        public void dataEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int posicion = -1;
             txtCi.Text = "";
             posicion = dataEmpleados.CurrentRow.Index;
             txtCi.Text = dataEmpleados[0 , posicion].Value.ToString();
-  
+            comboRol.SelectedItem = dataEmpleados[1, posicion].Value.ToString();
+            txtTelefono.Text = dataEmpleados[2, posicion].Value.ToString();
+            txtNombre.Text = dataEmpleados[3, posicion].Value.ToString();
+            txtApellido.Text = dataEmpleados[4, posicion].Value.ToString();
+            txtDireccion.Text = dataEmpleados[5, posicion].Value.ToString();
         }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
+        public void btnEliminar_Click(object sender, EventArgs e)
         {
             int ci = Convert.ToInt32(txtCi.Text);
             restaurante.EliminarEmpleado(ci);
             dataEmpleados.Rows.Clear();
             cargarListaEmpleados();
         }
-
-        private void btnAgregar_Click(object sender, EventArgs e)
+        public void btnAgregar_Click(object sender, EventArgs e)
         {
             byte unRol = (byte)comboRol.SelectedIndex;
             string unaDireccion = txtDireccion.Text;
@@ -102,6 +112,11 @@ namespace Interface
             dataEmpleados.Rows.Clear();
             cargarListaEmpleados();
             limpiar();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            RefrescarSeleccion();
         }
     }
 }
