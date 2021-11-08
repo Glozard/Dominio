@@ -53,6 +53,20 @@ namespace DominoBDD
                 else return true;
             }
         }
+        public bool ModificarEstadoProductoDisponible(string tipo_comida)
+        {
+            using (MySqlConnection conexion = ConexionBD.ObtenerConexion())
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conexion;
+                cmd.CommandText = "Update producto set estado=?estado where tipo_comida=?tipo_comida ;";
+                cmd.Parameters.Add("?tipo_comida", MySqlDbType.VarChar).Value = tipo_comida;
+                cmd.Parameters.Add("?estado", MySqlDbType.VarChar).Value = "hay";
+                int resp = cmd.ExecuteNonQuery();
+                if (resp != 1) return false;
+                else return true;
+            }
+        }
 
     }
 }

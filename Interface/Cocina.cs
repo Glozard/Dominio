@@ -15,12 +15,14 @@ namespace Interface
         Stopwatch reloj = new Stopwatch();
         int posicion = 0;
         Restaurante restaurante;
+        bool mostreAlerta;
         public Cocina(Restaurante unRestaurante )
         {
             this.restaurante = unRestaurante;
             InitializeComponent();
             btnTerminado.Enabled = false;
             cargarListaPedidos();
+            mostreAlerta = false;
         }
         public void cargarListaPedidos()
         {
@@ -79,6 +81,13 @@ namespace Interface
             txtSegundos.Text = ts.Seconds.ToString().Length < 2 ? "0" + ts.Seconds.ToString() : ts.Seconds.ToString();
             txtMinutos.Text = ts.Minutes.ToString().Length < 2 ? "0" + ts.Minutes.ToString() : ts.Minutes.ToString();
             txtHoras.Text = ts.Hours.ToString().Length < 2 ? "0" + ts.Hours.ToString() : ts.Hours.ToString();
+            if (Convert.ToInt32(txtMinutos.Text) == 45 && !mostreAlerta)
+            {
+                mostreAlerta = true;
+                DialogResult dr = MessageBox.Show("Debes terminar el pedido ya!");
+                if (dr == DialogResult.OK) mostreAlerta = false;                
+            }
+
         }
 
         private void btnTerminado_Click(object sender, EventArgs e)
@@ -91,11 +100,9 @@ namespace Interface
             timer.Enabled = false;
             btnTerminado.Enabled = false;
             btnComenzar.Enabled = true;
-
             int codigo= (int)dataListaPedidos[2, 0].Value;
             restaurante.PedidoTerminado(codigo);
-            dataListaPedidos.Rows.RemoveAt(0);
-      
+            dataListaPedidos.Rows.RemoveAt(0);     
         }
 
         private void btnListaDeProductos_Click(object sender, EventArgs e)

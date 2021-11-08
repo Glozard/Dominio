@@ -40,11 +40,14 @@ namespace Interface
         {
             int posicion = -1;
             posicion = dataPedido.CurrentRow.Index;
-            if (posicion != -1)
+            try
             {
-                dataPedido.Rows.RemoveAt(posicion);   //a preguntarle al profe
-            }
-            else MessageBox.Show("Debes seleccionar un pedido valido");
+                if (posicion != -1)
+                {
+                    dataPedido.Rows.RemoveAt(posicion);  
+                }
+            } catch (Exception) { MessageBox.Show("Debes seleccionar un pedido valido"); }
+            
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -56,9 +59,9 @@ namespace Interface
         }
         private void lblAgregar_Click(object sender, EventArgs e)
         {
+           
             AgregarPedido();
         }
-
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
@@ -67,12 +70,12 @@ namespace Interface
                 if (aux.Cells[0].Value != null)
                 {
                     int cantidadAux = Convert.ToInt32(aux.Cells[1].Value);
-                    int codigoAux = Convert.ToInt32(aux.Cells[4].Value);
+                    int unCodigo_productoAux = Convert.ToInt32(aux.Cells[4].Value);
                     int numeroDeOrdenAux = Convert.ToInt32(aux.Cells[3].Value);
                     string direccionAux = aux.Cells[2].Value.ToString();
                     int telefono = Convert.ToInt32(aux.Cells[5].Value);
                     string cliente = aux.Cells[6].Value.ToString();
-                    restaurante.agregarPedido(aux.Cells[0].Value.ToString(), cantidadAux, estado, numeroDeOrdenAux, unCodigo, unCodigo_producto, direccionAux, telefono, cliente);
+                    restaurante.agregarPedido(aux.Cells[0].Value.ToString(), cantidadAux, estado, numeroDeOrdenAux, unCodigo, unCodigo_productoAux, direccionAux, telefono, cliente);
                     dataPedido.Rows.RemoveAt(0);
                 }
                 else MessageBox.Show("No hay pedidos en cola para enviar");
@@ -95,18 +98,20 @@ namespace Interface
                 btnDisponible.Visible = true;
                 btnNoDisponble.Visible = true;
             }
+            else { ListasOnlyRead(); }
         }
 
         private void btnDisponible_Click(object sender, EventArgs e)
         {
-
+            restaurante.ModificarEstadoProductoDisponible(ComidaSeleccionadaNoDisponible());
+            LimpiarListas();
+            CargarProductos();
         }
         private void btnNoDisponble_Click(object sender, EventArgs e)
         {
             restaurante.ModificarEstadoProducto(ComidaSeleccionada());
             LimpiarListas();
             CargarProductos();
-
         }
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
@@ -140,6 +145,15 @@ namespace Interface
             if (listaPapasDisponible.SelectedIndex != -1) comida = listaPapasDisponible.SelectedItem.ToString();
             if (listaBebidasDisponible.SelectedIndex != -1) comida = listaBebidasDisponible.SelectedItem.ToString();
             if (listaCervezasDisponible.SelectedIndex != -1) comida = listaCervezasDisponible.SelectedItem.ToString();
+            return comida;
+        }
+        string ComidaSeleccionadaNoDisponible() 
+        {
+            if (listaMilanesasNoDisponible.SelectedIndex != -1) comida = listaMilanesasNoDisponible.SelectedItem.ToString();
+            if (listaHamburguesasNoDisponible.SelectedIndex != -1) comida = listaHamburguesasNoDisponible.SelectedItem.ToString();
+            if (listaPapasNoDisponible.SelectedIndex != -1) comida = listaPapasNoDisponible.SelectedItem.ToString();
+            if (listaBebidasNoDisponible.SelectedIndex != -1) comida = listaBebidasNoDisponible.SelectedItem.ToString();
+            if (listaCervezaNoDisponible.SelectedIndex != -1) comida = listaCervezaNoDisponible.SelectedItem.ToString();
             return comida;
         }
         void SeleccionarListasNulo()
@@ -190,47 +204,62 @@ namespace Interface
 
             try
             {
-                unaDireccion = txtDireccion.Text;
-                unaCantidad = Convert.ToInt32(txtCantidad.Text);
-                unNumero_orden = unNumero_orden + 1;
-                unCodigo = restaurante.CargarCodigo(ComidaSeleccionada());
-                unTelefono = Convert.ToInt32(txtTelefono.Text);
+                if (ComidaSeleccionada() != "")
+                {
+                    unaDireccion = txtDireccion.Text;
+                    unaCantidad = Convert.ToInt32(txtCantidad.Text);
+                    unNumero_orden = unNumero_orden + 1;
+                    unCodigo = restaurante.CargarCodigo(ComidaSeleccionada());
+                    unTelefono = Convert.ToInt32(txtTelefono.Text);
 
-                dataPedido.Rows.Add(ComidaSeleccionada(), unaCantidad, unaDireccion, unNumero_orden, unCodigo, unTelefono, unCliente);
-                txtCantidad.Text = "";
-                txtDireccion.Text = "";
-                txtTelefono.Text = "";
-                comboClientes.SelectedIndex = -1;
-                SeleccionarListasNulo();
+
+                    dataPedido.Rows.Add(ComidaSeleccionada(), unaCantidad, unaDireccion, unNumero_orden, unCodigo, unTelefono, unCliente);
+                    txtCantidad.Text = "";
+                    txtDireccion.Text = "";
+                    txtTelefono.Text = "";
+                    comboClientes.SelectedIndex = -1;
+                    SeleccionarListasNulo();
+                }
+                else MessageBox.Show("Selecciona un producto valido");
+
             }
             catch (Exception) { MessageBox.Show("Datos ingresados incorrectamente"); }
         }
 
         private void listaMilanesasNoDisponible_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listaMilanesasNoDisponible.SelectedIndex = -1;
+            ListasOnlyRead();
         }
 
         private void listaHamburguesasNoDisponible_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listaHamburguesasNoDisponible.SelectedItem = -1;
+            ListasOnlyRead();
         }
 
         private void listaPapasNoDisponible_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listaPapasNoDisponible.SelectedIndex = -1;
+            ListasOnlyRead();
         }
 
         private void listaBebidasNoDisponible_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listaBebidasNoDisponible.SelectedIndex = -1;
+            ListasOnlyRead();
         }
 
         private void listaCervezaNoDisponible_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listaBebidasNoDisponible.SelectedIndex = -1;
+            ListasOnlyRead();
         }
-
+        void ListasOnlyRead()
+        {
+            if (unaPocision != 0) {
+                listaHamburguesasNoDisponible.SelectedIndex = -1;
+                listaPapasNoDisponible.SelectedIndex = -1;
+                listaBebidasNoDisponible.SelectedIndex = -1;
+                listaBebidasNoDisponible.SelectedIndex = -1;
+                listaMilanesasNoDisponible.SelectedIndex = -1;
+            }
+        }
 
     }
 }

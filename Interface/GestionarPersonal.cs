@@ -84,7 +84,7 @@ namespace Interface
         }
         public void btnEliminar_Click(object sender, EventArgs e)
         {
-            int ci = Convert.ToInt32(txtCi.Text);
+            int ci = Convert.ToInt32(txtCi.Text); //preguntar al profe
             restaurante.EliminarEmpleado(ci);
             limpiar();
             dataEmpleados.Rows.Clear();

@@ -100,6 +100,10 @@ namespace DominioElChivito
         {
             return restaurantebd.ModificarEstadoProducto(tipo_producto);
         }
+        public bool ModificarEstadoProductoDisponible(string tipo_producto)
+        {
+            return restaurantebd.ModificarEstadoProductoDisponible(tipo_producto);
+        }
         public bool EliminarEmpleado(int ci) 
         { 
             return restaurantebd.EliminarEmpleado(ci);
@@ -113,14 +117,14 @@ namespace DominioElChivito
 
         public Empleado Login(string nombre, int ci , int rol)
         {
+            Empleado empleado1 = null;
             EmpleadoElevador empleado = restaurantebd.LoginBD(nombre, ci , rol);
             if (empleado != null)
             {
-                Empleado empleado1 = new Empleado(empleado);
+                empleado1 = new Empleado(empleado);
                 empleadoLogeado = empleado1;
-                return empleado1;
             }
-            return empleado; // preguntar al profe
+            return empleado1; 
         }
 
 

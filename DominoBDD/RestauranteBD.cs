@@ -35,7 +35,7 @@ namespace DominoBDD
             return empleadobd.GuardarEmpleado(e);
         }
 
-        public EmpleadoElevador LoginBD(string nombre, int ci, byte rol)
+        public EmpleadoElevador LoginBD(string nombre, int ci, int rol)
         {
             return empleadobd.Login(nombre, ci, rol);
         }
@@ -78,10 +78,12 @@ namespace DominoBDD
         {
             return productobd.ModificarEstadoProducto(tipo_comida);
         }
-
-        public EmpleadoElevador LoginBD(string nombre, int ci, int rol)
+        public bool ModificarEstadoProductoDisponible(string tipo_comida)
         {
-            throw new NotImplementedException();
+            return productobd.ModificarEstadoProductoDisponible(tipo_comida);
         }
+
+
+
     }
 }
