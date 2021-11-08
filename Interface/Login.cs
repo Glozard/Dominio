@@ -25,10 +25,12 @@ namespace Interface
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            unNombre = txtNombre.Text;
-            unaContraseña = Convert.ToInt32(txtContraseña.Text);
-            unRol = (byte)comboRol.SelectedIndex;          
-            int rol = restaurante.Login(unNombre , unaContraseña , unRol).Rol;
+            
+                unNombre = txtNombre.Text;
+                unaContraseña = Convert.ToInt32(txtContraseña.Text);
+                unRol = (byte)comboRol.SelectedIndex;
+            int rol = rol = restaurante.Login(unNombre, unaContraseña, unRol).Rol;
+
                if(rol == 0)
                 {
                     MenuPrincipal menu = new MenuPrincipal(restaurante);
@@ -39,11 +41,11 @@ namespace Interface
                 agregarPedido pedido = new agregarPedido(restaurante, 1);
                 pedido.Show();
                   }
-            if (rol == 2)
-            {
+                if (rol == 2)
+                  {
                 Cocina cocina = new Cocina(restaurante);
                 cocina.Show();
-            }
+                  }
         }
     }
 }

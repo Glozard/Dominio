@@ -70,17 +70,6 @@ namespace Interface
         {
 
         }
-        public void RefrescarSeleccion()
-        {
-            txtCi.Text = "";
-
-            txtCi.Text = "";
-            comboRol.SelectedIndex = -1;
-            txtTelefono.Text = "";
-            txtNombre.Text = "";
-            txtApellido.Text = "";
-            txtDireccion.Text = "";
-        }
         public void dataEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int posicion = -1;
@@ -97,8 +86,10 @@ namespace Interface
         {
             int ci = Convert.ToInt32(txtCi.Text);
             restaurante.EliminarEmpleado(ci);
+            limpiar();
             dataEmpleados.Rows.Clear();
             cargarListaEmpleados();
+            
         }
         public void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -116,7 +107,7 @@ namespace Interface
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            RefrescarSeleccion();
+            limpiar();
         }
     }
 }
