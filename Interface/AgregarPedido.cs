@@ -103,15 +103,25 @@ namespace Interface
 
         private void btnDisponible_Click(object sender, EventArgs e)
         {
-            restaurante.ModificarEstadoProductoDisponible(ComidaSeleccionadaNoDisponible());
-            LimpiarListas();
-            CargarProductos();
+            string resp = ComidaSeleccionadaNoDisponible();
+            if (resp != null)
+            {
+                restaurante.ModificarEstadoProductoDisponible(resp);
+                LimpiarListas();
+                CargarProductos();
+            }
+            else MessageBox.Show("Debe seleccionar un producto.");
         }
         private void btnNoDisponble_Click(object sender, EventArgs e)
         {
-            restaurante.ModificarEstadoProducto(ComidaSeleccionada());
-            LimpiarListas();
-            CargarProductos();
+            string resp = ComidaSeleccionada();
+            if (resp != null)
+            {
+                restaurante.ModificarEstadoProducto(resp);
+                LimpiarListas();
+                CargarProductos();
+            }
+            else MessageBox.Show("Debe seleccionar un producto.");
         }
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
@@ -140,21 +150,63 @@ namespace Interface
         //metodo para relevar el pedido
         string ComidaSeleccionada()
         {
-            if (listaMilanesasDisponible.SelectedIndex != -1) comida = listaMilanesasDisponible.SelectedItem.ToString();
-            if (listaHamburguesasDisponible.SelectedIndex != -1) comida = listaHamburguesasDisponible.SelectedItem.ToString();
-            if (listaPapasDisponible.SelectedIndex != -1) comida = listaPapasDisponible.SelectedItem.ToString();
-            if (listaBebidasDisponible.SelectedIndex != -1) comida = listaBebidasDisponible.SelectedItem.ToString();
-            if (listaCervezasDisponible.SelectedIndex != -1) comida = listaCervezasDisponible.SelectedItem.ToString();
-            return comida;
+            bool haySeleccion = false;
+
+            if (listaMilanesasDisponible.SelectedIndex != -1)
+            {
+                comida = listaMilanesasDisponible.SelectedItem.ToString();
+                haySeleccion = true;
+            }
+            if (listaHamburguesasDisponible.SelectedIndex != -1) {
+                comida = listaHamburguesasDisponible.SelectedItem.ToString();
+                haySeleccion = true;
+            }
+            if (listaPapasDisponible.SelectedIndex != -1)
+            {
+                comida = listaPapasDisponible.SelectedItem.ToString();
+                haySeleccion = true;
+            }
+            if (listaBebidasDisponible.SelectedIndex != -1)
+            {
+                comida = listaBebidasDisponible.SelectedItem.ToString();
+                haySeleccion = true;
+            }
+            if (listaCervezasDisponible.SelectedIndex != -1)
+            {
+                comida = listaCervezasDisponible.SelectedItem.ToString();
+                haySeleccion = true;
+            }
+            if (haySeleccion)
+                return comida;
+            else return null;
         }
         string ComidaSeleccionadaNoDisponible() 
         {
-            if (listaMilanesasNoDisponible.SelectedIndex != -1) comida = listaMilanesasNoDisponible.SelectedItem.ToString();
-            if (listaHamburguesasNoDisponible.SelectedIndex != -1) comida = listaHamburguesasNoDisponible.SelectedItem.ToString();
-            if (listaPapasNoDisponible.SelectedIndex != -1) comida = listaPapasNoDisponible.SelectedItem.ToString();
-            if (listaBebidasNoDisponible.SelectedIndex != -1) comida = listaBebidasNoDisponible.SelectedItem.ToString();
-            if (listaCervezaNoDisponible.SelectedIndex != -1) comida = listaCervezaNoDisponible.SelectedItem.ToString();
-            return comida;
+            bool haySeleccion = false;
+            if (listaMilanesasNoDisponible.SelectedIndex != -1)
+            {
+                comida = listaMilanesasNoDisponible.SelectedItem.ToString();
+                haySeleccion = true;
+            }
+            if (listaHamburguesasNoDisponible.SelectedIndex != -1) { 
+                comida = listaHamburguesasNoDisponible.SelectedItem.ToString();
+                haySeleccion = true;
+            }
+            if (listaPapasNoDisponible.SelectedIndex != -1) { 
+                comida = listaPapasNoDisponible.SelectedItem.ToString();
+                haySeleccion = true;
+            }
+            if (listaBebidasNoDisponible.SelectedIndex != -1) {
+                comida = listaBebidasNoDisponible.SelectedItem.ToString();
+                haySeleccion = true;
+            }
+            if (listaCervezaNoDisponible.SelectedIndex != -1) { 
+                comida = listaCervezaNoDisponible.SelectedItem.ToString();
+                haySeleccion = true;
+            }
+            if (haySeleccion)
+                return comida;
+            else return null;
         }
         void SeleccionarListasNulo()
         {

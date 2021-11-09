@@ -28,6 +28,7 @@ namespace Interface
            
         }
 
+        //poner password visible
         private void checkVerContrasenia_CheckedChanged(object sender, EventArgs e)
         {
             if (checkVerContrasenia.Checked == true)
@@ -51,24 +52,28 @@ namespace Interface
                 unNombre = txtNombre.Text.ToLower().Trim();
                 unaContraseña = Convert.ToInt32(txtContraseña.Text);
                 unRol = (byte)comboRol.SelectedIndex;
-                rol = restaurante.Login(unNombre, unaContraseña, unRol).Rol;
+                Empleado emp = restaurante.Login(unNombre, unaContraseña, unRol);
+                if (emp != null)
+                    rol = emp.Rol;
+                else throw new Exception();
+                if (rol == 0)
+                {
+                    MenuPrincipal menu = new MenuPrincipal(restaurante);
+                    menu.Show();
+                }
+                if (rol == 1)
+                {
+                    agregarPedido pedido = new agregarPedido(restaurante, 1);
+                    pedido.Show();
+                }
+                if (rol == 2)
+                {
+                    Cocina cocina = new Cocina(restaurante);
+                    cocina.Show();
+                }
             }
             catch (Exception) { MessageBox.Show("Usuario incorrecto"); } ///problema al ingresar otro rol que no es
-            if (rol == 0)
-            {
-                MenuPrincipal menu = new MenuPrincipal(restaurante);
-                menu.Show();
-            }
-            if (rol == 1)
-            {
-                agregarPedido pedido = new agregarPedido(restaurante, 1);
-                pedido.Show();
-            }
-            if (rol == 2)
-            {
-                Cocina cocina = new Cocina(restaurante);
-                cocina.Show();
-            }
+ 
         }
     }
 }
