@@ -43,7 +43,7 @@ namespace Interface
             // 
             this.lblContraseña.AutoSize = true;
             this.lblContraseña.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblContraseña.Location = new System.Drawing.Point(63, 227);
+            this.lblContraseña.Location = new System.Drawing.Point(220, 183);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(110, 28);
             this.lblContraseña.TabIndex = 0;
@@ -53,7 +53,7 @@ namespace Interface
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNombre.Location = new System.Drawing.Point(63, 151);
+            this.lblNombre.Location = new System.Drawing.Point(220, 107);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(85, 28);
             this.lblNombre.TabIndex = 1;
@@ -61,14 +61,14 @@ namespace Interface
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(245, 155);
+            this.txtNombre.Location = new System.Drawing.Point(402, 111);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(125, 27);
             this.txtNombre.TabIndex = 2;
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(245, 231);
+            this.txtContraseña.Location = new System.Drawing.Point(402, 187);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(125, 27);
@@ -77,9 +77,9 @@ namespace Interface
             // btnIngresar
             // 
             this.btnIngresar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnIngresar.Location = new System.Drawing.Point(335, 405);
+            this.btnIngresar.Location = new System.Drawing.Point(311, 372);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(117, 48);
+            this.btnIngresar.Size = new System.Drawing.Size(128, 55);
             this.btnIngresar.TabIndex = 4;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
@@ -96,7 +96,7 @@ namespace Interface
             "Administrador",
             "Rececpcionista",
             "Cocinero"});
-            this.comboRol.Location = new System.Drawing.Point(245, 305);
+            this.comboRol.Location = new System.Drawing.Point(402, 264);
             this.comboRol.Name = "comboRol";
             this.comboRol.Size = new System.Drawing.Size(125, 28);
             this.comboRol.TabIndex = 26;
@@ -105,7 +105,7 @@ namespace Interface
             // 
             this.lblRol.AutoSize = true;
             this.lblRol.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblRol.Location = new System.Drawing.Point(63, 305);
+            this.lblRol.Location = new System.Drawing.Point(220, 264);
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(40, 28);
             this.lblRol.TabIndex = 25;
@@ -114,7 +114,7 @@ namespace Interface
             // checkVerContrasenia
             // 
             this.checkVerContrasenia.AutoSize = true;
-            this.checkVerContrasenia.Location = new System.Drawing.Point(392, 237);
+            this.checkVerContrasenia.Location = new System.Drawing.Point(549, 193);
             this.checkVerContrasenia.Name = "checkVerContrasenia";
             this.checkVerContrasenia.Size = new System.Drawing.Size(18, 17);
             this.checkVerContrasenia.TabIndex = 27;
