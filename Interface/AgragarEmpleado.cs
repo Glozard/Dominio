@@ -28,9 +28,9 @@ namespace Interface
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             byte unRol = (byte)comboRol.SelectedIndex;
-            string unaDireccion = txtDireccion.Text;
-            string unNombre = txtNombre.Text;
-            string unApellido = txtApellido.Text;
+            string unaDireccion = txtDireccion.Text.ToLower().Trim();
+            string unNombre = txtNombre.Text.ToLower().Trim();
+            string unApellido = txtApellido.Text.ToLower().Trim();
             int unaCi = Convert.ToInt32(txtCi.Text);
             int unTelefono = Convert.ToInt32(txtTelefono.Text);
             restaurante.agregarEmpleado(unRol, unNombre, unApellido, unaCi, unTelefono , unaDireccion);

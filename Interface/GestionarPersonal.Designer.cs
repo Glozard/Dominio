@@ -253,7 +253,7 @@ namespace Interface
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(849, 47);
+            this.btnRefresh.Location = new System.Drawing.Point(12, 54);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(63, 29);
             this.btnRefresh.TabIndex = 28;

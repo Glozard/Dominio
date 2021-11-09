@@ -27,11 +27,11 @@ namespace Interface
         {
             int rol = -1;
             try { 
-                unNombre = txtNombre.Text;
+                unNombre = txtNombre.Text.ToLower().Trim();
                 unaContraseña = Convert.ToInt32(txtContraseña.Text);
                 unRol = (byte)comboRol.SelectedIndex;
-            rol = restaurante.Login(unNombre, unaContraseña, unRol).Rol;
-            }catch(Exception) { MessageBox.Show("Revisa los campos de datos"); }
+                rol = restaurante.Login(unNombre, unaContraseña, unRol).Rol;
+            }catch(Exception) {MessageBox.Show("Usuario incorrecto");} ///problema al ingresar otro rol que no es
                if (rol == 0)
                 {
                     MenuPrincipal menu = new MenuPrincipal(restaurante);
@@ -47,6 +47,21 @@ namespace Interface
                 Cocina cocina = new Cocina(restaurante);
                 cocina.Show();
                   }
+        }
+
+        private void checkVerContrasenia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkVerContrasenia.Checked == true)
+            {
+                if (txtContraseña.PasswordChar == '*')
+                {
+                    txtContraseña.PasswordChar = '\0';
+                }
+            }
+            else
+            {
+                txtContraseña.PasswordChar = '*';
+            }
         }
     }
 }

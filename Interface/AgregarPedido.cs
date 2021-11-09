@@ -72,10 +72,10 @@ namespace Interface
                     int cantidadAux = Convert.ToInt32(aux.Cells[1].Value);
                     int unCodigo_productoAux = Convert.ToInt32(aux.Cells[4].Value);
                     int numeroDeOrdenAux = Convert.ToInt32(aux.Cells[3].Value);
-                    string direccionAux = aux.Cells[2].Value.ToString();
+                    string direccionAux = aux.Cells[2].Value.ToString().ToLower().Trim();
                     int telefono = Convert.ToInt32(aux.Cells[5].Value);
-                    string cliente = aux.Cells[6].Value.ToString();
-                    restaurante.agregarPedido(aux.Cells[0].Value.ToString(), cantidadAux, estado, numeroDeOrdenAux, unCodigo, unCodigo_productoAux, direccionAux, telefono, cliente);
+                    string cliente = aux.Cells[6].Value.ToString().ToLower().Trim();
+                    restaurante.agregarPedido(aux.Cells[0].Value.ToString().ToLower().Trim(), cantidadAux, estado, numeroDeOrdenAux, unCodigo, unCodigo_productoAux, direccionAux, telefono, cliente);
                     dataPedido.Rows.RemoveAt(0);
                 }
                 else MessageBox.Show("No hay pedidos en cola para enviar");
@@ -206,19 +206,28 @@ namespace Interface
             {
                 if (ComidaSeleccionada() != "")
                 {
-                    unaDireccion = txtDireccion.Text;
-                    unaCantidad = Convert.ToInt32(txtCantidad.Text);
-                    unNumero_orden = unNumero_orden + 1;
-                    unCodigo = restaurante.CargarCodigo(ComidaSeleccionada());
-                    unTelefono = Convert.ToInt32(txtTelefono.Text);
+                    if (txtDireccion.Text != "")
+                    {
+                        if (txtTelefono.Text != "")
+                        {
+                            if (txtCantidad.Text !="") 
+                            {
+                                unaDireccion = txtDireccion.Text;
+                                unaCantidad = Convert.ToInt32(txtCantidad.Text);
+                                unNumero_orden = unNumero_orden + 1;
+                                unCodigo = restaurante.CargarCodigo(ComidaSeleccionada());
+                                unTelefono = Convert.ToInt32(txtTelefono.Text);
 
 
-                    dataPedido.Rows.Add(ComidaSeleccionada(), unaCantidad, unaDireccion, unNumero_orden, unCodigo, unTelefono, unCliente);
-                    txtCantidad.Text = "";
-                    txtDireccion.Text = "";
-                    txtTelefono.Text = "";
-                    comboClientes.SelectedIndex = -1;
-                    SeleccionarListasNulo();
+                                dataPedido.Rows.Add(ComidaSeleccionada(), unaCantidad, unaDireccion, unNumero_orden, unCodigo, unTelefono, unCliente);
+                                txtCantidad.Text = "";
+                                txtDireccion.Text = "";
+                                txtTelefono.Text = "";
+                                comboClientes.SelectedIndex = -1;
+                                SeleccionarListasNulo();
+                            }
+                        }
+                    }
                 }
                 else MessageBox.Show("Selecciona un producto valido");
 

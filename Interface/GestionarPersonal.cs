@@ -54,9 +54,9 @@ namespace Interface
         public void btnModificar_Click(object sender, EventArgs e)
         {
             int unRol = comboRol.SelectedIndex;
-            string unaDireccion = txtDireccion.Text;
-            string unNombre = txtNombre.Text;
-            string unApellido = txtApellido.Text;
+            string unaDireccion = txtDireccion.Text.ToLower().Trim();
+            string unNombre = txtNombre.Text.ToLower().Trim();
+            string unApellido = txtApellido.Text.ToLower().Trim();
             int unaCi = Convert.ToInt32(txtCi.Text);
             int unTelefono = Convert.ToInt32(txtTelefono.Text);
 
@@ -84,20 +84,27 @@ namespace Interface
         }
         public void btnEliminar_Click(object sender, EventArgs e)
         {
-            int ci = Convert.ToInt32(txtCi.Text); //preguntar al profe
-            restaurante.EliminarEmpleado(ci);
-            limpiar();
-            dataEmpleados.Rows.Clear();
-            cargarListaEmpleados();
-            
+            if (txtCi.Text != "")
+            {
+                int ci = Convert.ToInt32(txtCi.Text); //preguntar al profe
+                DialogResult dr = MessageBox.Show("¿Estás seguro que deseas eliminar?", "", MessageBoxButtons.YesNo);
+                restaurante.EliminarEmpleado(ci);
+                if (dr == DialogResult.Yes)
+                {
+                    limpiar();
+                    dataEmpleados.Rows.Clear();
+                    cargarListaEmpleados();
+                }
+            }
+            else { MessageBox.Show("Error : Debes seleccionar un usuario valido"); }
         }
         public void btnAgregar_Click(object sender, EventArgs e)
         {
             byte unRol = (byte)comboRol.SelectedIndex;
             string unaDireccion = txtDireccion.Text;
-            string unNombre = txtNombre.Text;
-            string unApellido = txtApellido.Text;
-            int unaCi = Convert.ToInt32(txtCi.Text);
+            string unNombre = txtNombre.Text.ToLower().Trim();
+            string unApellido = txtApellido.Text.ToLower().Trim();
+            int unaCi = Convert.ToInt32(txtCi.Text.ToLower().Trim());
             int unTelefono = Convert.ToInt32(txtTelefono.Text);
             restaurante.agregarEmpleado(unRol, unNombre, unApellido, unaCi, unTelefono, unaDireccion);
             dataEmpleados.Rows.Clear();
