@@ -25,28 +25,7 @@ namespace Interface
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            int rol = -1;
-            try { 
-                unNombre = txtNombre.Text.ToLower().Trim();
-                unaContraseña = Convert.ToInt32(txtContraseña.Text);
-                unRol = (byte)comboRol.SelectedIndex;
-                rol = restaurante.Login(unNombre, unaContraseña, unRol).Rol;
-            }catch(Exception) {MessageBox.Show("Usuario incorrecto");} ///problema al ingresar otro rol que no es
-               if (rol == 0)
-                {
-                    MenuPrincipal menu = new MenuPrincipal(restaurante);
-                    menu.Show();
-                }
-                if (rol == 1)
-                  {
-                agregarPedido pedido = new agregarPedido(restaurante, 1);
-                pedido.Show();
-                  }
-                if (rol == 2)
-                  {
-                Cocina cocina = new Cocina(restaurante);
-                cocina.Show();
-                  }
+           
         }
 
         private void checkVerContrasenia_CheckedChanged(object sender, EventArgs e)
@@ -61,6 +40,34 @@ namespace Interface
             else
             {
                 txtContraseña.PasswordChar = '*';
+            }
+        }
+
+        private void botones2_Click(object sender, EventArgs e)
+        {
+            int rol = -1;
+            try
+            {
+                unNombre = txtNombre.Text.ToLower().Trim();
+                unaContraseña = Convert.ToInt32(txtContraseña.Text);
+                unRol = (byte)comboRol.SelectedIndex;
+                rol = restaurante.Login(unNombre, unaContraseña, unRol).Rol;
+            }
+            catch (Exception) { MessageBox.Show("Usuario incorrecto"); } ///problema al ingresar otro rol que no es
+            if (rol == 0)
+            {
+                MenuPrincipal menu = new MenuPrincipal(restaurante);
+                menu.Show();
+            }
+            if (rol == 1)
+            {
+                agregarPedido pedido = new agregarPedido(restaurante, 1);
+                pedido.Show();
+            }
+            if (rol == 2)
+            {
+                Cocina cocina = new Cocina(restaurante);
+                cocina.Show();
             }
         }
     }

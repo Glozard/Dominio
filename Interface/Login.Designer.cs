@@ -33,17 +33,17 @@ namespace Interface
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
-            this.btnIngresar = new System.Windows.Forms.Button();
             this.comboRol = new System.Windows.Forms.ComboBox();
             this.lblRol = new System.Windows.Forms.Label();
             this.checkVerContrasenia = new System.Windows.Forms.CheckBox();
+            this.btnIngresar = new Interface.Botones();
             this.SuspendLayout();
             // 
             // lblContraseña
             // 
             this.lblContraseña.AutoSize = true;
             this.lblContraseña.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblContraseña.Location = new System.Drawing.Point(220, 183);
+            this.lblContraseña.Location = new System.Drawing.Point(365, 229);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(110, 28);
             this.lblContraseña.TabIndex = 0;
@@ -53,7 +53,7 @@ namespace Interface
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNombre.Location = new System.Drawing.Point(220, 107);
+            this.lblNombre.Location = new System.Drawing.Point(365, 153);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(85, 28);
             this.lblNombre.TabIndex = 1;
@@ -61,29 +61,18 @@ namespace Interface
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(402, 111);
+            this.txtNombre.Location = new System.Drawing.Point(547, 157);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(125, 27);
             this.txtNombre.TabIndex = 2;
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(402, 187);
+            this.txtContraseña.Location = new System.Drawing.Point(547, 233);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(125, 27);
             this.txtContraseña.TabIndex = 3;
-            // 
-            // btnIngresar
-            // 
-            this.btnIngresar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnIngresar.Location = new System.Drawing.Point(311, 372);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(128, 55);
-            this.btnIngresar.TabIndex = 4;
-            this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.UseVisualStyleBackColor = true;
-            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // comboRol
             // 
@@ -96,7 +85,7 @@ namespace Interface
             "Administrador",
             "Rececpcionista",
             "Cocinero"});
-            this.comboRol.Location = new System.Drawing.Point(402, 264);
+            this.comboRol.Location = new System.Drawing.Point(547, 310);
             this.comboRol.Name = "comboRol";
             this.comboRol.Size = new System.Drawing.Size(125, 28);
             this.comboRol.TabIndex = 26;
@@ -105,7 +94,7 @@ namespace Interface
             // 
             this.lblRol.AutoSize = true;
             this.lblRol.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblRol.Location = new System.Drawing.Point(220, 264);
+            this.lblRol.Location = new System.Drawing.Point(365, 310);
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(40, 28);
             this.lblRol.TabIndex = 25;
@@ -114,26 +103,51 @@ namespace Interface
             // checkVerContrasenia
             // 
             this.checkVerContrasenia.AutoSize = true;
-            this.checkVerContrasenia.Location = new System.Drawing.Point(549, 193);
+            this.checkVerContrasenia.Location = new System.Drawing.Point(694, 239);
             this.checkVerContrasenia.Name = "checkVerContrasenia";
             this.checkVerContrasenia.Size = new System.Drawing.Size(18, 17);
             this.checkVerContrasenia.TabIndex = 27;
             this.checkVerContrasenia.UseVisualStyleBackColor = true;
             this.checkVerContrasenia.CheckedChanged += new System.EventHandler(this.checkVerContrasenia_CheckedChanged);
             // 
+            // btnIngresar
+            // 
+            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnIngresar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnIngresar.BorderColor = System.Drawing.Color.Empty;
+            this.btnIngresar.BorderRadius = 25;
+            this.btnIngresar.BorderSize = 0;
+            this.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIngresar.FlatAppearance.BorderSize = 0;
+            this.btnIngresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(33)))), ((int)(((byte)(254)))));
+            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnIngresar.ForeColor = System.Drawing.Color.White;
+            this.btnIngresar.Location = new System.Drawing.Point(419, 417);
+            this.btnIngresar.Name = "btnIngresar";
+            this.btnIngresar.Size = new System.Drawing.Size(188, 50);
+            this.btnIngresar.TabIndex = 29;
+            this.btnIngresar.Text = "Ingresar";
+            this.btnIngresar.TextColor = System.Drawing.Color.White;
+            this.btnIngresar.UseVisualStyleBackColor = false;
+            this.btnIngresar.Click += new System.EventHandler(this.botones2_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 493);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(1079, 582);
+            this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.checkVerContrasenia);
             this.Controls.Add(this.comboRol);
             this.Controls.Add(this.lblRol);
-            this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblContraseña);
+            this.DoubleBuffered = true;
             this.Name = "Login";
             this.Text = "Login";
             this.ResumeLayout(false);
@@ -147,9 +161,9 @@ namespace Interface
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtContraseña;
-        private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.ComboBox comboRol;
         private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.CheckBox checkVerContrasenia;
+        private Botones btnIngresar;
     }
 }
