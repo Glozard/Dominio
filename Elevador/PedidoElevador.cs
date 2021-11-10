@@ -14,10 +14,10 @@ namespace Elevador
         private int codigo;
         private int codigo_producto;
         private string direccion;
-        private int telefono;
+        private string telefono;
         private string cliente;
 
-        public PedidoElevador(int cantidad, string estado, int numero_orden, int codigo, int codigo_producto, string direccion , int telefono, string comida , string cliente)
+        public PedidoElevador(int cantidad, string estado, int numero_orden, int codigo, int codigo_producto, string direccion , string telefono, string comida , string cliente)
         {
             this.cantidad = cantidad;
             this.estado = estado;
@@ -39,7 +39,7 @@ namespace Elevador
         public int Codigo { get => codigo; set => codigo = value; }
         public int Codigo_producto { get => codigo_producto; set => codigo_producto = value; }
         public string Direccion { get => direccion; set => direccion = value; }
-        public int Telefono { get => telefono; set => telefono = value; }
+        public string Telefono { get => telefono; set => telefono = value; }
         public string Cliente { get => cliente; set => cliente = value; }
     }
 }

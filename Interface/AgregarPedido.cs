@@ -20,7 +20,7 @@ namespace Interface
         string comida = "";
         string estado = "pendiente";
         int unaPocision = -1;
-        int unTelefono;
+        string unTelefono;
         string unCliente = "";
         public agregarPedido(Restaurante unRestaurante ,int posicion)
         {            
@@ -73,7 +73,7 @@ namespace Interface
                     int unCodigo_productoAux = Convert.ToInt32(aux.Cells[4].Value);
                     int numeroDeOrdenAux = Convert.ToInt32(aux.Cells[3].Value);
                     string direccionAux = aux.Cells[2].Value.ToString().ToLower().Trim();
-                    int telefono = Convert.ToInt32(aux.Cells[5].Value);
+                    string telefono = aux.Cells[5].Value.ToString().ToLower().Trim();
                     string cliente = aux.Cells[6].Value.ToString().ToLower().Trim();
                     restaurante.agregarPedido(aux.Cells[0].Value.ToString().ToLower().Trim(), cantidadAux, estado, numeroDeOrdenAux, unCodigo, unCodigo_productoAux, direccionAux, telefono, cliente);
                     dataPedido.Rows.RemoveAt(0);
@@ -268,7 +268,7 @@ namespace Interface
                                 unaCantidad = Convert.ToInt32(txtCantidad.Text);
                                 unNumero_orden = unNumero_orden + 1;
                                 unCodigo = restaurante.CargarCodigo(ComidaSeleccionada());
-                                unTelefono = Convert.ToInt32(txtTelefono.Text);
+                                unTelefono = txtTelefono.Text;
 
 
                                 dataPedido.Rows.Add(ComidaSeleccionada(), unaCantidad, unaDireccion, unNumero_orden, unCodigo, unTelefono, unCliente);

@@ -23,7 +23,7 @@ namespace DominoBDD
                 cmd.Parameters.Add("?codigo_producto", MySqlDbType.Int32).Value = e.Codigo_producto;
                 cmd.Parameters.Add("?cantidad", MySqlDbType.Int32).Value = e.Cantidad;
                 cmd.Parameters.Add("?fecha", MySqlDbType.DateTime).Value = DateTime.Now;
-                cmd.Parameters.Add("?telefono_cliente", MySqlDbType.Int32).Value = e.Telefono;
+                cmd.Parameters.Add("?telefono_cliente", MySqlDbType.VarChar).Value = e.Telefono;
                 cmd.Parameters.Add("?comida", MySqlDbType.VarChar).Value = e.Comida;
                 cmd.Parameters.Add("?estado", MySqlDbType.VarChar).Value = estado;
                 cmd.Parameters.Add("?cliente", MySqlDbType.VarChar).Value = e.Cliente;

@@ -24,7 +24,12 @@ namespace DominoBDD
                 cmd.Parameters.Add("?nombre", MySqlDbType.VarChar).Value = e.Nombre;
                 cmd.Parameters.Add("?apellido", MySqlDbType.VarChar).Value = e.Apellido;
                 cmd.Parameters.Add("?direccion", MySqlDbType.VarChar).Value = e.Direccion;
-                int resp = cmd.ExecuteNonQuery();
+                int resp;
+                try
+                {
+                     resp = cmd.ExecuteNonQuery();
+                }
+                catch (Exception) { return false; }
                 if (resp != 1) return false;
                 else return true;
             }
