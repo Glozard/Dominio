@@ -43,7 +43,6 @@ namespace Interface
                 txtContraseña.PasswordChar = '*';
             }
         }
-
         private void botones2_Click(object sender, EventArgs e)
         {
             int rol = -1;

@@ -89,6 +89,7 @@ namespace Interface
             // 
             // lblProducto
             // 
+            this.lblProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblProducto.AutoSize = true;
             this.lblProducto.Location = new System.Drawing.Point(227, 27);
             this.lblProducto.Name = "lblProducto";
@@ -98,6 +99,7 @@ namespace Interface
             // 
             // dataPedido
             // 
+            this.dataPedido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ComidaRow,
@@ -166,6 +168,7 @@ namespace Interface
             // 
             // tablaComida
             // 
+            this.tablaComida.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tablaComida.Controls.Add(this.Pizza);
             this.tablaComida.Controls.Add(this.Hamburguesa);
             this.tablaComida.Controls.Add(this.PapasFritas);
@@ -432,6 +435,7 @@ namespace Interface
             // 
             // lblCantidad
             // 
+            this.lblCantidad.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.Location = new System.Drawing.Point(1134, 109);
             this.lblCantidad.Name = "lblCantidad";
@@ -441,13 +445,15 @@ namespace Interface
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(974, 105);
+            this.txtCantidad.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCantidad.Location = new System.Drawing.Point(975, 106);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(125, 27);
             this.txtCantidad.TabIndex = 29;
             // 
             // txtDireccion
             // 
+            this.txtDireccion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDireccion.Location = new System.Drawing.Point(974, 165);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(125, 27);
@@ -455,6 +461,7 @@ namespace Interface
             // 
             // lblDireccion
             // 
+            this.lblDireccion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDireccion.AutoSize = true;
             this.lblDireccion.Location = new System.Drawing.Point(1134, 168);
             this.lblDireccion.Name = "lblDireccion";
@@ -464,6 +471,7 @@ namespace Interface
             // 
             // lblAgregar
             // 
+            this.lblAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblAgregar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblAgregar.Location = new System.Drawing.Point(975, 369);
             this.lblAgregar.Name = "lblAgregar";
@@ -475,6 +483,7 @@ namespace Interface
             // 
             // btnEnviar
             // 
+            this.btnEnviar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEnviar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEnviar.Location = new System.Drawing.Point(1001, 432);
             this.btnEnviar.Name = "btnEnviar";
@@ -486,6 +495,7 @@ namespace Interface
             // 
             // btnNoDisponble
             // 
+            this.btnNoDisponble.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnNoDisponble.Location = new System.Drawing.Point(427, 316);
             this.btnNoDisponble.Name = "btnNoDisponble";
             this.btnNoDisponble.Size = new System.Drawing.Size(169, 48);
@@ -496,6 +506,7 @@ namespace Interface
             // 
             // btnDisponible
             // 
+            this.btnDisponible.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDisponible.Location = new System.Drawing.Point(251, 316);
             this.btnDisponible.Name = "btnDisponible";
             this.btnDisponible.Size = new System.Drawing.Size(169, 48);
@@ -506,6 +517,7 @@ namespace Interface
             // 
             // btnAgregarCliente
             // 
+            this.btnAgregarCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAgregarCliente.Location = new System.Drawing.Point(1152, 575);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
             this.btnAgregarCliente.Size = new System.Drawing.Size(142, 29);
@@ -516,6 +528,7 @@ namespace Interface
             // 
             // txtTelefono
             // 
+            this.txtTelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTelefono.Location = new System.Drawing.Point(974, 229);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(125, 27);
@@ -523,6 +536,7 @@ namespace Interface
             // 
             // lblTelefono
             // 
+            this.lblTelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Location = new System.Drawing.Point(1134, 232);
             this.lblTelefono.Name = "lblTelefono";
@@ -532,6 +546,7 @@ namespace Interface
             // 
             // comboClientes
             // 
+            this.comboClientes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboClientes.FormattingEnabled = true;
             this.comboClientes.Location = new System.Drawing.Point(974, 288);
             this.comboClientes.Name = "comboClientes";
@@ -540,6 +555,7 @@ namespace Interface
             // 
             // lblClientes
             // 
+            this.lblClientes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblClientes.AutoSize = true;
             this.lblClientes.Location = new System.Drawing.Point(1134, 291);
             this.lblClientes.Name = "lblClientes";
@@ -549,6 +565,7 @@ namespace Interface
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEliminar.Location = new System.Drawing.Point(1190, 379);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(94, 29);
@@ -561,7 +578,8 @@ namespace Interface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1307, 619);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(1382, 653);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.lblClientes);
             this.Controls.Add(this.comboClientes);
