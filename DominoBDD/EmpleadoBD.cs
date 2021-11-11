@@ -107,7 +107,7 @@ namespace DominoBDD
                 int resp = cmd.ExecuteNonQuery();
                 if (resp != 1) return false;
                 else return true;
-                ///problema al ingresar un cliente con la misma ci
+                
             }
         }
         public bool EliminarEmpleado(int ci)

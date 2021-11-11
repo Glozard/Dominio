@@ -50,6 +50,7 @@ namespace Interface
             txtTelefono.Text = "";
             txtDireccion.Text = "";
             txtCi.Text = "";
+            txtCi.ReadOnly = false;
         }
         public void btnModificar_Click(object sender, EventArgs e)
         {
@@ -81,6 +82,7 @@ namespace Interface
             txtNombre.Text = dataEmpleados[3, posicion].Value.ToString();
             txtApellido.Text = dataEmpleados[4, posicion].Value.ToString();
             txtDireccion.Text = dataEmpleados[5, posicion].Value.ToString();
+            txtCi.ReadOnly = true;
         }
         public void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -115,6 +117,7 @@ namespace Interface
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             limpiar();
+            txtCi.ReadOnly = false;
         }
     }
 }

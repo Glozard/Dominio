@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace Interface
 {
     partial class ListaDePedidos
@@ -18,7 +20,11 @@ namespace Interface
             {
                 components.Dispose();
             }
-            base.Dispose(disposing);
+            try
+            {
+                base.Dispose(disposing);
+            }
+            catch (Exception) { }
         }
 
         #region Windows Form Designer generated code
@@ -47,6 +53,7 @@ namespace Interface
             this.btnExportar = new Interface.Botones();
             this.savePedidos = new System.Windows.Forms.SaveFileDialog();
             this.tipMensaje = new System.Windows.Forms.ToolTip(this.components);
+            this.lblCargando = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataPedidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,12 +78,13 @@ namespace Interface
             this.dataPedidos.ReadOnly = true;
             this.dataPedidos.RowHeadersWidth = 51;
             this.dataPedidos.RowTemplate.Height = 29;
-            this.dataPedidos.Size = new System.Drawing.Size(1400, 500);
+            this.dataPedidos.Size = new System.Drawing.Size(1416, 500);
             this.dataPedidos.TabIndex = 0;
+            this.dataPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPedidos_CellContentClick);
             // 
             // CodigoRow
             // 
-            this.CodigoRow.HeaderText = "Codigo 1";
+            this.CodigoRow.HeaderText = "Codigo";
             this.CodigoRow.MinimumWidth = 6;
             this.CodigoRow.Name = "CodigoRow";
             this.CodigoRow.ReadOnly = true;
@@ -84,7 +92,7 @@ namespace Interface
             // 
             // EstadoRow
             // 
-            this.EstadoRow.HeaderText = "Estado 8";
+            this.EstadoRow.HeaderText = "Estado";
             this.EstadoRow.MinimumWidth = 6;
             this.EstadoRow.Name = "EstadoRow";
             this.EstadoRow.ReadOnly = true;
@@ -92,7 +100,7 @@ namespace Interface
             // 
             // ComidaRow
             // 
-            this.ComidaRow.HeaderText = "Comida 7";
+            this.ComidaRow.HeaderText = "Comida";
             this.ComidaRow.MinimumWidth = 6;
             this.ComidaRow.Name = "ComidaRow";
             this.ComidaRow.ReadOnly = true;
@@ -100,7 +108,7 @@ namespace Interface
             // 
             // CantidadRow
             // 
-            this.CantidadRow.HeaderText = "Cantidad 4";
+            this.CantidadRow.HeaderText = "Cantidad";
             this.CantidadRow.MinimumWidth = 6;
             this.CantidadRow.Name = "CantidadRow";
             this.CantidadRow.ReadOnly = true;
@@ -108,7 +116,7 @@ namespace Interface
             // 
             // Codigo_Producto_Row
             // 
-            this.Codigo_Producto_Row.HeaderText = "Codigo producto 3";
+            this.Codigo_Producto_Row.HeaderText = "Codigo producto";
             this.Codigo_Producto_Row.MinimumWidth = 6;
             this.Codigo_Producto_Row.Name = "Codigo_Producto_Row";
             this.Codigo_Producto_Row.ReadOnly = true;
@@ -116,7 +124,7 @@ namespace Interface
             // 
             // Numero_Orden_Row
             // 
-            this.Numero_Orden_Row.HeaderText = "Numero de orden 2";
+            this.Numero_Orden_Row.HeaderText = "Numero de orden";
             this.Numero_Orden_Row.MinimumWidth = 6;
             this.Numero_Orden_Row.Name = "Numero_Orden_Row";
             this.Numero_Orden_Row.ReadOnly = true;
@@ -124,7 +132,7 @@ namespace Interface
             // 
             // FechaRow
             // 
-            this.FechaRow.HeaderText = "Fecha 5";
+            this.FechaRow.HeaderText = "Fecha";
             this.FechaRow.MinimumWidth = 6;
             this.FechaRow.Name = "FechaRow";
             this.FechaRow.ReadOnly = true;
@@ -132,7 +140,7 @@ namespace Interface
             // 
             // ClienteRow
             // 
-            this.ClienteRow.HeaderText = "Cliente 9";
+            this.ClienteRow.HeaderText = "Cliente";
             this.ClienteRow.MinimumWidth = 6;
             this.ClienteRow.Name = "ClienteRow";
             this.ClienteRow.ReadOnly = true;
@@ -140,7 +148,7 @@ namespace Interface
             // 
             // TelefonoRow
             // 
-            this.TelefonoRow.HeaderText = "Telefono 6";
+            this.TelefonoRow.HeaderText = "Telefono";
             this.TelefonoRow.MinimumWidth = 6;
             this.TelefonoRow.Name = "TelefonoRow";
             this.TelefonoRow.ReadOnly = true;
@@ -148,7 +156,7 @@ namespace Interface
             // 
             // DireccionRow
             // 
-            this.DireccionRow.HeaderText = "Direccion 1";
+            this.DireccionRow.HeaderText = "Direccion";
             this.DireccionRow.MinimumWidth = 6;
             this.DireccionRow.Name = "DireccionRow";
             this.DireccionRow.ReadOnly = true;
@@ -182,7 +190,7 @@ namespace Interface
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(188, 50);
             this.btnExportar.TabIndex = 2;
-            this.btnExportar.Text = "Exportar";
+            this.btnExportar.Text = "&Exportar";
             this.btnExportar.TextColor = System.Drawing.Color.White;
             this.btnExportar.UseVisualStyleBackColor = false;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
@@ -197,6 +205,15 @@ namespace Interface
             this.tipMensaje.IsBalloon = true;
             this.tipMensaje.Popup += new System.Windows.Forms.PopupEventHandler(this.tipMensaje_Popup);
             // 
+            // lblCargando
+            // 
+            this.lblCargando.AutoSize = true;
+            this.lblCargando.Location = new System.Drawing.Point(12, 628);
+            this.lblCargando.Name = "lblCargando";
+            this.lblCargando.Size = new System.Drawing.Size(83, 20);
+            this.lblCargando.TabIndex = 3;
+            this.lblCargando.Text = "Cargando...";
+            // 
             // ListaDePedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -205,16 +222,19 @@ namespace Interface
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1382, 653);
+            this.Controls.Add(this.lblCargando);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.dataPedidos);
             this.DoubleBuffered = true;
             this.Name = "ListaDePedidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Lista de Pedidos";
+            this.Text = "Historial de pedidos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ListaDePedidos_FormClosing);
             this.Load += new System.EventHandler(this.ListaDePedidos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataPedidos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -223,6 +243,9 @@ namespace Interface
         private System.Windows.Forms.DataGridView dataPedidos;
         private System.ComponentModel.BackgroundWorker backWorkerCargarData;
         private System.Windows.Forms.ProgressBar progressBar;
+        private Botones btnExportar;
+        private System.Windows.Forms.SaveFileDialog savePedidos;
+        private System.Windows.Forms.ToolTip tipMensaje;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodigoRow;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoRow;
         private System.Windows.Forms.DataGridViewTextBoxColumn ComidaRow;
@@ -233,8 +256,6 @@ namespace Interface
         private System.Windows.Forms.DataGridViewTextBoxColumn ClienteRow;
         private System.Windows.Forms.DataGridViewTextBoxColumn TelefonoRow;
         private System.Windows.Forms.DataGridViewTextBoxColumn DireccionRow;
-        private Botones btnExportar;
-        private System.Windows.Forms.SaveFileDialog savePedidos;
-        private System.Windows.Forms.ToolTip tipMensaje;
+        private System.Windows.Forms.Label lblCargando;
     }
 }

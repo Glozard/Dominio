@@ -28,7 +28,6 @@ namespace Interface
         private void ListaDePedidos_Load(object sender, EventArgs e)
         {
             btnExportar.Visible = false;
-
             CheckForIllegalCrossThreadCalls = false;
             if (backWorkerCargarData.IsBusy != true)
             {
@@ -62,9 +61,10 @@ namespace Interface
                 int periodo = 100 / cantidad;
                 int progreso = 0;
                 foreach (Pedido aux in pedidos)
+            {
+                try
                 {
-                    
-                    indice = dataPedidos.Rows.Add();                  
+                    indice = dataPedidos.Rows.Add();            
                     dataPedidos.Rows[indice].Cells[0].Value = aux.Codigo;
                     dataPedidos.Rows[indice].Cells[1].Value = aux.Estado;
                     dataPedidos.Rows[indice].Cells[2].Value = aux.Comida;
@@ -75,9 +75,11 @@ namespace Interface
                     dataPedidos.Rows[indice].Cells[7].Value = aux.Cliente;
                     dataPedidos.Rows[indice].Cells[8].Value = aux.Telefono;
                     dataPedidos.Rows[indice].Cells[9].Value = aux.Direccion;
-                progreso = progreso + periodo;
+                    progreso = progreso + periodo;
                     backWorkerCargarData.ReportProgress(progreso);
-                Thread.Sleep(100);
+                    Thread.Sleep(100);
+                }
+                catch (Exception) { }
                 
             }
             
@@ -119,6 +121,19 @@ namespace Interface
         private void backWorkerCargarData_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             btnExportar.Visible = true;
+            progressBar.Visible = false;
+            lblCargando.Visible = false;
+
+
+        }
+
+        private void dataPedidos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ListaDePedidos_FormClosing(object sender, FormClosingEventArgs e)
+        {
         }
     }
 }

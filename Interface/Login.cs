@@ -28,7 +28,7 @@ namespace Interface
            
         }
 
-        //poner password visible
+     
         private void checkVerContrasenia_CheckedChanged(object sender, EventArgs e)
         {
             if (checkVerContrasenia.Checked == true)
@@ -71,8 +71,13 @@ namespace Interface
                     cocina.Show();
                 }
             }
-            catch (Exception) { MessageBox.Show("Usuario incorrecto"); } ///problema al ingresar otro rol que no es
+            catch (Exception) { MessageBox.Show("Usuario incorrecto"); } 
  
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
