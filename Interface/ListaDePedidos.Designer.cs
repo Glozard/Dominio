@@ -192,6 +192,7 @@ namespace Interface
             this.btnExportar.TabIndex = 2;
             this.btnExportar.Text = "&Exportar";
             this.btnExportar.TextColor = System.Drawing.Color.White;
+            this.tipMensaje.SetToolTip(this.btnExportar, "Exporta la tabla de pedidos");
             this.btnExportar.UseVisualStyleBackColor = false;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 

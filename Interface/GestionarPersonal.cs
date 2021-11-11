@@ -52,21 +52,7 @@ namespace Interface
             txtCi.Text = "";
             txtCi.ReadOnly = false;
         }
-        public void btnModificar_Click(object sender, EventArgs e)
-        {
-            int unRol = comboRol.SelectedIndex;
-            string unaDireccion = txtDireccion.Text.ToLower().Trim();
-            string unNombre = txtNombre.Text.ToLower().Trim();
-            string unApellido = txtApellido.Text.ToLower().Trim();
-            int unaCi = Convert.ToInt32(txtCi.Text);
-            int unTelefono = Convert.ToInt32(txtTelefono.Text);
 
-            restaurante.ModificarEmpleado(unaCi , unRol , unTelefono , unNombre , unApellido , unaDireccion);
-            limpiar();
-            dataEmpleados.Rows.Clear();
-            cargarListaEmpleados();
-            MessageBox.Show("Empleado modificado correctamente");
-        }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -84,7 +70,8 @@ namespace Interface
             txtDireccion.Text = dataEmpleados[5, posicion].Value.ToString();
             txtCi.ReadOnly = true;
         }
-        public void btnEliminar_Click(object sender, EventArgs e)
+
+        private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             if (txtCi.Text != "")
             {
@@ -100,7 +87,8 @@ namespace Interface
             }
             else { MessageBox.Show("Error : Debes seleccionar un usuario valido"); }
         }
-        public void btnAgregar_Click(object sender, EventArgs e)
+
+        private void btnAgregar_Click_1(object sender, EventArgs e)
         {
             byte unRol = (byte)comboRol.SelectedIndex;
             string unaDireccion = txtDireccion.Text;
@@ -114,7 +102,23 @@ namespace Interface
             limpiar();
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            int unRol = comboRol.SelectedIndex;
+            string unaDireccion = txtDireccion.Text.ToLower().Trim();
+            string unNombre = txtNombre.Text.ToLower().Trim();
+            string unApellido = txtApellido.Text.ToLower().Trim();
+            int unaCi = Convert.ToInt32(txtCi.Text);
+            int unTelefono = Convert.ToInt32(txtTelefono.Text);
+
+            restaurante.ModificarEmpleado(unaCi, unRol, unTelefono, unNombre, unApellido, unaDireccion);
+            limpiar();
+            dataEmpleados.Rows.Clear();
+            cargarListaEmpleados();
+            MessageBox.Show("Empleado modificado correctamente");
+        }
+
+        private void btnRefresh_Click_1(object sender, EventArgs e)
         {
             limpiar();
             txtCi.ReadOnly = false;

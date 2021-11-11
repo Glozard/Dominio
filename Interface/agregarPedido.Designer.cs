@@ -29,7 +29,7 @@ namespace Interface
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblProducto = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(agregarPedido));
             this.dataPedido = new System.Windows.Forms.DataGridView();
             this.ComidaRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,16 +68,16 @@ namespace Interface
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
-            this.lblAgregar = new System.Windows.Forms.Button();
-            this.btnEnviar = new System.Windows.Forms.Button();
-            this.btnNoDisponble = new System.Windows.Forms.Button();
-            this.btnDisponible = new System.Windows.Forms.Button();
-            this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.comboClientes = new System.Windows.Forms.ComboBox();
             this.lblClientes = new System.Windows.Forms.Label();
-            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnDisponible = new Interface.Botones();
+            this.btnNoDisponible = new Interface.Botones();
+            this.btnAgregar = new Interface.Botones();
+            this.btnEnviar = new Interface.Botones();
+            this.btnEliminar = new Interface.Botones();
+            this.btnAgregarCliente = new Interface.Botones();
             ((System.ComponentModel.ISupportInitialize)(this.dataPedido)).BeginInit();
             this.tablaComida.SuspendLayout();
             this.Pizza.SuspendLayout();
@@ -87,19 +87,10 @@ namespace Interface
             this.Cervezas.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblProducto
-            // 
-            this.lblProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblProducto.AutoSize = true;
-            this.lblProducto.Location = new System.Drawing.Point(227, 27);
-            this.lblProducto.Name = "lblProducto";
-            this.lblProducto.Size = new System.Drawing.Size(61, 20);
-            this.lblProducto.TabIndex = 24;
-            this.lblProducto.Text = "Comida";
-            // 
             // dataPedido
             // 
             this.dataPedido.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataPedido.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ComidaRow,
@@ -109,11 +100,12 @@ namespace Interface
             this.CodigoRow,
             this.TelefonoRow,
             this.ClienteRow});
+            this.dataPedido.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataPedido.Location = new System.Drawing.Point(35, 369);
             this.dataPedido.Name = "dataPedido";
             this.dataPedido.RowHeadersWidth = 51;
             this.dataPedido.RowTemplate.Height = 29;
-            this.dataPedido.Size = new System.Drawing.Size(934, 184);
+            this.dataPedido.Size = new System.Drawing.Size(934, 200);
             this.dataPedido.TabIndex = 26;
             this.dataPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -174,6 +166,8 @@ namespace Interface
             this.tablaComida.Controls.Add(this.PapasFritas);
             this.tablaComida.Controls.Add(this.Bebida);
             this.tablaComida.Controls.Add(this.Cervezas);
+            this.tablaComida.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tablaComida.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tablaComida.Location = new System.Drawing.Point(31, 61);
             this.tablaComida.Name = "tablaComida";
             this.tablaComida.SelectedIndex = 0;
@@ -439,9 +433,9 @@ namespace Interface
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.Location = new System.Drawing.Point(1134, 109);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(69, 20);
+            this.lblCantidad.Size = new System.Drawing.Size(75, 20);
             this.lblCantidad.TabIndex = 28;
-            this.lblCantidad.Text = "Cantidad";
+            this.lblCantidad.Text = "Cantidad*";
             // 
             // txtCantidad
             // 
@@ -465,66 +459,9 @@ namespace Interface
             this.lblDireccion.AutoSize = true;
             this.lblDireccion.Location = new System.Drawing.Point(1134, 168);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(72, 20);
+            this.lblDireccion.Size = new System.Drawing.Size(78, 20);
             this.lblDireccion.TabIndex = 30;
-            this.lblDireccion.Text = "Direccion";
-            // 
-            // lblAgregar
-            // 
-            this.lblAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblAgregar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAgregar.Location = new System.Drawing.Point(975, 369);
-            this.lblAgregar.Name = "lblAgregar";
-            this.lblAgregar.Size = new System.Drawing.Size(194, 45);
-            this.lblAgregar.TabIndex = 32;
-            this.lblAgregar.Text = "Agregar";
-            this.lblAgregar.UseVisualStyleBackColor = true;
-            this.lblAgregar.Click += new System.EventHandler(this.lblAgregar_Click);
-            // 
-            // btnEnviar
-            // 
-            this.btnEnviar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEnviar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEnviar.Location = new System.Drawing.Point(1001, 432);
-            this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(137, 41);
-            this.btnEnviar.TabIndex = 33;
-            this.btnEnviar.Text = "Enviar";
-            this.btnEnviar.UseVisualStyleBackColor = true;
-            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
-            // 
-            // btnNoDisponble
-            // 
-            this.btnNoDisponble.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnNoDisponble.Location = new System.Drawing.Point(427, 316);
-            this.btnNoDisponble.Name = "btnNoDisponble";
-            this.btnNoDisponble.Size = new System.Drawing.Size(169, 48);
-            this.btnNoDisponble.TabIndex = 34;
-            this.btnNoDisponble.Text = "No disponible";
-            this.btnNoDisponble.UseVisualStyleBackColor = true;
-            this.btnNoDisponble.Click += new System.EventHandler(this.btnNoDisponble_Click);
-            // 
-            // btnDisponible
-            // 
-            this.btnDisponible.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDisponible.Location = new System.Drawing.Point(251, 316);
-            this.btnDisponible.Name = "btnDisponible";
-            this.btnDisponible.Size = new System.Drawing.Size(169, 48);
-            this.btnDisponible.TabIndex = 35;
-            this.btnDisponible.Text = "Disponible";
-            this.btnDisponible.UseVisualStyleBackColor = true;
-            this.btnDisponible.Click += new System.EventHandler(this.btnDisponible_Click);
-            // 
-            // btnAgregarCliente
-            // 
-            this.btnAgregarCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAgregarCliente.Location = new System.Drawing.Point(1152, 575);
-            this.btnAgregarCliente.Name = "btnAgregarCliente";
-            this.btnAgregarCliente.Size = new System.Drawing.Size(142, 29);
-            this.btnAgregarCliente.TabIndex = 36;
-            this.btnAgregarCliente.Text = "Agregar Cliente";
-            this.btnAgregarCliente.UseVisualStyleBackColor = true;
-            this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
+            this.lblDireccion.Text = "Direccion*";
             // 
             // txtTelefono
             // 
@@ -540,9 +477,9 @@ namespace Interface
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Location = new System.Drawing.Point(1134, 232);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(67, 20);
+            this.lblTelefono.Size = new System.Drawing.Size(73, 20);
             this.lblTelefono.TabIndex = 37;
-            this.lblTelefono.Text = "Telefono";
+            this.lblTelefono.Text = "Telefono*";
             // 
             // comboClientes
             // 
@@ -563,40 +500,145 @@ namespace Interface
             this.lblClientes.TabIndex = 40;
             this.lblClientes.Text = "Clientes";
             // 
+            // btnDisponible
+            // 
+            this.btnDisponible.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnDisponible.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnDisponible.BorderColor = System.Drawing.Color.White;
+            this.btnDisponible.BorderRadius = 0;
+            this.btnDisponible.BorderSize = 1;
+            this.btnDisponible.FlatAppearance.BorderSize = 0;
+            this.btnDisponible.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDisponible.ForeColor = System.Drawing.Color.White;
+            this.btnDisponible.Location = new System.Drawing.Point(233, 316);
+            this.btnDisponible.Name = "btnDisponible";
+            this.btnDisponible.Size = new System.Drawing.Size(188, 50);
+            this.btnDisponible.TabIndex = 42;
+            this.btnDisponible.Text = "&Disponible";
+            this.btnDisponible.TextColor = System.Drawing.Color.White;
+            this.btnDisponible.UseVisualStyleBackColor = false;
+            this.btnDisponible.Click += new System.EventHandler(this.btnDisponible_Click);
+            // 
+            // btnNoDisponible
+            // 
+            this.btnNoDisponible.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnNoDisponible.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnNoDisponible.BorderColor = System.Drawing.Color.White;
+            this.btnNoDisponible.BorderRadius = 0;
+            this.btnNoDisponible.BorderSize = 1;
+            this.btnNoDisponible.FlatAppearance.BorderSize = 0;
+            this.btnNoDisponible.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNoDisponible.ForeColor = System.Drawing.Color.White;
+            this.btnNoDisponible.Location = new System.Drawing.Point(445, 316);
+            this.btnNoDisponible.Name = "btnNoDisponible";
+            this.btnNoDisponible.Size = new System.Drawing.Size(188, 50);
+            this.btnNoDisponible.TabIndex = 43;
+            this.btnNoDisponible.Text = "&No disponible";
+            this.btnNoDisponible.TextColor = System.Drawing.Color.White;
+            this.btnNoDisponible.UseVisualStyleBackColor = false;
+            this.btnNoDisponible.Click += new System.EventHandler(this.btnNoDisponible_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnAgregar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnAgregar.BorderColor = System.Drawing.Color.White;
+            this.btnAgregar.BorderRadius = 0;
+            this.btnAgregar.BorderSize = 1;
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnAgregar.Location = new System.Drawing.Point(975, 375);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(188, 50);
+            this.btnAgregar.TabIndex = 44;
+            this.btnAgregar.Text = "&Agregar";
+            this.btnAgregar.TextColor = System.Drawing.Color.White;
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnEnviar
+            // 
+            this.btnEnviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnEnviar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnEnviar.BorderColor = System.Drawing.Color.White;
+            this.btnEnviar.BorderRadius = 0;
+            this.btnEnviar.BorderSize = 1;
+            this.btnEnviar.FlatAppearance.BorderSize = 0;
+            this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviar.ForeColor = System.Drawing.Color.White;
+            this.btnEnviar.Location = new System.Drawing.Point(1003, 441);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.Size = new System.Drawing.Size(137, 44);
+            this.btnEnviar.TabIndex = 45;
+            this.btnEnviar.Text = "&Enviar";
+            this.btnEnviar.TextColor = System.Drawing.Color.White;
+            this.btnEnviar.UseVisualStyleBackColor = false;
+            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click_1);
+            // 
             // btnEliminar
             // 
-            this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEliminar.Location = new System.Drawing.Point(1190, 379);
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnEliminar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnEliminar.BorderColor = System.Drawing.Color.White;
+            this.btnEliminar.BorderRadius = 0;
+            this.btnEliminar.BorderSize = 1;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(1187, 375);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(94, 29);
-            this.btnEliminar.TabIndex = 41;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnEliminar.Size = new System.Drawing.Size(107, 35);
+            this.btnEliminar.TabIndex = 46;
+            this.btnEliminar.Text = "E&liminar";
+            this.btnEliminar.TextColor = System.Drawing.Color.White;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
+            // 
+            // btnAgregarCliente
+            // 
+            this.btnAgregarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnAgregarCliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnAgregarCliente.BorderColor = System.Drawing.Color.White;
+            this.btnAgregarCliente.BorderRadius = 0;
+            this.btnAgregarCliente.BorderSize = 1;
+            this.btnAgregarCliente.FlatAppearance.BorderSize = 0;
+            this.btnAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarCliente.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarCliente.Location = new System.Drawing.Point(1204, 578);
+            this.btnAgregarCliente.Name = "btnAgregarCliente";
+            this.btnAgregarCliente.Size = new System.Drawing.Size(150, 30);
+            this.btnAgregarCliente.TabIndex = 47;
+            this.btnAgregarCliente.Text = "Agregar &Cliente";
+            this.btnAgregarCliente.TextColor = System.Drawing.Color.White;
+            this.btnAgregarCliente.UseVisualStyleBackColor = false;
+            this.btnAgregarCliente.Click += new System.EventHandler(this.botones1_Click);
             // 
             // agregarPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1382, 653);
+            this.Controls.Add(this.btnAgregarCliente);
             this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnEnviar);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.btnNoDisponible);
+            this.Controls.Add(this.btnDisponible);
             this.Controls.Add(this.lblClientes);
             this.Controls.Add(this.comboClientes);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.lblTelefono);
-            this.Controls.Add(this.btnAgregarCliente);
-            this.Controls.Add(this.btnDisponible);
-            this.Controls.Add(this.btnNoDisponble);
-            this.Controls.Add(this.btnEnviar);
-            this.Controls.Add(this.lblAgregar);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.lblCantidad);
             this.Controls.Add(this.tablaComida);
             this.Controls.Add(this.dataPedido);
-            this.Controls.Add(this.lblProducto);
+            this.DoubleBuffered = true;
             this.Name = "agregarPedido";
             this.Text = "agregarPedido";
             this.Load += new System.EventHandler(this.agregarPedido_Load);
@@ -618,7 +660,6 @@ namespace Interface
         }
 
         #endregion
-        private System.Windows.Forms.Label lblProducto;
         private System.Windows.Forms.DataGridView dataPedido;
         private System.Windows.Forms.TabControl tablaComida;
         private System.Windows.Forms.TabPage Pizza;
@@ -627,13 +668,8 @@ namespace Interface
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label lblDireccion;
-        private System.Windows.Forms.Button lblAgregar;
-        private System.Windows.Forms.Button btnEnviar;
-        private System.Windows.Forms.Button btnNoDisponble;
-        private System.Windows.Forms.Button btnDisponible;
         private System.Windows.Forms.Label lblNoDisponible;
         private System.Windows.Forms.Label lblDisponible;
-        private System.Windows.Forms.Button btnAgregarCliente;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn ComidaRow;
@@ -666,6 +702,11 @@ namespace Interface
         private System.Windows.Forms.ListBox listaCervezasDisponible;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnEliminar;
+        private Botones btnDisponible;
+        private Botones btnNoDisponible;
+        private Botones btnAgregar;
+        private Botones btnEnviar;
+        private Botones btnEliminar;
+        private Botones btnAgregarCliente;
     }
 }

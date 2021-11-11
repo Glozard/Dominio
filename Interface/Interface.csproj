@@ -7,11 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\FondoDos.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="RawPrint" Version="0.5.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DominioElChivito\DominioElChivito.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\FondoDos.png" />
   </ItemGroup>
 
 </Project>

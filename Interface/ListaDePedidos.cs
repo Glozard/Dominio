@@ -22,7 +22,7 @@ namespace Interface
         {
             this.restaurante = unRestaurante;
             InitializeComponent();         
-            tipMensaje.SetToolTip(this.btnExportar, "Exporta la tabla de pedidos");
+
         }
         
         private void ListaDePedidos_Load(object sender, EventArgs e)
@@ -123,8 +123,6 @@ namespace Interface
             btnExportar.Visible = true;
             progressBar.Visible = false;
             lblCargando.Visible = false;
-
-
         }
 
         private void dataPedidos_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -29,6 +29,8 @@ namespace Interface
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionarPersonal));
             this.lblCi = new System.Windows.Forms.Label();
             this.txtCi = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -41,9 +43,6 @@ namespace Interface
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblRol = new System.Windows.Forms.Label();
             this.comboRol = new System.Windows.Forms.ComboBox();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.dataEmpleados = new System.Windows.Forms.DataGridView();
             this.CiRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RolRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,25 +50,32 @@ namespace Interface
             this.NombreRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidoRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DireccionRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.botones1 = new Interface.Botones();
+            this.btnEliminar = new Interface.Botones();
+            this.btnModificar = new Interface.Botones();
+            this.btnAgregar = new Interface.Botones();
+            this.btnRefresh = new Interface.Botones();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCi
             // 
             this.lblCi.AutoSize = true;
+            this.lblCi.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblCi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblCi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCi.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblCi.Location = new System.Drawing.Point(96, 34);
             this.lblCi.Name = "lblCi";
-            this.lblCi.Size = new System.Drawing.Size(22, 20);
+            this.lblCi.Size = new System.Drawing.Size(30, 22);
             this.lblCi.TabIndex = 5;
-            this.lblCi.Text = "Ci";
+            this.lblCi.Text = "Ci*";
             // 
             // txtCi
             // 
             this.txtCi.Location = new System.Drawing.Point(138, 34);
             this.txtCi.Name = "txtCi";
-            this.txtCi.Size = new System.Drawing.Size(125, 27);
+            this.txtCi.Size = new System.Drawing.Size(134, 27);
             this.txtCi.TabIndex = 0;
             this.txtCi.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -83,20 +89,22 @@ namespace Interface
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
+            this.lblNombre.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblNombre.Location = new System.Drawing.Point(374, 73);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(64, 20);
+            this.lblNombre.Size = new System.Drawing.Size(70, 20);
             this.lblNombre.TabIndex = 3;
-            this.lblNombre.Text = "Nombre";
+            this.lblNombre.Text = "Nombre*";
             // 
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
+            this.lblApellido.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblApellido.Location = new System.Drawing.Point(618, 31);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(66, 20);
+            this.lblApellido.Size = new System.Drawing.Size(72, 20);
             this.lblApellido.TabIndex = 7;
-            this.lblApellido.Text = "Apellido";
+            this.lblApellido.Text = "Apellido*";
             // 
             // txtApellido
             // 
@@ -108,11 +116,12 @@ namespace Interface
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
+            this.lblDireccion.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblDireccion.Location = new System.Drawing.Point(618, 73);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(72, 20);
+            this.lblDireccion.Size = new System.Drawing.Size(78, 20);
             this.lblDireccion.TabIndex = 11;
-            this.lblDireccion.Text = "Direccion";
+            this.lblDireccion.Text = "Direccion*";
             // 
             // txtDireccion
             // 
@@ -124,11 +133,12 @@ namespace Interface
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
+            this.lblTelefono.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblTelefono.Location = new System.Drawing.Point(374, 27);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(67, 20);
+            this.lblTelefono.Size = new System.Drawing.Size(73, 20);
             this.lblTelefono.TabIndex = 9;
-            this.lblTelefono.Text = "Telefono";
+            this.lblTelefono.Text = "Telefono*";
             // 
             // txtTelefono
             // 
@@ -140,11 +150,12 @@ namespace Interface
             // lblRol
             // 
             this.lblRol.AutoSize = true;
+            this.lblRol.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblRol.Location = new System.Drawing.Point(87, 76);
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(31, 20);
+            this.lblRol.Size = new System.Drawing.Size(37, 20);
             this.lblRol.TabIndex = 13;
-            this.lblRol.Text = "Rol";
+            this.lblRol.Text = "Rol*";
             // 
             // comboRol
             // 
@@ -162,38 +173,9 @@ namespace Interface
             this.comboRol.Size = new System.Drawing.Size(134, 28);
             this.comboRol.TabIndex = 1;
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(527, 420);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(94, 29);
-            this.btnEliminar.TabIndex = 8;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(285, 420);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(94, 29);
-            this.btnAgregar.TabIndex = 6;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(12, 54);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(63, 29);
-            this.btnRefresh.TabIndex = 28;
-            this.btnRefresh.Text = "refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
             // dataEmpleados
             // 
+            this.dataEmpleados.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CiRow,
@@ -202,7 +184,8 @@ namespace Interface
             this.NombreRow,
             this.ApellidoRow,
             this.DireccionRow});
-            this.dataEmpleados.Location = new System.Drawing.Point(79, 149);
+            this.dataEmpleados.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dataEmpleados.Location = new System.Drawing.Point(96, 155);
             this.dataEmpleados.Name = "dataEmpleados";
             this.dataEmpleados.RowHeadersWidth = 51;
             this.dataEmpleados.RowTemplate.Height = 29;
@@ -253,42 +236,96 @@ namespace Interface
             this.DireccionRow.Name = "DireccionRow";
             this.DireccionRow.Width = 125;
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnEliminar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnEliminar.BorderColor = System.Drawing.Color.White;
+            this.btnEliminar.BorderRadius = 0;
+            this.btnEliminar.BorderSize = 1;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(618, 425);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(188, 50);
+            this.btnEliminar.TabIndex = 29;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextColor = System.Drawing.Color.White;
+            this.toolTip1.SetToolTip(this.btnEliminar, "Elimina el empleado seleccionado");
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
+            // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(406, 420);
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnModificar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnModificar.BorderColor = System.Drawing.Color.White;
+            this.btnModificar.BorderRadius = 0;
+            this.btnModificar.BorderSize = 1;
+            this.btnModificar.FlatAppearance.BorderSize = 0;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
+            this.btnModificar.Location = new System.Drawing.Point(405, 425);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(94, 29);
-            this.btnModificar.TabIndex = 7;
+            this.btnModificar.Size = new System.Drawing.Size(188, 50);
+            this.btnModificar.TabIndex = 30;
             this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.TextColor = System.Drawing.Color.White;
+            this.toolTip1.SetToolTip(this.btnModificar, "Modificas el empleado seleccionado");
+            this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // botones1
+            // btnAgregar
             // 
-            this.botones1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
-            this.botones1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
-            this.botones1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botones1.BorderRadius = 0;
-            this.botones1.BorderSize = 0;
-            this.botones1.FlatAppearance.BorderSize = 0;
-            this.botones1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botones1.ForeColor = System.Drawing.Color.White;
-            this.botones1.Location = new System.Drawing.Point(630, 457);
-            this.botones1.Name = "botones1";
-            this.botones1.Size = new System.Drawing.Size(188, 50);
-            this.botones1.TabIndex = 29;
-            this.botones1.Text = "Eliminar";
-            this.botones1.TextColor = System.Drawing.Color.White;
-            this.botones1.UseVisualStyleBackColor = false;
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnAgregar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnAgregar.BorderColor = System.Drawing.Color.White;
+            this.btnAgregar.BorderRadius = 1;
+            this.btnAgregar.BorderSize = 0;
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnAgregar.Location = new System.Drawing.Point(192, 425);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(188, 50);
+            this.btnAgregar.TabIndex = 31;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextColor = System.Drawing.Color.White;
+            this.toolTip1.SetToolTip(this.btnAgregar, "Agrega un empleado nuevo a la base de datos");
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnRefresh.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnRefresh.BorderColor = System.Drawing.Color.White;
+            this.btnRefresh.BorderRadius = 0;
+            this.btnRefresh.BorderSize = 1;
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Location = new System.Drawing.Point(12, 48);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(69, 30);
+            this.btnRefresh.TabIndex = 32;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.TextColor = System.Drawing.Color.White;
+            this.toolTip1.SetToolTip(this.btnRefresh, "Refresca y limpia todos los campos selccionados");
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click_1);
             // 
             // GestionarPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(999, 519);
-            this.Controls.Add(this.botones1);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.comboRol);
             this.Controls.Add(this.lblRol);
@@ -302,8 +339,8 @@ namespace Interface
             this.Controls.Add(this.txtCi);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.dataEmpleados);
+            this.DoubleBuffered = true;
             this.Name = "GestionarPersonal";
             this.Text = "Gestion de personal";
             this.Load += new System.EventHandler(this.ListaDeEmpleados_Load);
@@ -321,7 +358,6 @@ namespace Interface
         private System.Windows.Forms.TextBox txtCi;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.DataGridViewTextBoxColumn CiRow;
         private System.Windows.Forms.DataGridViewTextBoxColumn RolRow;
         private System.Windows.Forms.DataGridViewTextBoxColumn TelefonoRows;
@@ -336,9 +372,10 @@ namespace Interface
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.ComboBox comboRol;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnRefresh;
-        private Botones botones1;
+        private Botones btnEliminar;
+        private Botones btnModificar;
+        private Botones btnAgregar;
+        private Botones btnRefresh;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

@@ -27,7 +27,7 @@ namespace Interface
             this.restaurante = unRestaurante;
             InitializeComponent();
             btnDisponible.Visible = false;
-            btnNoDisponble.Visible = false;
+            btnNoDisponible.Visible = false;
             unaPocision = posicion;
             LevantarClientes();
             CargarProductos();
@@ -36,19 +36,7 @@ namespace Interface
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            int posicion = -1;
-            posicion = dataPedido.CurrentRow.Index;
-            try
-            {
-                if (posicion != -1)
-                {
-                    dataPedido.Rows.RemoveAt(posicion);  
-                }
-            } catch (Exception) { MessageBox.Show("Debes seleccionar un pedido valido"); }
-            
-        }
+ 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int posicion = -1;
@@ -59,28 +47,10 @@ namespace Interface
         }
         private void lblAgregar_Click(object sender, EventArgs e)
         {
-           
-            AgregarPedido();
+
         }
 
-        private void btnEnviar_Click(object sender, EventArgs e)
-        {
-                foreach (DataGridViewRow aux in dataPedido.Rows)
-                {
-                if (aux.Cells[0].Value != null)
-                {
-                    int cantidadAux = Convert.ToInt32(aux.Cells[1].Value);
-                    int unCodigo_productoAux = Convert.ToInt32(aux.Cells[4].Value);
-                    int numeroDeOrdenAux = Convert.ToInt32(aux.Cells[3].Value);
-                    string direccionAux = aux.Cells[2].Value.ToString().ToLower().Trim();
-                    string telefono = aux.Cells[5].Value.ToString().ToLower().Trim();
-                    string cliente = aux.Cells[6].Value.ToString().ToLower().Trim();
-                    restaurante.agregarPedido(aux.Cells[0].Value.ToString().ToLower().Trim(), cantidadAux, estado, numeroDeOrdenAux, unCodigo, unCodigo_productoAux, direccionAux, telefono, cliente);
-                    dataPedido.Rows.RemoveAt(0);
-                }
-                else MessageBox.Show("No hay pedidos en cola para enviar");
-                }
-        }
+
         private void agregarPedido_Load(object sender, EventArgs e)
         {
             if (unaPocision == 0)
@@ -88,7 +58,7 @@ namespace Interface
                 lblClientes.Visible = false;
                 comboClientes.Visible = false;
                 btnEnviar.Visible = false;
-                lblAgregar.Visible = false;
+                btnAgregar.Visible = false;
                 txtCantidad.Visible = false;
                 txtDireccion.Visible = false;
                 dataPedido.Visible = false;
@@ -96,42 +66,21 @@ namespace Interface
                 lblDireccion.Visible = false;
                 Size = new Size(918, 431);
                 btnDisponible.Visible = true;
-                btnNoDisponble.Visible = true;
+                btnNoDisponible.Visible = true;
             }
             else { ListasOnlyRead(); }
         }
-
-        private void btnDisponible_Click(object sender, EventArgs e)
-        {
-            string resp = ComidaSeleccionadaNoDisponible();
-            if (resp != null)
-            {
-                restaurante.ModificarEstadoProductoDisponible(resp);
-                LimpiarListas();
-                CargarProductos();
-            }
-            else MessageBox.Show("Debe seleccionar un producto.");
-        }
-        private void btnNoDisponble_Click(object sender, EventArgs e)
-        {
-            string resp = ComidaSeleccionada();
-            if (resp != null)
-            {
-                restaurante.ModificarEstadoProducto(resp);
-                LimpiarListas();
-                CargarProductos();
-            }
-            else MessageBox.Show("Debe seleccionar un producto.");
-        }
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
-            AgregarCliente cliente = new AgregarCliente(restaurante);
-            cliente.Show();
+
+        }
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            AgregarPedido();
         }
 
         private void tablaComida_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
         void LimpiarListas()
         {
@@ -322,5 +271,70 @@ namespace Interface
             }
         }
 
+        private void btnDisponible_Click(object sender, EventArgs e)
+        {
+            string resp = ComidaSeleccionadaNoDisponible();
+            if (resp != null)
+            {
+                restaurante.ModificarEstadoProductoDisponible(resp);
+                LimpiarListas();
+                CargarProductos();
+            }
+            else MessageBox.Show("Debe seleccionar un producto.");
+        }
+
+        private void btnNoDisponible_Click(object sender, EventArgs e)
+        {
+            string resp = ComidaSeleccionada();
+            if (resp != null)
+            {
+                restaurante.ModificarEstadoProducto(resp);
+                LimpiarListas();
+                CargarProductos();
+            }
+            else MessageBox.Show("Debe seleccionar un producto.");
+
+        }
+
+        private void btnEnviar_Click_1(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow aux in dataPedido.Rows)
+            {
+                if (aux.Cells[0].Value != null)
+                {
+                    int cantidadAux = Convert.ToInt32(aux.Cells[1].Value);
+                    int unCodigo_productoAux = Convert.ToInt32(aux.Cells[4].Value);
+                    int numeroDeOrdenAux = Convert.ToInt32(aux.Cells[3].Value);
+                    string direccionAux = aux.Cells[2].Value.ToString().ToLower().Trim();
+                    string telefono = aux.Cells[5].Value.ToString().ToLower().Trim();
+                    string cliente = aux.Cells[6].Value.ToString().ToLower().Trim();
+                    restaurante.agregarPedido(aux.Cells[0].Value.ToString().ToLower().Trim(), cantidadAux, estado, numeroDeOrdenAux, unCodigo, unCodigo_productoAux, direccionAux, telefono, cliente);
+                    dataPedido.Rows.RemoveAt(0);
+                }
+                else MessageBox.Show("No hay pedidos en cola para enviar");
+            }
+
+        }
+
+        private void btnEliminar_Click_1(object sender, EventArgs e)
+        {
+            int posicion = -1;
+            posicion = dataPedido.CurrentRow.Index;
+            try
+            {
+                if (posicion != -1)
+                {
+                    dataPedido.Rows.RemoveAt(posicion);
+                }
+            }
+            catch (Exception) { MessageBox.Show("Debes seleccionar un pedido valido"); }
+
+        }
+
+        private void botones1_Click(object sender, EventArgs e)
+        {
+            AgregarCliente cliente = new AgregarCliente(restaurante);
+            cliente.Show();
+        }
     }
 }

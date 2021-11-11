@@ -66,14 +66,6 @@ namespace Interface
         {
         }
 
-        private void btnComenzar_Click(object sender, EventArgs e)
-        {
-
-            btnTerminado.Enabled = true;
-            reloj.Start();
-            timer.Enabled = true;
-            btnComenzar.Enabled = false;
-        }
 
         private void timer_Tick(object sender, EventArgs e)
         {
@@ -90,7 +82,18 @@ namespace Interface
 
         }
 
-        private void btnTerminado_Click(object sender, EventArgs e)
+
+
+
+        private void btnComenzar_Click_1(object sender, EventArgs e)
+        {
+            btnTerminado.Enabled = true;
+            reloj.Start();
+            timer.Enabled = true;
+            btnComenzar.Enabled = false;
+        }
+
+        private void btnTerminado_Click_1(object sender, EventArgs e)
         {
             posicion = dataListaPedidos.CurrentRow.Index;
             reloj.Reset();
@@ -100,14 +103,14 @@ namespace Interface
             timer.Enabled = false;
             btnTerminado.Enabled = false;
             btnComenzar.Enabled = true;
-            int codigo= (int)dataListaPedidos[2, 0].Value;
+            int codigo = (int)dataListaPedidos[2, 0].Value;
             restaurante.PedidoTerminado(codigo);
-            dataListaPedidos.Rows.RemoveAt(0);     
+            dataListaPedidos.Rows.RemoveAt(0);
         }
 
-        private void btnListaDeProductos_Click(object sender, EventArgs e)
+        private void btnListaDeProductos_Click_1(object sender, EventArgs e)
         {
-            agregarPedido agregar = new agregarPedido(restaurante ,0);
+            agregarPedido agregar = new agregarPedido(restaurante, 0);
             agregar.Show();
         }
     }
