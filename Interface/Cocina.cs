@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Drawing.Printing;
 
 namespace Interface
 {
@@ -106,12 +107,29 @@ namespace Interface
             int codigo = (int)dataListaPedidos[2, 0].Value;
             restaurante.PedidoTerminado(codigo);
             dataListaPedidos.Rows.RemoveAt(0);
+
         }
+   
 
         private void btnListaDeProductos_Click_1(object sender, EventArgs e)
         {
             agregarPedido agregar = new agregarPedido(restaurante, 0);
             agregar.Show();
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            printDocument1 = new System.Drawing.Printing.PrintDocument();
+            PrinterSettings ps = new PrinterSettings();
+            printDocument1.PrinterSettings = ps;
+            printDocument1.PrintPage += Imprimir;
+            printDocument1.Print();
+        }
+        private void Imprimir(object sender, PrintPageEventArgs e)
+        {
+            Font font = new Font("Arial", 14, FontStyle.Regular, GraphicsUnit.Point);
+
+            e.Graphics.DrawString("Ticket de pedido", font, Brushes.Black, new RectangleF(0, 10, 120, 20));
         }
     }
 }

@@ -51,6 +51,8 @@ namespace Interface
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnTerminado = new Interface.Botones();
             this.btnListaDeProductos = new Interface.Botones();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.btnImprimir = new Interface.Botones();
             ((System.ComponentModel.ISupportInitialize)(this.dataListaPedidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -244,6 +246,25 @@ namespace Interface
             this.btnListaDeProductos.UseVisualStyleBackColor = false;
             this.btnListaDeProductos.Click += new System.EventHandler(this.btnListaDeProductos_Click_1);
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnImprimir.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnImprimir.BorderColor = System.Drawing.Color.White;
+            this.btnImprimir.BorderRadius = 10;
+            this.btnImprimir.BorderSize = 1;
+            this.btnImprimir.FlatAppearance.BorderSize = 0;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.ForeColor = System.Drawing.Color.White;
+            this.btnImprimir.Location = new System.Drawing.Point(1084, 213);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(188, 50);
+            this.btnImprimir.TabIndex = 48;
+            this.btnImprimir.Text = "&Imprimir";
+            this.btnImprimir.TextColor = System.Drawing.Color.White;
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
             // Cocina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -251,6 +272,7 @@ namespace Interface
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1382, 653);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnListaDeProductos);
             this.Controls.Add(this.btnTerminado);
             this.Controls.Add(this.btnComenzar);
@@ -290,5 +312,7 @@ namespace Interface
         private System.Windows.Forms.ToolTip toolTip1;
         private Botones btnTerminado;
         private Botones btnListaDeProductos;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private Botones btnImprimir;
     }
 }
