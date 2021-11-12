@@ -65,11 +65,11 @@ namespace Interface
             this.EstadoRow,
             this.ColumNumeroOrden});
             this.dataListaPedidos.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataListaPedidos.Location = new System.Drawing.Point(321, 268);
+            this.dataListaPedidos.Location = new System.Drawing.Point(343, 243);
             this.dataListaPedidos.Name = "dataListaPedidos";
             this.dataListaPedidos.RowHeadersWidth = 51;
             this.dataListaPedidos.RowTemplate.Height = 29;
-            this.dataListaPedidos.Size = new System.Drawing.Size(680, 188);
+            this.dataListaPedidos.Size = new System.Drawing.Size(683, 213);
             this.dataListaPedidos.TabIndex = 0;
             this.dataListaPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListaPedidos_CellContentClick);
             // 
@@ -189,7 +189,7 @@ namespace Interface
             this.btnComenzar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
             this.btnComenzar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
             this.btnComenzar.BorderColor = System.Drawing.Color.White;
-            this.btnComenzar.BorderRadius = 0;
+            this.btnComenzar.BorderRadius = 10;
             this.btnComenzar.BorderSize = 1;
             this.btnComenzar.FlatAppearance.BorderSize = 0;
             this.btnComenzar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -209,7 +209,7 @@ namespace Interface
             this.btnTerminado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
             this.btnTerminado.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
             this.btnTerminado.BorderColor = System.Drawing.Color.White;
-            this.btnTerminado.BorderRadius = 0;
+            this.btnTerminado.BorderRadius = 10;
             this.btnTerminado.BorderSize = 1;
             this.btnTerminado.FlatAppearance.BorderSize = 0;
             this.btnTerminado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

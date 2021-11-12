@@ -149,7 +149,7 @@ namespace Interface
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(427, 406);
+            this.btnAgregar.Location = new System.Drawing.Point(406, 400);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(179, 54);
             this.btnAgregar.TabIndex = 45;

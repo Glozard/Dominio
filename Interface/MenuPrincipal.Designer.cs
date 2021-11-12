@@ -49,7 +49,7 @@ namespace Interface
             this.btnRelevarPedidos.FlatAppearance.BorderSize = 0;
             this.btnRelevarPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRelevarPedidos.ForeColor = System.Drawing.Color.White;
-            this.btnRelevarPedidos.Location = new System.Drawing.Point(465, 232);
+            this.btnRelevarPedidos.Location = new System.Drawing.Point(387, 197);
             this.btnRelevarPedidos.Name = "btnRelevarPedidos";
             this.btnRelevarPedidos.Size = new System.Drawing.Size(188, 50);
             this.btnRelevarPedidos.TabIndex = 6;
@@ -69,7 +69,7 @@ namespace Interface
             this.btnAgregarCliente.FlatAppearance.BorderSize = 0;
             this.btnAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarCliente.Location = new System.Drawing.Point(465, 312);
+            this.btnAgregarCliente.Location = new System.Drawing.Point(387, 332);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
             this.btnAgregarCliente.Size = new System.Drawing.Size(188, 50);
             this.btnAgregarCliente.TabIndex = 7;
@@ -89,7 +89,7 @@ namespace Interface
             this.btnGestionarPersonal.FlatAppearance.BorderSize = 0;
             this.btnGestionarPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionarPersonal.ForeColor = System.Drawing.Color.White;
-            this.btnGestionarPersonal.Location = new System.Drawing.Point(585, 392);
+            this.btnGestionarPersonal.Location = new System.Drawing.Point(576, 447);
             this.btnGestionarPersonal.Name = "btnGestionarPersonal";
             this.btnGestionarPersonal.Size = new System.Drawing.Size(188, 50);
             this.btnGestionarPersonal.TabIndex = 8;
@@ -109,7 +109,7 @@ namespace Interface
             this.btnHistorialPedidos.FlatAppearance.BorderSize = 0;
             this.btnHistorialPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHistorialPedidos.ForeColor = System.Drawing.Color.White;
-            this.btnHistorialPedidos.Location = new System.Drawing.Point(707, 312);
+            this.btnHistorialPedidos.Location = new System.Drawing.Point(765, 332);
             this.btnHistorialPedidos.Name = "btnHistorialPedidos";
             this.btnHistorialPedidos.Size = new System.Drawing.Size(188, 50);
             this.btnHistorialPedidos.TabIndex = 9;
@@ -129,7 +129,7 @@ namespace Interface
             this.btnCocina.FlatAppearance.BorderSize = 0;
             this.btnCocina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCocina.ForeColor = System.Drawing.Color.White;
-            this.btnCocina.Location = new System.Drawing.Point(707, 232);
+            this.btnCocina.Location = new System.Drawing.Point(765, 197);
             this.btnCocina.Name = "btnCocina";
             this.btnCocina.Size = new System.Drawing.Size(188, 50);
             this.btnCocina.TabIndex = 10;

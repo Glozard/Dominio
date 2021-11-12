@@ -21,8 +21,7 @@ namespace Interface
         }
 
         public void ListaDeEmpleados_Load(object sender, EventArgs e)
-        {
-           
+        {          
         }
         public void cargarListaEmpleados()
         {
@@ -41,7 +40,6 @@ namespace Interface
                 dataEmpleados.Rows[indice].Cells[5].Value = aux.Direccion;
             }
         }
-
         public void limpiar()
         {
             comboRol.SelectedItem = null;
@@ -52,10 +50,8 @@ namespace Interface
             txtCi.Text = "";
             txtCi.ReadOnly = false;
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
         public void dataEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

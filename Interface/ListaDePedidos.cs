@@ -29,6 +29,7 @@ namespace Interface
         {
             btnExportar.Visible = false;
             CheckForIllegalCrossThreadCalls = false;
+
             if (backWorkerCargarData.IsBusy != true)
             {
                 backWorkerCargarData.RunWorkerAsync();
@@ -41,8 +42,7 @@ namespace Interface
             dt = restaurante.CargarPedidos();
             
                 for (int i = 1; i < restaurante.CargarPedidos().Rows.Count; i++) 
-                {
-                    
+                {                 
                         Pedido p = new Pedido();
                         p.Codigo = (int)dt.Rows[i][0];
                         p.Estado = ((string)dt.Rows[i][8]);
@@ -51,7 +51,7 @@ namespace Interface
                         p.Codigo_producto = (int)dt.Rows[i][3];
                         p.Numero_orden = (int)dt.Rows[i][2];
                         p.Fecha = (DateTime)dt.Rows[i][5];
-                        p.Cliente = (string)dt.Rows[i][9];
+                        p.Cliente = (int)dt.Rows[i][9];
                         p.Telefono = (string)dt.Rows[i][7];
                         p.Direccion = (string)dt.Rows[i][1];
                         pedidos.Add(p);

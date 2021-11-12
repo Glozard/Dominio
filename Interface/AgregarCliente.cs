@@ -57,7 +57,7 @@ namespace Interface
 
         private void txtNombre_Click(object sender, EventArgs e)
         {
-            
+            listaClientes.Items.Clear();
         }
     }
 }
