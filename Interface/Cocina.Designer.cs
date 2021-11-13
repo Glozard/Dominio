@@ -32,11 +32,6 @@ namespace Interface
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cocina));
             this.dataListaPedidos = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumNumeroOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSegundos = new System.Windows.Forms.TextBox();
             this.txtMinutos = new System.Windows.Forms.TextBox();
             this.txtHoras = new System.Windows.Forms.TextBox();
@@ -53,6 +48,13 @@ namespace Interface
             this.btnListaDeProductos = new Interface.Botones();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.btnImprimir = new Interface.Botones();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumNumeroOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DireccionRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TelefonoRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataListaPedidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,50 +67,17 @@ namespace Interface
             this.ColumCantidad,
             this.ColumCodigo,
             this.EstadoRow,
-            this.ColumNumeroOrden});
+            this.ColumNumeroOrden,
+            this.DireccionRow,
+            this.TelefonoRow});
             this.dataListaPedidos.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataListaPedidos.Location = new System.Drawing.Point(343, 243);
+            this.dataListaPedidos.Location = new System.Drawing.Point(278, 243);
             this.dataListaPedidos.Name = "dataListaPedidos";
             this.dataListaPedidos.RowHeadersWidth = 51;
             this.dataListaPedidos.RowTemplate.Height = 29;
-            this.dataListaPedidos.Size = new System.Drawing.Size(683, 213);
+            this.dataListaPedidos.Size = new System.Drawing.Size(780, 213);
             this.dataListaPedidos.TabIndex = 0;
             this.dataListaPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListaPedidos_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Comida";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 125;
-            // 
-            // ColumCantidad
-            // 
-            this.ColumCantidad.HeaderText = "Cantidad";
-            this.ColumCantidad.MinimumWidth = 6;
-            this.ColumCantidad.Name = "ColumCantidad";
-            this.ColumCantidad.Width = 125;
-            // 
-            // ColumCodigo
-            // 
-            this.ColumCodigo.HeaderText = "Codigo";
-            this.ColumCodigo.MinimumWidth = 6;
-            this.ColumCodigo.Name = "ColumCodigo";
-            this.ColumCodigo.Width = 125;
-            // 
-            // EstadoRow
-            // 
-            this.EstadoRow.HeaderText = "Estado";
-            this.EstadoRow.MinimumWidth = 6;
-            this.EstadoRow.Name = "EstadoRow";
-            this.EstadoRow.Width = 125;
-            // 
-            // ColumNumeroOrden
-            // 
-            this.ColumNumeroOrden.HeaderText = "Numero de Orden";
-            this.ColumNumeroOrden.MinimumWidth = 6;
-            this.ColumNumeroOrden.Name = "ColumNumeroOrden";
-            this.ColumNumeroOrden.Width = 125;
             // 
             // txtSegundos
             // 
@@ -265,6 +234,57 @@ namespace Interface
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Comida";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // ColumCantidad
+            // 
+            this.ColumCantidad.HeaderText = "Cantidad";
+            this.ColumCantidad.MinimumWidth = 6;
+            this.ColumCantidad.Name = "ColumCantidad";
+            this.ColumCantidad.Width = 125;
+            // 
+            // ColumCodigo
+            // 
+            this.ColumCodigo.HeaderText = "Codigo";
+            this.ColumCodigo.MinimumWidth = 6;
+            this.ColumCodigo.Name = "ColumCodigo";
+            this.ColumCodigo.Width = 125;
+            // 
+            // EstadoRow
+            // 
+            this.EstadoRow.HeaderText = "Estado";
+            this.EstadoRow.MinimumWidth = 6;
+            this.EstadoRow.Name = "EstadoRow";
+            this.EstadoRow.Width = 125;
+            // 
+            // ColumNumeroOrden
+            // 
+            this.ColumNumeroOrden.HeaderText = "Numero de Orden";
+            this.ColumNumeroOrden.MinimumWidth = 6;
+            this.ColumNumeroOrden.Name = "ColumNumeroOrden";
+            this.ColumNumeroOrden.Width = 125;
+            // 
+            // DireccionRow
+            // 
+            this.DireccionRow.HeaderText = "Direccion";
+            this.DireccionRow.MinimumWidth = 6;
+            this.DireccionRow.Name = "DireccionRow";
+            this.DireccionRow.Visible = false;
+            this.DireccionRow.Width = 125;
+            // 
+            // TelefonoRow
+            // 
+            this.TelefonoRow.HeaderText = "Telefono";
+            this.TelefonoRow.MinimumWidth = 6;
+            this.TelefonoRow.Name = "TelefonoRow";
+            this.TelefonoRow.Visible = false;
+            this.TelefonoRow.Width = 125;
+            // 
             // Cocina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -303,16 +323,18 @@ namespace Interface
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumCantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumCodigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoRow;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumNumeroOrden;
         private Botones btnComenzar;
         private System.Windows.Forms.ToolTip toolTip1;
         private Botones btnTerminado;
         private Botones btnListaDeProductos;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private Botones btnImprimir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumCantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoRow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumNumeroOrden;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DireccionRow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TelefonoRow;
     }
 }

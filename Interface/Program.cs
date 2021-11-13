@@ -20,8 +20,6 @@ namespace Interface
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login(e));
-            Application.Run(new MenuPrincipal(e));
-            
         }
     }
 }
