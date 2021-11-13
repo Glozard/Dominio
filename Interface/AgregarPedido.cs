@@ -229,6 +229,7 @@ namespace Interface
                                 unNumero_orden = unNumero_orden + 1;
                                 unCodigo = restaurante.CargarCodigo(ComidaSeleccionada());
                                 unTelefono = txtTelefono.Text;
+                                unCliente = comboClientes.Text;
 
 
                                 dataPedido.Rows.Add(ComidaSeleccionada(), unaCantidad, unaDireccion, unNumero_orden, unCodigo, unTelefono, unCliente);
@@ -319,7 +320,7 @@ namespace Interface
                     int numeroDeOrdenAux = Convert.ToInt32(aux.Cells[3].Value);
                     string direccionAux = aux.Cells[2].Value.ToString().ToLower().Trim();
                     string telefono = aux.Cells[5].Value.ToString().ToLower().Trim();
-                    int cliente = Convert.ToInt32(aux.Cells[6].Value.ToString().ToLower().Trim());
+                    string cliente = (aux.Cells[6].Value.ToString().ToLower().Trim());
                     restaurante.agregarPedido(aux.Cells[0].Value.ToString().ToLower().Trim(), cantidadAux, estado, numeroDeOrdenAux, unCodigo, unCodigo_productoAux, direccionAux, telefono, cliente);
                     dataPedido.Rows.RemoveAt(0);
                 }

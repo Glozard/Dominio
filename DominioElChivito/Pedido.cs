@@ -15,7 +15,7 @@ namespace DominioElChivito
         int codigo_producto; 
         string direccion;
         string telefono;
-        int cliente;
+        string cliente;
         DateTime fecha;
 
         
@@ -36,7 +36,7 @@ namespace DominioElChivito
         {
         }
 
-        public Pedido(string comida, int cantidad, string estado, int numero_orden, int codigo, int codigo_producto, string direccion, string telefono, int cliente)
+        public Pedido(string comida, int cantidad, string estado, int numero_orden, int codigo, int codigo_producto, string direccion, string telefono, string cliente)
         {
             this.comida = comida;
             this.cantidad = cantidad;
@@ -49,7 +49,7 @@ namespace DominioElChivito
             this.cliente = cliente;
         }
 
-        public Pedido(string comida, int cantidad, string estado, int numero_orden, int codigo, int codigo_producto, string direccion, string telefono, int cliente, DateTime fecha)
+        public Pedido(string comida, int cantidad, string estado, int numero_orden, int codigo, int codigo_producto, string direccion, string telefono, string cliente, DateTime fecha)
         {
             this.comida = comida;
             this.cantidad = cantidad;
@@ -71,7 +71,7 @@ namespace DominioElChivito
         public int Codigo_producto { get => codigo_producto; set => codigo_producto = value; }
         public string Direccion { get => direccion; set => direccion = value; }
         public string Telefono { get => telefono; set => telefono = value; }
-        public int Cliente { get => cliente; set => cliente = value; }
+        public string Cliente { get => cliente; set => cliente = value; }
         public DateTime Fecha { get; set; }
     }
     }

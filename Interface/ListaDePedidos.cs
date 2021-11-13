@@ -51,7 +51,7 @@ namespace Interface
                         p.Codigo_producto = (int)dt.Rows[i][3];
                         p.Numero_orden = (int)dt.Rows[i][2];
                         p.Fecha = (DateTime)dt.Rows[i][5];
-                        p.Cliente = (int)dt.Rows[i][9];
+                        p.Cliente = (string)dt.Rows[i][9];
                         p.Telefono = (string)dt.Rows[i][7];
                         p.Direccion = (string)dt.Rows[i][1];
                         pedidos.Add(p);

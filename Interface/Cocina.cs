@@ -134,15 +134,15 @@ namespace Interface
             Font font = new Font("Arial", 14, FontStyle.Regular, GraphicsUnit.Point);
             int y = 10;
             string direccion = dataListaPedidos[5, 0].Value.ToString();
-            e.Graphics.DrawString("--Pedido--", font, Brushes.Black, new RectangleF(0, y+=15, 120, 20));
-            e.Graphics.DrawString("Dirección:", font, Brushes.Black, new RectangleF(0, y += 20, 120, 20));
-            e.Graphics.DrawString(direccion, font, Brushes.Black, new RectangleF(0, y += 15, 120, 20));
-            e.Graphics.DrawString("Teléfono:", font, Brushes.Black, new RectangleF(0, y += 15, 120, 20));
-            e.Graphics.DrawString(dataListaPedidos[6 ,0].Value.ToString(), font, Brushes.Black, new RectangleF(0, y += 15, 120, 20));
-            e.Graphics.DrawString("Comida:", font, Brushes.Black, new RectangleF(0, y += 15, 120, 20));
-            e.Graphics.DrawString(dataListaPedidos[0, 0].Value.ToString(), font, Brushes.Black, new RectangleF(0, y += 15, 120, 20));
-            e.Graphics.DrawString("Cantidad:", font, Brushes.Black, new RectangleF(0, y += 15, 120, 20));
-            e.Graphics.DrawString(dataListaPedidos[1, 0].Value.ToString(), font, Brushes.Black, new RectangleF(0, y += 15, 120, 20));
+            e.Graphics.DrawString("--Pedido--", font, Brushes.Black, new RectangleF(5, y+=15, 300, 20));
+            e.Graphics.DrawString("Dirección:", font, Brushes.Black, new RectangleF(5, y += 25, 300, 20));
+            e.Graphics.DrawString(direccion, font, Brushes.Black, new RectangleF(5, y += 20, 300, 20));
+            e.Graphics.DrawString("Teléfono:", font, Brushes.Black, new RectangleF(5, y += 25, 300, 20));
+            e.Graphics.DrawString(dataListaPedidos[6 ,0].Value.ToString(), font, Brushes.Black, new RectangleF(5, y += 20, 300, 20));
+            e.Graphics.DrawString("Comida:", font, Brushes.Black, new RectangleF(5, y += 25, 300, 20));
+            e.Graphics.DrawString(dataListaPedidos[0, 0].Value.ToString(), font, Brushes.Black, new RectangleF(5, y += 20, 300, 20));
+            e.Graphics.DrawString("Cantidad:", font, Brushes.Black, new RectangleF(0, y += 25, 300, 20));
+            e.Graphics.DrawString(dataListaPedidos[1, 0].Value.ToString(), font, Brushes.Black, new RectangleF(5, y += 20, 300, 20 ));
         }
     }
 }
