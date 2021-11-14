@@ -7,13 +7,18 @@ namespace DominioElChivito
 {
     public class Cliente : Persona
     {
-        public string direccion;
+        string direccion;
+        int puntos;
 
         public Cliente(string direccion, string nombre, string apellido, int ci, int telefono) : base(nombre, apellido, ci, telefono)
         {
             direccion = " ";
         }
-        
+        public Cliente(string direccion, string nombre, string apellido, int ci, int telefono , int puntos) : base(nombre, apellido, ci, telefono)
+        {
+            direccion = " ";
+            puntos = puntos;
+        }
         public Cliente() { }
 
         public Cliente(ClienteElevador cliente) 
@@ -23,10 +28,11 @@ namespace DominioElChivito
             this.apellido = cliente.Apellido;
             this.ci = cliente.Ci;
             this.telefono = cliente.Telefono;
+            this.puntos = cliente.Puntos;
         }
         
         public string Direccion { get => direccion; set => direccion = value; }
-        
+        public int Puntos { get => puntos; set => puntos = value; }
     }
 
 }

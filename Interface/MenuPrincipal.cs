@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
@@ -52,5 +53,30 @@ namespace Interface
             Cocina cocina = new Cocina(restaurante);
             cocina.Show();
         }
+
+        private void btnListaDeClientes_Click(object sender, EventArgs e)
+        {
+
+            DialogResult dr = saveClientes.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                string nombreArchivo = saveClientes.FileName;
+                exportCSV(nombreArchivo);
+                MessageBox.Show("Archivo exportado correctamente en:" + nombreArchivo);
+            }
+        }
+
+        void exportCSV(string nombreArchivo)
+        {
+            StreamWriter file = new StreamWriter(nombreArchivo);
+            file.WriteLine("Ci ; Nombre ; Apellido ; Direccion ; Telefono ; Puntos");
+
+            foreach (Cliente aux in restaurante.CargarClientes())
+            {
+                file.WriteLine(aux.ci + ";" + aux.Nombre + ";" + aux.Apellido + ";" + aux.Direccion + ";" + aux.telefono + ";" + aux.Puntos);
+            }
+            file.Close();
+        }
     }
+
 }

@@ -38,7 +38,6 @@ namespace DominoBDD
                 MySqlDataAdapter da = new MySqlDataAdapter("SELECT * From cliente", conexion);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-
                 
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
@@ -48,6 +47,7 @@ namespace DominoBDD
                     c.Apellido = dt.Rows[i]["apellido"].ToString();
                     c.Direccion = dt.Rows[i]["direccion"].ToString();
                     c.Telefono = Convert.ToInt32(dt.Rows[i]["telefono"]);
+                    c.Puntos = Convert.ToInt32(dt.Rows[i]["puntos"].ToString());
                     listaClientes.Add(c);
                 }
             }

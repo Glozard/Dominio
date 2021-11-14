@@ -37,6 +37,8 @@ namespace Interface
             this.btnHistorialPedidos = new Interface.Botones();
             this.btnCocina = new Interface.Botones();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnListaDeClientes = new Interface.Botones();
+            this.saveClientes = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // btnRelevarPedidos
@@ -89,7 +91,7 @@ namespace Interface
             this.btnGestionarPersonal.FlatAppearance.BorderSize = 0;
             this.btnGestionarPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionarPersonal.ForeColor = System.Drawing.Color.White;
-            this.btnGestionarPersonal.Location = new System.Drawing.Point(576, 447);
+            this.btnGestionarPersonal.Location = new System.Drawing.Point(387, 447);
             this.btnGestionarPersonal.Name = "btnGestionarPersonal";
             this.btnGestionarPersonal.Size = new System.Drawing.Size(188, 50);
             this.btnGestionarPersonal.TabIndex = 8;
@@ -139,6 +141,31 @@ namespace Interface
             this.btnCocina.UseVisualStyleBackColor = false;
             this.btnCocina.Click += new System.EventHandler(this.btnCocina_Click_1);
             // 
+            // btnListaDeClientes
+            // 
+            this.btnListaDeClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnListaDeClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnListaDeClientes.BorderColor = System.Drawing.Color.White;
+            this.btnListaDeClientes.BorderRadius = 0;
+            this.btnListaDeClientes.BorderSize = 0;
+            this.btnListaDeClientes.FlatAppearance.BorderSize = 0;
+            this.btnListaDeClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListaDeClientes.ForeColor = System.Drawing.Color.White;
+            this.btnListaDeClientes.Location = new System.Drawing.Point(770, 447);
+            this.btnListaDeClientes.Name = "btnListaDeClientes";
+            this.btnListaDeClientes.Size = new System.Drawing.Size(188, 50);
+            this.btnListaDeClientes.TabIndex = 11;
+            this.btnListaDeClientes.Text = "&Exportar lista de clientes";
+            this.btnListaDeClientes.TextColor = System.Drawing.Color.White;
+            this.toolTip1.SetToolTip(this.btnListaDeClientes, "Exporta en una hoja de calculo la lista de clientes");
+            this.btnListaDeClientes.UseVisualStyleBackColor = false;
+            this.btnListaDeClientes.Click += new System.EventHandler(this.btnListaDeClientes_Click);
+            // 
+            // saveClientes
+            // 
+            this.saveClientes.DefaultExt = "csv";
+            this.saveClientes.Filter = "Archivos CSV|*.csv";
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -146,6 +173,7 @@ namespace Interface
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1382, 653);
+            this.Controls.Add(this.btnListaDeClientes);
             this.Controls.Add(this.btnCocina);
             this.Controls.Add(this.btnHistorialPedidos);
             this.Controls.Add(this.btnGestionarPersonal);
@@ -166,5 +194,7 @@ namespace Interface
         private Botones btnGestionarPersonal;
         private Botones btnCocina;
         private System.Windows.Forms.ToolTip toolTip1;
+        private Botones btnListaDeClientes;
+        private System.Windows.Forms.SaveFileDialog saveClientes;
     }
 }

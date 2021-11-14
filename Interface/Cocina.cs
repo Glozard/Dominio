@@ -100,18 +100,26 @@ namespace Interface
 
         private void btnTerminado_Click_1(object sender, EventArgs e)
         {
-            posicion = dataListaPedidos.CurrentRow.Index;
-            reloj.Reset();
-            txtSegundos.Text = "00";
-            txtMinutos.Text = "00";
-            txtHoras.Text = "00";
-            timer.Enabled = false;
-            btnTerminado.Enabled = false;
-            btnComenzar.Enabled = true;
-            int codigo = (int)dataListaPedidos[2, 0].Value;
-            restaurante.PedidoTerminado(codigo);
-            dataListaPedidos.Rows.RemoveAt(0);
-
+            try
+            {
+                posicion = dataListaPedidos.CurrentRow.Index;
+                reloj.Reset();
+                txtSegundos.Text = "00";
+                txtMinutos.Text = "00";
+                txtHoras.Text = "00";
+                timer.Enabled = false;
+                btnTerminado.Enabled = false;
+                btnComenzar.Enabled = true;
+                int codigo = (int)dataListaPedidos[2, 0].Value;
+                restaurante.PedidoTerminado(codigo);
+                printDocument1 = new System.Drawing.Printing.PrintDocument();
+                PrinterSettings ps = new PrinterSettings();
+                printDocument1.PrinterSettings = ps;
+                printDocument1.PrintPage += Imprimir;
+                printDocument1.Print();
+                dataListaPedidos.Rows.RemoveAt(0);
+            }
+            catch (Exception) { MessageBox.Show("Imposible realizar esta acción");}
         }
    
 
@@ -123,11 +131,7 @@ namespace Interface
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            printDocument1 = new System.Drawing.Printing.PrintDocument();
-            PrinterSettings ps = new PrinterSettings();
-            printDocument1.PrinterSettings = ps;
-            printDocument1.PrintPage += Imprimir;
-            printDocument1.Print();
+
         }
         private void Imprimir(object sender, PrintPageEventArgs e)
         {
