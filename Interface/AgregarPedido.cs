@@ -320,7 +320,12 @@ namespace Interface
                     int numeroDeOrdenAux = Convert.ToInt32(aux.Cells[3].Value);
                     string direccionAux = aux.Cells[2].Value.ToString().ToLower().Trim();
                     string telefono = aux.Cells[5].Value.ToString().ToLower().Trim();
-                    string cliente = (aux.Cells[6].Value.ToString().ToLower().Trim());
+                    string cliente = "";
+                    if (aux.Cells[6].Value.ToString().ToLower().Trim() != null)
+                    {
+                        cliente = (aux.Cells[6].Value.ToString().ToLower().Trim());
+                    }
+
                     restaurante.agregarPedido(aux.Cells[0].Value.ToString().ToLower().Trim(), cantidadAux, estado, numeroDeOrdenAux, unCodigo, unCodigo_productoAux, direccionAux, telefono, cliente);
                     dataPedido.Rows.RemoveAt(0);
                 }
