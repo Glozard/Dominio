@@ -41,7 +41,6 @@ namespace Interface
             txtDireccion.Text = dataPedido[2, posicion].Value.ToString();
             txtTelefono.Text = dataPedido[5, posicion].Value.ToString();
         }
-
         private void agregarPedido_Load(object sender, EventArgs e)
         {
             if (unaPocision == 0)
@@ -355,8 +354,7 @@ namespace Interface
         }
         private void btnRefreshClientes_Click(object sender, EventArgs e)
         {
-            comboClientes.Items.Clear();
-            LevantarClientes();
+           comboClientes.AutoCompleteCustomSource =LevantarClientes();
         }
     }
 }

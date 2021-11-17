@@ -27,7 +27,6 @@ namespace DominioElChivito
 
         }
         
-
         public bool agregarPedido(string comida, int cantidad, string estado, int numero_orden, int codigo, int codigo_producto, string direccion , string telefono , int cliente)
         {
 
