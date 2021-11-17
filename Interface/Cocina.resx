@@ -66,11 +66,14 @@
   <metadata name="TelefonoRow.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
     <value>True</value>
   </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>51</value>
+  </metadata>
   <assembly alias="System.Drawing.Common" name="System.Drawing.Common, Version=4.0.2.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAB4AAAAQ4CAYAAADo08FDAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw0AAAsNAe0HwCwAAGSxSURBVHhe7N13tJxlofbhA6II
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAGSxSURBVHhe7N13tJxlofbhA6II
         CSGhJAQkgRB6Cb03pUSlKUWlfBA4dKQJSkCKIEW6gIAICEiN9CpVMPReBJHeayAJBEIg5f7OOK8ej26B
         kF1mnrmutX7r/HMEsvdk5n3nXs/Mf/3X9IkkSZIkSZLavy/NkEzbK5l+lmTJFZOf/ix54KEAAAB0GAOw
         JEmSJElSOzVVt+QrPZNusyZ9ByRbbJOcPyx5d2T1TgwAAEAHMwBLkiRJkiRNQdP0qJ/w7dk3WXbV5NAj

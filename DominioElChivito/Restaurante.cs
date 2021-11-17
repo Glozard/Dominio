@@ -28,7 +28,7 @@ namespace DominioElChivito
         }
         
 
-        public bool agregarPedido(string comida, int cantidad, string estado, int numero_orden, int codigo, int codigo_producto, string direccion , string telefono , string cliente)
+        public bool agregarPedido(string comida, int cantidad, string estado, int numero_orden, int codigo, int codigo_producto, string direccion , string telefono , int cliente)
         {
 
             PedidoElevador pe = new PedidoElevador(cantidad, estado, numero_orden, codigo, codigo_producto, direccion, telefono, comida , cliente);
@@ -38,14 +38,14 @@ namespace DominioElChivito
             return resp;
         }
 
-        public bool agregarEmpleado(byte rol, string nombre, string apellido, int ci, int telefono ,string direccion)
+        public bool agregarEmpleado(byte rol, string nombre, string apellido, int ci, string telefono ,string direccion)
         {
             Empleado e = new Empleado(rol, nombre, apellido, ci, telefono , direccion);
             empleados.Add(e);
             return restaurantebd.GuardarEmpleado(new EmpleadoElevador(rol, nombre, apellido, ci, telefono, direccion));
         }
 
-        public bool agregarCliente(string direccion, string nombre, string apellido, int ci, int telefono)
+        public bool agregarCliente(string direccion, string nombre, string apellido, int ci, string telefono)
         {
             Cliente c = new Cliente(direccion, nombre, apellido, ci, telefono);
             clientes.Add(c);
@@ -91,7 +91,7 @@ namespace DominioElChivito
             return empleados;
         }
 
-        public bool ModificarEmpleado(int ci , int rol , int telefono, string nombre ,string apellido, string direccion)
+        public bool ModificarEmpleado(int ci , int rol , string telefono, string nombre ,string apellido, string direccion)
         {
             EmpleadoElevador empleado = new EmpleadoElevador(rol, nombre , apellido , ci , telefono , direccion);
             return restaurantebd.ModificarEmpleado(empleado);

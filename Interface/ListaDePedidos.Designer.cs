@@ -59,6 +59,8 @@ namespace Interface
             // 
             // dataPedidos
             // 
+            this.dataPedidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataPedidos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataPedidos.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -78,7 +80,7 @@ namespace Interface
             this.dataPedidos.ReadOnly = true;
             this.dataPedidos.RowHeadersWidth = 51;
             this.dataPedidos.RowTemplate.Height = 29;
-            this.dataPedidos.Size = new System.Drawing.Size(1416, 500);
+            this.dataPedidos.Size = new System.Drawing.Size(1395, 500);
             this.dataPedidos.TabIndex = 0;
             this.dataPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPedidos_CellContentClick);
             // 
@@ -88,7 +90,6 @@ namespace Interface
             this.CodigoRow.MinimumWidth = 6;
             this.CodigoRow.Name = "CodigoRow";
             this.CodigoRow.ReadOnly = true;
-            this.CodigoRow.Width = 125;
             // 
             // EstadoRow
             // 
@@ -96,7 +97,6 @@ namespace Interface
             this.EstadoRow.MinimumWidth = 6;
             this.EstadoRow.Name = "EstadoRow";
             this.EstadoRow.ReadOnly = true;
-            this.EstadoRow.Width = 125;
             // 
             // ComidaRow
             // 
@@ -104,7 +104,6 @@ namespace Interface
             this.ComidaRow.MinimumWidth = 6;
             this.ComidaRow.Name = "ComidaRow";
             this.ComidaRow.ReadOnly = true;
-            this.ComidaRow.Width = 125;
             // 
             // CantidadRow
             // 
@@ -112,7 +111,6 @@ namespace Interface
             this.CantidadRow.MinimumWidth = 6;
             this.CantidadRow.Name = "CantidadRow";
             this.CantidadRow.ReadOnly = true;
-            this.CantidadRow.Width = 125;
             // 
             // Codigo_Producto_Row
             // 
@@ -120,7 +118,6 @@ namespace Interface
             this.Codigo_Producto_Row.MinimumWidth = 6;
             this.Codigo_Producto_Row.Name = "Codigo_Producto_Row";
             this.Codigo_Producto_Row.ReadOnly = true;
-            this.Codigo_Producto_Row.Width = 125;
             // 
             // Numero_Orden_Row
             // 
@@ -128,7 +125,6 @@ namespace Interface
             this.Numero_Orden_Row.MinimumWidth = 6;
             this.Numero_Orden_Row.Name = "Numero_Orden_Row";
             this.Numero_Orden_Row.ReadOnly = true;
-            this.Numero_Orden_Row.Width = 125;
             // 
             // FechaRow
             // 
@@ -136,7 +132,6 @@ namespace Interface
             this.FechaRow.MinimumWidth = 6;
             this.FechaRow.Name = "FechaRow";
             this.FechaRow.ReadOnly = true;
-            this.FechaRow.Width = 125;
             // 
             // ClienteRow
             // 
@@ -144,7 +139,6 @@ namespace Interface
             this.ClienteRow.MinimumWidth = 6;
             this.ClienteRow.Name = "ClienteRow";
             this.ClienteRow.ReadOnly = true;
-            this.ClienteRow.Width = 125;
             // 
             // TelefonoRow
             // 
@@ -152,7 +146,6 @@ namespace Interface
             this.TelefonoRow.MinimumWidth = 6;
             this.TelefonoRow.Name = "TelefonoRow";
             this.TelefonoRow.ReadOnly = true;
-            this.TelefonoRow.Width = 125;
             // 
             // DireccionRow
             // 
@@ -160,7 +153,6 @@ namespace Interface
             this.DireccionRow.MinimumWidth = 6;
             this.DireccionRow.Name = "DireccionRow";
             this.DireccionRow.ReadOnly = true;
-            this.DireccionRow.Width = 125;
             // 
             // backWorkerCargarData
             // 
@@ -228,6 +220,7 @@ namespace Interface
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.dataPedidos);
             this.DoubleBuffered = true;
+            this.MaximizeBox = false;
             this.Name = "ListaDePedidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Historial de pedidos";

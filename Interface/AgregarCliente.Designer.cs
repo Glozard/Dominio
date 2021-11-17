@@ -178,8 +178,10 @@ namespace Interface
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtNombre);
             this.DoubleBuffered = true;
+            this.MaximizeBox = false;
             this.Name = "AgregarCliente";
             this.Text = "Agregar Pedido";
+            this.MaximizedBoundsChanged += new System.EventHandler(this.AgregarCliente_MaximizedBoundsChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

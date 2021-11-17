@@ -32,10 +32,7 @@ namespace Interface
             CargarProductos();
             SeleccionarListasNulo();
         }
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
- 
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int posicion = -1;
@@ -77,14 +74,10 @@ namespace Interface
             comboClientes.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
         }
-        private void btnAgregarCliente_Click(object sender, EventArgs e)
-        {
 
-        }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             AgregarPedido();
-
         }
 
         private void tablaComida_SelectedIndexChanged(object sender, EventArgs e)
@@ -199,7 +192,7 @@ namespace Interface
         }
 
 
-        public  AutoCompleteStringCollection LevantarClientes()
+        public  AutoCompleteStringCollection LevantarClientes()  //preguntar esto al profe
         {
             AutoCompleteStringCollection coleccion = new AutoCompleteStringCollection();
 
@@ -231,13 +224,13 @@ namespace Interface
                                 unTelefono = txtTelefono.Text;
                                 unCliente = comboClientes.Text;
 
-
                                 dataPedido.Rows.Add(ComidaSeleccionada(), unaCantidad, unaDireccion, unNumero_orden, unCodigo, unTelefono, unCliente);
                                 txtCantidad.Text = "";
                                 txtDireccion.Text = "";
                                 txtTelefono.Text = "";
                                 unCliente = "";
                                 comboClientes.SelectedIndex = -1;
+                                comboClientes.Text = "";
                                 SeleccionarListasNulo();
                             }
                         }
@@ -320,10 +313,10 @@ namespace Interface
                     int numeroDeOrdenAux = Convert.ToInt32(aux.Cells[3].Value);
                     string direccionAux = aux.Cells[2].Value.ToString().ToLower().Trim();
                     string telefono = aux.Cells[5].Value.ToString().ToLower().Trim();
-                    string cliente = "";
-                    if (aux.Cells[6].Value.ToString().ToLower().Trim() != null)
+                    int cliente = 0;
+                    if (aux.Cells[6].Value != null)
                     {
-                        cliente = (aux.Cells[6].Value.ToString().ToLower().Trim());
+                        cliente = Convert.ToInt32(aux.Cells[6].Value);
                     }
 
                     restaurante.agregarPedido(aux.Cells[0].Value.ToString().ToLower().Trim(), cantidadAux, estado, numeroDeOrdenAux, unCodigo, unCodigo_productoAux, direccionAux, telefono, cliente);
@@ -355,11 +348,15 @@ namespace Interface
             cliente.Show();
         }
 
-        private void panelModificarProducto_Paint(object sender, PaintEventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
-
+            LimpiarListas();
+            CargarProductos();
         }
-
-
+        private void btnRefreshClientes_Click(object sender, EventArgs e)
+        {
+            comboClientes.Items.Clear();
+            LevantarClientes();
+        }
     }
 }

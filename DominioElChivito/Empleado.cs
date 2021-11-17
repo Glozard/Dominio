@@ -11,7 +11,7 @@ namespace DominioElChivito
        private string direccion;
        
 
-        public Empleado(int rol, string nombre, string apellido, int ci, int telefono , string direccion) : base(nombre, apellido, ci, telefono)
+        public Empleado(int rol, string nombre, string apellido, int ci, string telefono , string direccion) : base(nombre, apellido, ci, telefono)
         {
             this.rol = rol;
             this.nombre = nombre;

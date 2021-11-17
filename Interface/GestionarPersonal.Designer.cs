@@ -62,18 +62,17 @@ namespace Interface
             // 
             this.lblCi.AutoSize = true;
             this.lblCi.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblCi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCi.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblCi.Location = new System.Drawing.Point(96, 34);
+            this.lblCi.Location = new System.Drawing.Point(339, 116);
             this.lblCi.Name = "lblCi";
-            this.lblCi.Size = new System.Drawing.Size(30, 22);
+            this.lblCi.Size = new System.Drawing.Size(28, 20);
             this.lblCi.TabIndex = 5;
             this.lblCi.Text = "Ci*";
             // 
             // txtCi
             // 
-            this.txtCi.Location = new System.Drawing.Point(138, 34);
+            this.txtCi.Location = new System.Drawing.Point(381, 116);
             this.txtCi.Name = "txtCi";
             this.txtCi.Size = new System.Drawing.Size(134, 27);
             this.txtCi.TabIndex = 0;
@@ -81,7 +80,7 @@ namespace Interface
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(474, 73);
+            this.txtNombre.Location = new System.Drawing.Point(672, 158);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(125, 27);
             this.txtNombre.TabIndex = 3;
@@ -90,7 +89,7 @@ namespace Interface
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblNombre.Location = new System.Drawing.Point(374, 73);
+            this.lblNombre.Location = new System.Drawing.Point(572, 158);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(70, 20);
             this.lblNombre.TabIndex = 3;
@@ -100,7 +99,7 @@ namespace Interface
             // 
             this.lblApellido.AutoSize = true;
             this.lblApellido.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblApellido.Location = new System.Drawing.Point(618, 31);
+            this.lblApellido.Location = new System.Drawing.Point(816, 116);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(72, 20);
             this.lblApellido.TabIndex = 7;
@@ -108,7 +107,7 @@ namespace Interface
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(718, 31);
+            this.txtApellido.Location = new System.Drawing.Point(916, 116);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(125, 27);
             this.txtApellido.TabIndex = 4;
@@ -117,7 +116,7 @@ namespace Interface
             // 
             this.lblDireccion.AutoSize = true;
             this.lblDireccion.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblDireccion.Location = new System.Drawing.Point(618, 73);
+            this.lblDireccion.Location = new System.Drawing.Point(816, 158);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(78, 20);
             this.lblDireccion.TabIndex = 11;
@@ -125,7 +124,7 @@ namespace Interface
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(718, 73);
+            this.txtDireccion.Location = new System.Drawing.Point(916, 158);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(125, 27);
             this.txtDireccion.TabIndex = 5;
@@ -134,7 +133,7 @@ namespace Interface
             // 
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTelefono.Location = new System.Drawing.Point(374, 27);
+            this.lblTelefono.Location = new System.Drawing.Point(572, 112);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(73, 20);
             this.lblTelefono.TabIndex = 9;
@@ -142,7 +141,7 @@ namespace Interface
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(474, 27);
+            this.txtTelefono.Location = new System.Drawing.Point(672, 112);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(125, 27);
             this.txtTelefono.TabIndex = 2;
@@ -151,7 +150,7 @@ namespace Interface
             // 
             this.lblRol.AutoSize = true;
             this.lblRol.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblRol.Location = new System.Drawing.Point(87, 76);
+            this.lblRol.Location = new System.Drawing.Point(330, 158);
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(37, 20);
             this.lblRol.TabIndex = 13;
@@ -168,7 +167,7 @@ namespace Interface
             "Administrador",
             "Rececpcionista",
             "Cocinero"});
-            this.comboRol.Location = new System.Drawing.Point(138, 76);
+            this.comboRol.Location = new System.Drawing.Point(381, 158);
             this.comboRol.Name = "comboRol";
             this.comboRol.Size = new System.Drawing.Size(134, 28);
             this.comboRol.TabIndex = 1;
@@ -185,7 +184,7 @@ namespace Interface
             this.ApellidoRow,
             this.DireccionRow});
             this.dataEmpleados.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataEmpleados.Location = new System.Drawing.Point(96, 155);
+            this.dataEmpleados.Location = new System.Drawing.Point(294, 240);
             this.dataEmpleados.Name = "dataEmpleados";
             this.dataEmpleados.RowHeadersWidth = 51;
             this.dataEmpleados.RowTemplate.Height = 29;
@@ -246,7 +245,7 @@ namespace Interface
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(618, 425);
+            this.btnEliminar.Location = new System.Drawing.Point(817, 539);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(188, 50);
             this.btnEliminar.TabIndex = 29;
@@ -266,7 +265,7 @@ namespace Interface
             this.btnModificar.FlatAppearance.BorderSize = 0;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(405, 425);
+            this.btnModificar.Location = new System.Drawing.Point(604, 539);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(188, 50);
             this.btnModificar.TabIndex = 30;
@@ -286,7 +285,7 @@ namespace Interface
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(192, 425);
+            this.btnAgregar.Location = new System.Drawing.Point(391, 539);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(188, 50);
             this.btnAgregar.TabIndex = 31;
@@ -306,7 +305,7 @@ namespace Interface
             this.btnRefresh.FlatAppearance.BorderSize = 0;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.Location = new System.Drawing.Point(12, 48);
+            this.btnRefresh.Location = new System.Drawing.Point(232, 135);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(69, 30);
             this.btnRefresh.TabIndex = 32;
@@ -322,7 +321,7 @@ namespace Interface
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(999, 519);
+            this.ClientSize = new System.Drawing.Size(1382, 653);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnModificar);
@@ -341,6 +340,7 @@ namespace Interface
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.dataEmpleados);
             this.DoubleBuffered = true;
+            this.MaximizeBox = false;
             this.Name = "GestionarPersonal";
             this.Text = "Gestion de personal";
             this.Load += new System.EventHandler(this.ListaDeEmpleados_Load);

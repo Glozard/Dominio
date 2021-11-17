@@ -21,8 +21,7 @@ namespace Interface
         public ListaDePedidos(Restaurante unRestaurante)
         {
             this.restaurante = unRestaurante;
-            InitializeComponent();         
-
+            InitializeComponent();
         }
         
         private void ListaDePedidos_Load(object sender, EventArgs e)
@@ -51,11 +50,10 @@ namespace Interface
                         p.Codigo_producto = (int)dt.Rows[i][3];
                         p.Numero_orden = (int)dt.Rows[i][2];
                         p.Fecha = (DateTime)dt.Rows[i][5];
-                        p.Cliente = (string)dt.Rows[i][9];
+                        p.Cliente = (int)dt.Rows[i][9];
                         p.Telefono = (string)dt.Rows[i][7];
                         p.Direccion = (string)dt.Rows[i][1];
-                        pedidos.Add(p);
-                        
+                        pedidos.Add(p);          
                 }
                 int cantidad = pedidos.Count;
                 int periodo = 100 / cantidad;

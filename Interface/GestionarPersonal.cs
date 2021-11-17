@@ -91,7 +91,7 @@ namespace Interface
             string unNombre = txtNombre.Text.ToLower().Trim();
             string unApellido = txtApellido.Text.ToLower().Trim();
             int unaCi = Convert.ToInt32(txtCi.Text.ToLower().Trim());
-            int unTelefono = Convert.ToInt32(txtTelefono.Text);
+            string unTelefono = (txtTelefono.Text.ToLower().Trim());
             restaurante.agregarEmpleado(unRol, unNombre, unApellido, unaCi, unTelefono, unaDireccion);
             dataEmpleados.Rows.Clear();
             cargarListaEmpleados();
@@ -105,7 +105,7 @@ namespace Interface
             string unNombre = txtNombre.Text.ToLower().Trim();
             string unApellido = txtApellido.Text.ToLower().Trim();
             int unaCi = Convert.ToInt32(txtCi.Text);
-            int unTelefono = Convert.ToInt32(txtTelefono.Text);
+            string unTelefono =(txtTelefono.Text.ToLower().Trim());
 
             restaurante.ModificarEmpleado(unaCi, unRol, unTelefono, unNombre, unApellido, unaDireccion);
             limpiar();

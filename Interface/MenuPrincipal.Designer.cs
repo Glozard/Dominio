@@ -51,7 +51,7 @@ namespace Interface
             this.btnRelevarPedidos.FlatAppearance.BorderSize = 0;
             this.btnRelevarPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRelevarPedidos.ForeColor = System.Drawing.Color.White;
-            this.btnRelevarPedidos.Location = new System.Drawing.Point(387, 197);
+            this.btnRelevarPedidos.Location = new System.Drawing.Point(387, 210);
             this.btnRelevarPedidos.Name = "btnRelevarPedidos";
             this.btnRelevarPedidos.Size = new System.Drawing.Size(188, 50);
             this.btnRelevarPedidos.TabIndex = 6;
@@ -131,7 +131,7 @@ namespace Interface
             this.btnCocina.FlatAppearance.BorderSize = 0;
             this.btnCocina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCocina.ForeColor = System.Drawing.Color.White;
-            this.btnCocina.Location = new System.Drawing.Point(765, 197);
+            this.btnCocina.Location = new System.Drawing.Point(765, 210);
             this.btnCocina.Name = "btnCocina";
             this.btnCocina.Size = new System.Drawing.Size(188, 50);
             this.btnCocina.TabIndex = 10;
@@ -151,7 +151,7 @@ namespace Interface
             this.btnListaDeClientes.FlatAppearance.BorderSize = 0;
             this.btnListaDeClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListaDeClientes.ForeColor = System.Drawing.Color.White;
-            this.btnListaDeClientes.Location = new System.Drawing.Point(770, 447);
+            this.btnListaDeClientes.Location = new System.Drawing.Point(765, 447);
             this.btnListaDeClientes.Name = "btnListaDeClientes";
             this.btnListaDeClientes.Size = new System.Drawing.Size(188, 50);
             this.btnListaDeClientes.TabIndex = 11;
@@ -180,6 +180,7 @@ namespace Interface
             this.Controls.Add(this.btnAgregarCliente);
             this.Controls.Add(this.btnRelevarPedidos);
             this.DoubleBuffered = true;
+            this.MaximizeBox = false;
             this.Name = "MenuPrincipal";
             this.Text = "Menu Principal";
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);

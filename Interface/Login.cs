@@ -22,13 +22,6 @@ namespace Interface
             this.restaurante = unRestaurante;
             InitializeComponent();
         }
-
-        private void btnIngresar_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-     
         private void checkVerContrasenia_CheckedChanged(object sender, EventArgs e)
         {
             if (checkVerContrasenia.Checked == true)
@@ -71,10 +64,11 @@ namespace Interface
                     cocina.Show();
                 }
             }
-            catch (Exception) { MessageBox.Show("Usuario incorrecto"); } 
- 
+            catch (Exception) { MessageBox.Show("Usuario incorrecto"); }
+            txtContraseña.Text = "";
+            txtNombre.Text = "";
+            comboRol.SelectedIndex = -1;
         }
-
         private void Login_Load(object sender, EventArgs e)
         {
 

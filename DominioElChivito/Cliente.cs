@@ -10,11 +10,11 @@ namespace DominioElChivito
         string direccion;
         int puntos;
 
-        public Cliente(string direccion, string nombre, string apellido, int ci, int telefono) : base(nombre, apellido, ci, telefono)
+        public Cliente(string direccion, string nombre, string apellido, int ci, string telefono) : base(nombre, apellido, ci, telefono)
         {
             direccion = " ";
         }
-        public Cliente(string direccion, string nombre, string apellido, int ci, int telefono , int puntos) : base(nombre, apellido, ci, telefono)
+        public Cliente(string direccion, string nombre, string apellido, int ci, string telefono , int puntos) : base(nombre, apellido, ci, telefono)
         {
             direccion = " ";
             puntos = puntos;

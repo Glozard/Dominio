@@ -56,7 +56,7 @@ namespace DominoBDD
                     {
                         e.Ci = reader.GetInt32(0);
                         e.Rol = reader.GetInt32(1);
-                        e.Telefono = reader.GetInt32(2);
+                        e.Telefono = reader.GetString(2);
                         e.Nombre = reader.GetString(3);
                         e.Apellido = reader.GetString(4);
                         e.Direccion = reader.GetString(5);
@@ -81,7 +81,7 @@ namespace DominoBDD
                     EmpleadoElevador e = new EmpleadoElevador();
                     e.Ci = Convert.ToInt32(dt.Rows[i]["ci"]);
                     e.Rol = Convert.ToInt32(dt.Rows[i]["rol"]);
-                    e.Telefono = Convert.ToInt32(dt.Rows[i]["telefono"]);
+                    e.Telefono = dt.Rows[i]["telefono"].ToString();
                     e.Nombre = dt.Rows[i]["nombre"].ToString();
                     e.Apellido = dt.Rows[i]["apellido"].ToString();
                     e.Direccion = dt.Rows[i]["direccion"].ToString();  

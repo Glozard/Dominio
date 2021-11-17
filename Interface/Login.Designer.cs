@@ -158,6 +158,7 @@ namespace Interface
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblContraseña);
             this.DoubleBuffered = true;
+            this.MaximizeBox = false;
             this.Name = "Login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);

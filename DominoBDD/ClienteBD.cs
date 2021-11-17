@@ -17,16 +17,16 @@ namespace DominoBDD
 
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conexion;
-                cmd.CommandText = "Insert into cliente(ci , nombre , apellido , direccion , telefono)values(?ci , ?nombre , ?apellido, ?direccion , ?telefono )";
+                cmd.CommandText = "Insert into cliente(ci , nombre , apellido , direccion , telefono , puntos)values(?ci , ?nombre , ?apellido, ?direccion , ?telefono ,?puntos)";
                 cmd.Parameters.Add("?ci", MySqlDbType.Int32).Value = c.Ci;
                 cmd.Parameters.Add("?nombre", MySqlDbType.VarChar).Value = c.Nombre;
                 cmd.Parameters.Add("?apellido", MySqlDbType.VarChar).Value = c.Apellido;
                 cmd.Parameters.Add("?direccion", MySqlDbType.VarChar).Value = c.Direccion;
-                cmd.Parameters.Add("?telefono", MySqlDbType.Int32).Value = c.Telefono;
+                cmd.Parameters.Add("?telefono", MySqlDbType.VarChar).Value = c.Telefono;
+                cmd.Parameters.Add("?puntos" , MySqlDbType.VarChar).Value = 0;
                 int resp = cmd.ExecuteNonQuery();
                 if (resp != 1) return false;
                 else return true;
-
             }
         }
         public List<ClienteElevador> CargarClientes()
@@ -46,7 +46,7 @@ namespace DominoBDD
                     c.Nombre = dt.Rows[i]["nombre"].ToString();
                     c.Apellido = dt.Rows[i]["apellido"].ToString();
                     c.Direccion = dt.Rows[i]["direccion"].ToString();
-                    c.Telefono = Convert.ToInt32(dt.Rows[i]["telefono"]);
+                    c.Telefono = dt.Rows[i]["telefono"].ToString();
                     c.Puntos = Convert.ToInt32(dt.Rows[i]["puntos"].ToString());
                     listaClientes.Add(c);
                 }

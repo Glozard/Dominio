@@ -29,6 +29,7 @@ namespace Interface
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(agregarPedido));
             this.dataPedido = new System.Windows.Forms.DataGridView();
             this.ComidaRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -104,6 +105,8 @@ namespace Interface
             this.listBox10 = new System.Windows.Forms.ListBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.btnRefresh = new Interface.Botones();
+            this.btnRefreshClientes = new Interface.Botones();
             ((System.ComponentModel.ISupportInitialize)(this.dataPedido)).BeginInit();
             this.tablaComida.SuspendLayout();
             this.Pizza.SuspendLayout();
@@ -122,7 +125,17 @@ namespace Interface
             // dataPedido
             // 
             this.dataPedido.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataPedido.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataPedido.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataPedido.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataPedido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ComidaRow,
@@ -146,49 +159,42 @@ namespace Interface
             this.ComidaRow.HeaderText = "Comida";
             this.ComidaRow.MinimumWidth = 6;
             this.ComidaRow.Name = "ComidaRow";
-            this.ComidaRow.Width = 125;
             // 
             // CantidadRow
             // 
             this.CantidadRow.HeaderText = "Cantidad";
             this.CantidadRow.MinimumWidth = 6;
             this.CantidadRow.Name = "CantidadRow";
-            this.CantidadRow.Width = 125;
             // 
             // DireccionRow
             // 
             this.DireccionRow.HeaderText = "Direccion";
             this.DireccionRow.MinimumWidth = 6;
             this.DireccionRow.Name = "DireccionRow";
-            this.DireccionRow.Width = 125;
             // 
             // NumeroOrdenRow
             // 
             this.NumeroOrdenRow.HeaderText = "Numero de oreden";
             this.NumeroOrdenRow.MinimumWidth = 6;
             this.NumeroOrdenRow.Name = "NumeroOrdenRow";
-            this.NumeroOrdenRow.Width = 125;
             // 
             // CodigoRow
             // 
             this.CodigoRow.HeaderText = "Codigo";
             this.CodigoRow.MinimumWidth = 6;
             this.CodigoRow.Name = "CodigoRow";
-            this.CodigoRow.Width = 125;
             // 
             // TelefonoRow
             // 
             this.TelefonoRow.HeaderText = "Telefono";
             this.TelefonoRow.MinimumWidth = 6;
             this.TelefonoRow.Name = "TelefonoRow";
-            this.TelefonoRow.Width = 125;
             // 
             // ClienteRow
             // 
             this.ClienteRow.HeaderText = "Cliente";
             this.ClienteRow.MinimumWidth = 6;
             this.ClienteRow.Name = "ClienteRow";
-            this.ClienteRow.Width = 125;
             // 
             // tablaComida
             // 
@@ -915,6 +921,44 @@ namespace Interface
             this.label18.TabIndex = 48;
             this.label18.Text = "Disponible";
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnRefresh.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnRefresh.BorderColor = System.Drawing.Color.White;
+            this.btnRefresh.BorderRadius = 0;
+            this.btnRefresh.BorderSize = 1;
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Location = new System.Drawing.Point(31, 25);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(69, 30);
+            this.btnRefresh.TabIndex = 48;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.TextColor = System.Drawing.Color.White;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnRefreshClientes
+            // 
+            this.btnRefreshClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnRefreshClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
+            this.btnRefreshClientes.BorderColor = System.Drawing.Color.White;
+            this.btnRefreshClientes.BorderRadius = 0;
+            this.btnRefreshClientes.BorderSize = 1;
+            this.btnRefreshClientes.FlatAppearance.BorderSize = 0;
+            this.btnRefreshClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefreshClientes.ForeColor = System.Drawing.Color.White;
+            this.btnRefreshClientes.Location = new System.Drawing.Point(899, 288);
+            this.btnRefreshClientes.Name = "btnRefreshClientes";
+            this.btnRefreshClientes.Size = new System.Drawing.Size(69, 30);
+            this.btnRefreshClientes.TabIndex = 49;
+            this.btnRefreshClientes.Text = "Refresh";
+            this.btnRefreshClientes.TextColor = System.Drawing.Color.White;
+            this.btnRefreshClientes.UseVisualStyleBackColor = false;
+            this.btnRefreshClientes.Click += new System.EventHandler(this.btnRefreshClientes_Click);
+            // 
             // agregarPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -923,6 +967,8 @@ namespace Interface
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1382, 653);
+            this.Controls.Add(this.btnRefreshClientes);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnNoDisponible);
             this.Controls.Add(this.btnDisponible);
             this.Controls.Add(this.tablaComida);
@@ -940,6 +986,7 @@ namespace Interface
             this.Controls.Add(this.lblCantidad);
             this.Controls.Add(this.dataPedido);
             this.DoubleBuffered = true;
+            this.MaximizeBox = false;
             this.Name = "agregarPedido";
             this.Text = "agregarPedido";
             this.Load += new System.EventHandler(this.agregarPedido_Load);
@@ -1046,5 +1093,7 @@ namespace Interface
         private System.Windows.Forms.ListBox listBox10;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
+        private Botones btnRefresh;
+        private Botones btnRefreshClientes;
     }
 }
