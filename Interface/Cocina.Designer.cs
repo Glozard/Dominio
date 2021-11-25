@@ -32,13 +32,6 @@ namespace Interface
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cocina));
             this.dataListaPedidos = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumNumeroOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DireccionRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TelefonoRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSegundos = new System.Windows.Forms.TextBox();
             this.txtMinutos = new System.Windows.Forms.TextBox();
             this.txtHoras = new System.Windows.Forms.TextBox();
@@ -54,6 +47,14 @@ namespace Interface
             this.btnTerminado = new Interface.Botones();
             this.btnListaDeProductos = new Interface.Botones();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumNumeroOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DireccionRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TelefonoRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataListaPedidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,57 +78,6 @@ namespace Interface
             this.dataListaPedidos.Size = new System.Drawing.Size(780, 213);
             this.dataListaPedidos.TabIndex = 0;
             this.dataListaPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListaPedidos_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Comida";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 125;
-            // 
-            // ColumCantidad
-            // 
-            this.ColumCantidad.HeaderText = "Cantidad";
-            this.ColumCantidad.MinimumWidth = 6;
-            this.ColumCantidad.Name = "ColumCantidad";
-            this.ColumCantidad.Width = 125;
-            // 
-            // ColumCodigo
-            // 
-            this.ColumCodigo.HeaderText = "Codigo";
-            this.ColumCodigo.MinimumWidth = 6;
-            this.ColumCodigo.Name = "ColumCodigo";
-            this.ColumCodigo.Width = 125;
-            // 
-            // EstadoRow
-            // 
-            this.EstadoRow.HeaderText = "Estado";
-            this.EstadoRow.MinimumWidth = 6;
-            this.EstadoRow.Name = "EstadoRow";
-            this.EstadoRow.Width = 125;
-            // 
-            // ColumNumeroOrden
-            // 
-            this.ColumNumeroOrden.HeaderText = "Numero de Orden";
-            this.ColumNumeroOrden.MinimumWidth = 6;
-            this.ColumNumeroOrden.Name = "ColumNumeroOrden";
-            this.ColumNumeroOrden.Width = 125;
-            // 
-            // DireccionRow
-            // 
-            this.DireccionRow.HeaderText = "Direccion";
-            this.DireccionRow.MinimumWidth = 6;
-            this.DireccionRow.Name = "DireccionRow";
-            this.DireccionRow.Visible = false;
-            this.DireccionRow.Width = 125;
-            // 
-            // TelefonoRow
-            // 
-            this.TelefonoRow.HeaderText = "Telefono";
-            this.TelefonoRow.MinimumWidth = 6;
-            this.TelefonoRow.Name = "TelefonoRow";
-            this.TelefonoRow.Visible = false;
-            this.TelefonoRow.Width = 125;
             // 
             // txtSegundos
             // 
@@ -261,9 +211,72 @@ namespace Interface
             this.btnListaDeProductos.TabIndex = 47;
             this.btnListaDeProductos.Text = "&Modificar lista de productos";
             this.btnListaDeProductos.TextColor = System.Drawing.Color.White;
-            this.toolTip1.SetToolTip(this.btnListaDeProductos, "Desplega el apartado para modificar la disponibilidad de un producto");
+            this.toolTip1.SetToolTip(this.btnListaDeProductos, "Despliega el apartado para modificar la disponibilidad de un producto");
             this.btnListaDeProductos.UseVisualStyleBackColor = false;
             this.btnListaDeProductos.Click += new System.EventHandler(this.btnListaDeProductos_Click_1);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(1270, 594);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 38);
+            this.label1.TabIndex = 48;
+            this.label1.Text = "Cocina";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Comida";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // ColumCantidad
+            // 
+            this.ColumCantidad.HeaderText = "Cantidad";
+            this.ColumCantidad.MinimumWidth = 6;
+            this.ColumCantidad.Name = "ColumCantidad";
+            this.ColumCantidad.Width = 125;
+            // 
+            // ColumCodigo
+            // 
+            this.ColumCodigo.HeaderText = "Código";
+            this.ColumCodigo.MinimumWidth = 6;
+            this.ColumCodigo.Name = "ColumCodigo";
+            this.ColumCodigo.Width = 125;
+            // 
+            // EstadoRow
+            // 
+            this.EstadoRow.HeaderText = "Estado";
+            this.EstadoRow.MinimumWidth = 6;
+            this.EstadoRow.Name = "EstadoRow";
+            this.EstadoRow.Width = 125;
+            // 
+            // ColumNumeroOrden
+            // 
+            this.ColumNumeroOrden.HeaderText = "Numero de Orden";
+            this.ColumNumeroOrden.MinimumWidth = 6;
+            this.ColumNumeroOrden.Name = "ColumNumeroOrden";
+            this.ColumNumeroOrden.Width = 125;
+            // 
+            // DireccionRow
+            // 
+            this.DireccionRow.HeaderText = "Dirección";
+            this.DireccionRow.MinimumWidth = 6;
+            this.DireccionRow.Name = "DireccionRow";
+            this.DireccionRow.Visible = false;
+            this.DireccionRow.Width = 125;
+            // 
+            // TelefonoRow
+            // 
+            this.TelefonoRow.HeaderText = "Teléfono";
+            this.TelefonoRow.MinimumWidth = 6;
+            this.TelefonoRow.Name = "TelefonoRow";
+            this.TelefonoRow.Visible = false;
+            this.TelefonoRow.Width = 125;
             // 
             // Cocina
             // 
@@ -272,6 +285,7 @@ namespace Interface
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1382, 653);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnListaDeProductos);
             this.Controls.Add(this.btnTerminado);
             this.Controls.Add(this.btnComenzar);
@@ -308,6 +322,7 @@ namespace Interface
         private Botones btnTerminado;
         private Botones btnListaDeProductos;
         private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumCodigo;

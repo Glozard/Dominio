@@ -39,6 +39,7 @@ namespace Interface
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnListaDeClientes = new Interface.Botones();
             this.saveClientes = new System.Windows.Forms.SaveFileDialog();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnRelevarPedidos
@@ -57,7 +58,7 @@ namespace Interface
             this.btnRelevarPedidos.TabIndex = 6;
             this.btnRelevarPedidos.Text = "&Relevar pedido";
             this.btnRelevarPedidos.TextColor = System.Drawing.Color.White;
-            this.toolTip1.SetToolTip(this.btnRelevarPedidos, "Desplega el apartado de relevar pedido");
+            this.toolTip1.SetToolTip(this.btnRelevarPedidos, "Despliega el apartado de relevar pedido");
             this.btnRelevarPedidos.UseVisualStyleBackColor = false;
             this.btnRelevarPedidos.Click += new System.EventHandler(this.btnRelevarPedidos_Click);
             // 
@@ -77,7 +78,7 @@ namespace Interface
             this.btnAgregarCliente.TabIndex = 7;
             this.btnAgregarCliente.Text = "&Agregar Cliente";
             this.btnAgregarCliente.TextColor = System.Drawing.Color.White;
-            this.toolTip1.SetToolTip(this.btnAgregarCliente, "Desplega el apartado de agregar un cliente");
+            this.toolTip1.SetToolTip(this.btnAgregarCliente, "Despliega el apartado de agregar un cliente");
             this.btnAgregarCliente.UseVisualStyleBackColor = false;
             this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click_1);
             // 
@@ -97,7 +98,7 @@ namespace Interface
             this.btnGestionarPersonal.TabIndex = 8;
             this.btnGestionarPersonal.Text = "&Gestionar personal";
             this.btnGestionarPersonal.TextColor = System.Drawing.Color.White;
-            this.toolTip1.SetToolTip(this.btnGestionarPersonal, "Desplega el apartado para el gestionamiento del personal");
+            this.toolTip1.SetToolTip(this.btnGestionarPersonal, "Despliega el apartado para el gestionamiento del personal");
             this.btnGestionarPersonal.UseVisualStyleBackColor = false;
             this.btnGestionarPersonal.Click += new System.EventHandler(this.botones1_Click);
             // 
@@ -117,7 +118,7 @@ namespace Interface
             this.btnHistorialPedidos.TabIndex = 9;
             this.btnHistorialPedidos.Text = "&Historial de pedidos";
             this.btnHistorialPedidos.TextColor = System.Drawing.Color.White;
-            this.toolTip1.SetToolTip(this.btnHistorialPedidos, "Desplega el apartado que contiene el listado de todos los pedidos realizados");
+            this.toolTip1.SetToolTip(this.btnHistorialPedidos, "Despliega el apartado que contiene el listado de todos los pedidos realizados");
             this.btnHistorialPedidos.UseVisualStyleBackColor = false;
             this.btnHistorialPedidos.Click += new System.EventHandler(this.btnHistorialPedidos_Click);
             // 
@@ -137,7 +138,7 @@ namespace Interface
             this.btnCocina.TabIndex = 10;
             this.btnCocina.Text = "&Cocina";
             this.btnCocina.TextColor = System.Drawing.Color.White;
-            this.toolTip1.SetToolTip(this.btnCocina, "Desplega el apartado de realizar el pedido");
+            this.toolTip1.SetToolTip(this.btnCocina, "Despliega el apartado de realizar el pedido");
             this.btnCocina.UseVisualStyleBackColor = false;
             this.btnCocina.Click += new System.EventHandler(this.btnCocina_Click_1);
             // 
@@ -166,6 +167,18 @@ namespace Interface
             this.saveClientes.DefaultExt = "csv";
             this.saveClientes.Filter = "Archivos CSV|*.csv";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(12, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(317, 38);
+            this.label1.TabIndex = 48;
+            this.label1.Text = "Menú de administración";
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -173,6 +186,7 @@ namespace Interface
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1382, 653);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnListaDeClientes);
             this.Controls.Add(this.btnCocina);
             this.Controls.Add(this.btnHistorialPedidos);
@@ -185,6 +199,7 @@ namespace Interface
             this.Text = "Menu Principal";
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -197,5 +212,6 @@ namespace Interface
         private System.Windows.Forms.ToolTip toolTip1;
         private Botones btnListaDeClientes;
         private System.Windows.Forms.SaveFileDialog saveClientes;
+        private System.Windows.Forms.Label label1;
     }
 }

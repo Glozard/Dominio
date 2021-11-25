@@ -38,6 +38,7 @@ namespace Interface
             this.lblRol = new System.Windows.Forms.Label();
             this.checkVerContrasenia = new System.Windows.Forms.CheckBox();
             this.btnIngresar = new Interface.Botones();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblContraseña
@@ -89,7 +90,7 @@ namespace Interface
             this.comboRol.FormattingEnabled = true;
             this.comboRol.Items.AddRange(new object[] {
             "Administrador",
-            "Rececpcionista",
+            "Recepcionista",
             "Cocinero"});
             this.comboRol.Location = new System.Drawing.Point(699, 345);
             this.comboRol.Name = "comboRol";
@@ -141,6 +142,18 @@ namespace Interface
             this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.botones2_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(12, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(208, 38);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "Inicio de sesion";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -149,6 +162,7 @@ namespace Interface
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1382, 653);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.checkVerContrasenia);
             this.Controls.Add(this.comboRol);
@@ -177,5 +191,6 @@ namespace Interface
         private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.CheckBox checkVerContrasenia;
         private Botones btnIngresar;
+        private System.Windows.Forms.Label label1;
     }
 }

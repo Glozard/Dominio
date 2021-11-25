@@ -42,6 +42,7 @@ namespace Interface
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.listaClientes = new System.Windows.Forms.ListBox();
             this.btnAgregar = new Interface.Botones();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtNombre
@@ -104,7 +105,7 @@ namespace Interface
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(78, 20);
             this.lblDireccion.TabIndex = 5;
-            this.lblDireccion.Text = "Direccion*";
+            this.lblDireccion.Text = "Dirección*";
             // 
             // txtDireccion
             // 
@@ -121,7 +122,7 @@ namespace Interface
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(73, 20);
             this.lblTelefono.TabIndex = 9;
-            this.lblTelefono.Text = "Telefono*";
+            this.lblTelefono.Text = "Teléfono*";
             // 
             // txtTelefono
             // 
@@ -158,6 +159,18 @@ namespace Interface
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(12, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(206, 38);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "Agregar cliente";
+            // 
             // AgregarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -165,6 +178,7 @@ namespace Interface
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(888, 563);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.listaClientes);
             this.Controls.Add(this.lblTelefono);
@@ -180,7 +194,7 @@ namespace Interface
             this.DoubleBuffered = true;
             this.MaximizeBox = false;
             this.Name = "AgregarCliente";
-            this.Text = "Agregar Pedido";
+            this.Text = "Agregar Cliente";
             this.MaximizedBoundsChanged += new System.EventHandler(this.AgregarCliente_MaximizedBoundsChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -201,6 +215,7 @@ namespace Interface
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.ListBox listaClientes;
         private Botones btnAgregar;
+        private System.Windows.Forms.Label label1;
     }
 }
 

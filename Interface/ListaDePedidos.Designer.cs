@@ -38,6 +38,13 @@ namespace Interface
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaDePedidos));
             this.dataPedidos = new System.Windows.Forms.DataGridView();
+            this.backWorkerCargarData = new System.ComponentModel.BackgroundWorker();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.btnExportar = new Interface.Botones();
+            this.savePedidos = new System.Windows.Forms.SaveFileDialog();
+            this.tipMensaje = new System.Windows.Forms.ToolTip(this.components);
+            this.lblCargando = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.CodigoRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ComidaRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,12 +55,6 @@ namespace Interface
             this.ClienteRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TelefonoRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DireccionRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.backWorkerCargarData = new System.ComponentModel.BackgroundWorker();
-            this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.btnExportar = new Interface.Botones();
-            this.savePedidos = new System.Windows.Forms.SaveFileDialog();
-            this.tipMensaje = new System.Windows.Forms.ToolTip(this.components);
-            this.lblCargando = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataPedidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,76 +84,6 @@ namespace Interface
             this.dataPedidos.Size = new System.Drawing.Size(1395, 500);
             this.dataPedidos.TabIndex = 0;
             this.dataPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPedidos_CellContentClick);
-            // 
-            // CodigoRow
-            // 
-            this.CodigoRow.HeaderText = "Codigo";
-            this.CodigoRow.MinimumWidth = 6;
-            this.CodigoRow.Name = "CodigoRow";
-            this.CodigoRow.ReadOnly = true;
-            // 
-            // EstadoRow
-            // 
-            this.EstadoRow.HeaderText = "Estado";
-            this.EstadoRow.MinimumWidth = 6;
-            this.EstadoRow.Name = "EstadoRow";
-            this.EstadoRow.ReadOnly = true;
-            // 
-            // ComidaRow
-            // 
-            this.ComidaRow.HeaderText = "Comida";
-            this.ComidaRow.MinimumWidth = 6;
-            this.ComidaRow.Name = "ComidaRow";
-            this.ComidaRow.ReadOnly = true;
-            // 
-            // CantidadRow
-            // 
-            this.CantidadRow.HeaderText = "Cantidad";
-            this.CantidadRow.MinimumWidth = 6;
-            this.CantidadRow.Name = "CantidadRow";
-            this.CantidadRow.ReadOnly = true;
-            // 
-            // Codigo_Producto_Row
-            // 
-            this.Codigo_Producto_Row.HeaderText = "Codigo producto";
-            this.Codigo_Producto_Row.MinimumWidth = 6;
-            this.Codigo_Producto_Row.Name = "Codigo_Producto_Row";
-            this.Codigo_Producto_Row.ReadOnly = true;
-            // 
-            // Numero_Orden_Row
-            // 
-            this.Numero_Orden_Row.HeaderText = "Numero de orden";
-            this.Numero_Orden_Row.MinimumWidth = 6;
-            this.Numero_Orden_Row.Name = "Numero_Orden_Row";
-            this.Numero_Orden_Row.ReadOnly = true;
-            // 
-            // FechaRow
-            // 
-            this.FechaRow.HeaderText = "Fecha";
-            this.FechaRow.MinimumWidth = 6;
-            this.FechaRow.Name = "FechaRow";
-            this.FechaRow.ReadOnly = true;
-            // 
-            // ClienteRow
-            // 
-            this.ClienteRow.HeaderText = "Cliente";
-            this.ClienteRow.MinimumWidth = 6;
-            this.ClienteRow.Name = "ClienteRow";
-            this.ClienteRow.ReadOnly = true;
-            // 
-            // TelefonoRow
-            // 
-            this.TelefonoRow.HeaderText = "Telefono";
-            this.TelefonoRow.MinimumWidth = 6;
-            this.TelefonoRow.Name = "TelefonoRow";
-            this.TelefonoRow.ReadOnly = true;
-            // 
-            // DireccionRow
-            // 
-            this.DireccionRow.HeaderText = "Direccion";
-            this.DireccionRow.MinimumWidth = 6;
-            this.DireccionRow.Name = "DireccionRow";
-            this.DireccionRow.ReadOnly = true;
             // 
             // backWorkerCargarData
             // 
@@ -207,6 +138,88 @@ namespace Interface
             this.lblCargando.TabIndex = 3;
             this.lblCargando.Text = "Cargando...";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(264, 38);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "Historial de pedidos";
+            // 
+            // CodigoRow
+            // 
+            this.CodigoRow.HeaderText = "Código";
+            this.CodigoRow.MinimumWidth = 6;
+            this.CodigoRow.Name = "CodigoRow";
+            this.CodigoRow.ReadOnly = true;
+            // 
+            // EstadoRow
+            // 
+            this.EstadoRow.HeaderText = "Estado";
+            this.EstadoRow.MinimumWidth = 6;
+            this.EstadoRow.Name = "EstadoRow";
+            this.EstadoRow.ReadOnly = true;
+            // 
+            // ComidaRow
+            // 
+            this.ComidaRow.HeaderText = "Comida";
+            this.ComidaRow.MinimumWidth = 6;
+            this.ComidaRow.Name = "ComidaRow";
+            this.ComidaRow.ReadOnly = true;
+            // 
+            // CantidadRow
+            // 
+            this.CantidadRow.HeaderText = "Cantidad";
+            this.CantidadRow.MinimumWidth = 6;
+            this.CantidadRow.Name = "CantidadRow";
+            this.CantidadRow.ReadOnly = true;
+            // 
+            // Codigo_Producto_Row
+            // 
+            this.Codigo_Producto_Row.HeaderText = "Código producto";
+            this.Codigo_Producto_Row.MinimumWidth = 6;
+            this.Codigo_Producto_Row.Name = "Codigo_Producto_Row";
+            this.Codigo_Producto_Row.ReadOnly = true;
+            // 
+            // Numero_Orden_Row
+            // 
+            this.Numero_Orden_Row.HeaderText = "Número de orden";
+            this.Numero_Orden_Row.MinimumWidth = 6;
+            this.Numero_Orden_Row.Name = "Numero_Orden_Row";
+            this.Numero_Orden_Row.ReadOnly = true;
+            // 
+            // FechaRow
+            // 
+            this.FechaRow.HeaderText = "Fecha";
+            this.FechaRow.MinimumWidth = 6;
+            this.FechaRow.Name = "FechaRow";
+            this.FechaRow.ReadOnly = true;
+            // 
+            // ClienteRow
+            // 
+            this.ClienteRow.HeaderText = "Cliente";
+            this.ClienteRow.MinimumWidth = 6;
+            this.ClienteRow.Name = "ClienteRow";
+            this.ClienteRow.ReadOnly = true;
+            // 
+            // TelefonoRow
+            // 
+            this.TelefonoRow.HeaderText = "Teléfono";
+            this.TelefonoRow.MinimumWidth = 6;
+            this.TelefonoRow.Name = "TelefonoRow";
+            this.TelefonoRow.ReadOnly = true;
+            // 
+            // DireccionRow
+            // 
+            this.DireccionRow.HeaderText = "Dirección";
+            this.DireccionRow.MinimumWidth = 6;
+            this.DireccionRow.Name = "DireccionRow";
+            this.DireccionRow.ReadOnly = true;
+            // 
             // ListaDePedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -215,6 +228,7 @@ namespace Interface
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1382, 653);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCargando);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.progressBar);
@@ -240,6 +254,8 @@ namespace Interface
         private Botones btnExportar;
         private System.Windows.Forms.SaveFileDialog savePedidos;
         private System.Windows.Forms.ToolTip tipMensaje;
+        private System.Windows.Forms.Label lblCargando;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodigoRow;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoRow;
         private System.Windows.Forms.DataGridViewTextBoxColumn ComidaRow;
@@ -250,6 +266,5 @@ namespace Interface
         private System.Windows.Forms.DataGridViewTextBoxColumn ClienteRow;
         private System.Windows.Forms.DataGridViewTextBoxColumn TelefonoRow;
         private System.Windows.Forms.DataGridViewTextBoxColumn DireccionRow;
-        private System.Windows.Forms.Label lblCargando;
     }
 }

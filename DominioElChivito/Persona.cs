@@ -11,8 +11,7 @@ namespace DominioElChivito
        public string apellido;
        public int ci;
        public string telefono;
-      
-
+ 
         public Persona(string nombre, string apellido, int ci, string telefono)
         {
             this.nombre = nombre;

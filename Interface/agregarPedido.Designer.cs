@@ -499,7 +499,7 @@ namespace Interface
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(78, 20);
             this.lblDireccion.TabIndex = 30;
-            this.lblDireccion.Text = "Direccion*";
+            this.lblDireccion.Text = "Dirección*";
             // 
             // txtTelefono
             // 
@@ -517,7 +517,7 @@ namespace Interface
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(73, 20);
             this.lblTelefono.TabIndex = 37;
-            this.lblTelefono.Text = "Telefono*";
+            this.lblTelefono.Text = "Teléfono*";
             // 
             // comboClientes
             // 
@@ -988,7 +988,7 @@ namespace Interface
             this.DoubleBuffered = true;
             this.MaximizeBox = false;
             this.Name = "agregarPedido";
-            this.Text = "agregarPedido";
+            this.Text = "Agregar pedido";
             this.Load += new System.EventHandler(this.agregarPedido_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataPedido)).EndInit();
             this.tablaComida.ResumeLayout(false);
