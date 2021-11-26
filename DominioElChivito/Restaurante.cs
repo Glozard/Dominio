@@ -24,7 +24,6 @@ namespace DominioElChivito
             clientes = new List<Cliente>();
             empleados = new List<Empleado>();
             pedidos = new List<Pedido>();
-
         }
         
         public bool agregarPedido(string comida, int cantidad, string estado, int numero_orden, int codigo, int codigo_producto, string direccion , string telefono , int cliente)

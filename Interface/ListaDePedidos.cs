@@ -56,7 +56,12 @@ namespace Interface
                         pedidos.Add(p);          
                 }
                 int cantidad = pedidos.Count;
-                int periodo = 100 / cantidad;
+            int periodo = 100;
+            try
+            {
+                periodo = 100 / cantidad;
+            }
+            catch (Exception) { }
                 int progreso = 0;
                 foreach (Pedido aux in pedidos)
             {

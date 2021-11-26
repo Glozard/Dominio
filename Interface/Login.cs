@@ -63,6 +63,7 @@ namespace Interface
                     Cocina cocina = new Cocina(restaurante);
                     cocina.Show();
                 }
+                this.Hide();
             }
             catch (Exception) { MessageBox.Show("Usuario incorrecto"); }
             txtContraseña.Text = "";

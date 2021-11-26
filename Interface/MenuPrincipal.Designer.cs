@@ -197,6 +197,7 @@ namespace Interface
             this.MaximizeBox = false;
             this.Name = "MenuPrincipal";
             this.Text = "Menu Principal";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

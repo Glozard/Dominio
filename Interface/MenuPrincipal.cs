@@ -77,6 +77,12 @@ namespace Interface
             }
             file.Close();
         }
+
+        private void MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Login login = new Login(restaurante);
+            login.Show();
+        }
     }
 
 }

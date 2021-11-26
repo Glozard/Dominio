@@ -32,7 +32,7 @@ namespace Interface
             CargarProductos();
             SeleccionarListasNulo();
         }
-
+        
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int posicion = -1;
@@ -64,7 +64,7 @@ namespace Interface
                 tablaComida.Location = new System.Drawing.Point(271, 192);
                 btnDisponible.Location = new System.Drawing.Point(473, 447);
                 btnNoDisponible.Location = new System.Drawing.Point(685, 447);
-
+                btnRefreshClientes.Visible = false;
             }
             else { ListasOnlyRead(); }
 
@@ -315,7 +315,7 @@ namespace Interface
                     int cliente = 0;
                     if (aux.Cells[6].Value != null)
                     {
-                        cliente = Convert.ToInt32(aux.Cells[6].Value);
+                        cliente = 0;
                     }
 
                     restaurante.agregarPedido(aux.Cells[0].Value.ToString().ToLower().Trim(), cantidadAux, estado, numeroDeOrdenAux, unCodigo, unCodigo_productoAux, direccionAux, telefono, cliente);
