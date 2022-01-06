@@ -86,16 +86,20 @@ namespace Interface
 
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
-            byte unRol = (byte)comboRol.SelectedIndex;
-            string unaDireccion = txtDireccion.Text;
-            string unNombre = txtNombre.Text.ToLower().Trim();
-            string unApellido = txtApellido.Text.ToLower().Trim();
-            int unaCi = Convert.ToInt32(txtCi.Text.ToLower().Trim());
-            string unTelefono = (txtTelefono.Text.ToLower().Trim());
-            restaurante.agregarEmpleado(unRol, unNombre, unApellido, unaCi, unTelefono, unaDireccion);
-            dataEmpleados.Rows.Clear();
-            cargarListaEmpleados();
-            limpiar();
+            try
+            {
+                byte unRol = (byte)comboRol.SelectedIndex;
+                string unaDireccion = txtDireccion.Text;
+                string unNombre = txtNombre.Text.ToLower().Trim();
+                string unApellido = txtApellido.Text.ToLower().Trim();
+                int unaCi = Convert.ToInt32(txtCi.Text.ToLower().Trim());
+                string unTelefono = (txtTelefono.Text.ToLower().Trim());
+                restaurante.agregarEmpleado(unRol, unNombre, unApellido, unaCi, unTelefono, unaDireccion);
+                dataEmpleados.Rows.Clear();
+                cargarListaEmpleados();
+                limpiar();
+            }
+            catch (Exception) { MessageBox.Show("Error : Debes seleccionar agregar correctamente los datos"); }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

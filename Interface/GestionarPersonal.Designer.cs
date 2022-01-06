@@ -44,18 +44,18 @@ namespace Interface
             this.lblRol = new System.Windows.Forms.Label();
             this.comboRol = new System.Windows.Forms.ComboBox();
             this.dataEmpleados = new System.Windows.Forms.DataGridView();
-            this.btnEliminar = new Interface.Botones();
-            this.btnModificar = new Interface.Botones();
-            this.btnAgregar = new Interface.Botones();
-            this.btnRefresh = new Interface.Botones();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.CiRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RolRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TelefonoRows = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidoRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DireccionRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEliminar = new Interface.Botones();
+            this.btnModificar = new Interface.Botones();
+            this.btnAgregar = new Interface.Botones();
+            this.btnRefresh = new Interface.Botones();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -194,6 +194,48 @@ namespace Interface
             this.dataEmpleados.TabStop = false;
             this.dataEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataEmpleados_CellContentClick);
             // 
+            // CiRow
+            // 
+            this.CiRow.HeaderText = "Ci";
+            this.CiRow.MinimumWidth = 6;
+            this.CiRow.Name = "CiRow";
+            this.CiRow.Width = 125;
+            // 
+            // RolRow
+            // 
+            this.RolRow.HeaderText = "Rol";
+            this.RolRow.MinimumWidth = 6;
+            this.RolRow.Name = "RolRow";
+            this.RolRow.Width = 125;
+            // 
+            // TelefonoRows
+            // 
+            this.TelefonoRows.HeaderText = "Teléfono";
+            this.TelefonoRows.MinimumWidth = 6;
+            this.TelefonoRows.Name = "TelefonoRows";
+            this.TelefonoRows.Width = 125;
+            // 
+            // NombreRow
+            // 
+            this.NombreRow.HeaderText = "Nombre";
+            this.NombreRow.MinimumWidth = 6;
+            this.NombreRow.Name = "NombreRow";
+            this.NombreRow.Width = 125;
+            // 
+            // ApellidoRow
+            // 
+            this.ApellidoRow.HeaderText = "Apellido";
+            this.ApellidoRow.MinimumWidth = 6;
+            this.ApellidoRow.Name = "ApellidoRow";
+            this.ApellidoRow.Width = 125;
+            // 
+            // DireccionRow
+            // 
+            this.DireccionRow.HeaderText = "Dirección";
+            this.DireccionRow.MinimumWidth = 6;
+            this.DireccionRow.Name = "DireccionRow";
+            this.DireccionRow.Width = 125;
+            // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(255)))));
@@ -284,49 +326,7 @@ namespace Interface
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(264, 38);
             this.label1.TabIndex = 47;
-            this.label1.Text = "Gestión de persoanl";
-            // 
-            // CiRow
-            // 
-            this.CiRow.HeaderText = "Ci";
-            this.CiRow.MinimumWidth = 6;
-            this.CiRow.Name = "CiRow";
-            this.CiRow.Width = 125;
-            // 
-            // RolRow
-            // 
-            this.RolRow.HeaderText = "Rol";
-            this.RolRow.MinimumWidth = 6;
-            this.RolRow.Name = "RolRow";
-            this.RolRow.Width = 125;
-            // 
-            // TelefonoRows
-            // 
-            this.TelefonoRows.HeaderText = "Teléfono";
-            this.TelefonoRows.MinimumWidth = 6;
-            this.TelefonoRows.Name = "TelefonoRows";
-            this.TelefonoRows.Width = 125;
-            // 
-            // NombreRow
-            // 
-            this.NombreRow.HeaderText = "Nombre";
-            this.NombreRow.MinimumWidth = 6;
-            this.NombreRow.Name = "NombreRow";
-            this.NombreRow.Width = 125;
-            // 
-            // ApellidoRow
-            // 
-            this.ApellidoRow.HeaderText = "Apellido";
-            this.ApellidoRow.MinimumWidth = 6;
-            this.ApellidoRow.Name = "ApellidoRow";
-            this.ApellidoRow.Width = 125;
-            // 
-            // DireccionRow
-            // 
-            this.DireccionRow.HeaderText = "Dirección";
-            this.DireccionRow.MinimumWidth = 6;
-            this.DireccionRow.Name = "DireccionRow";
-            this.DireccionRow.Width = 125;
+            this.label1.Text = "Gestión de personal";
             // 
             // GestionarPersonal
             // 

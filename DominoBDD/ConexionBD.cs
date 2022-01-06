@@ -13,5 +13,6 @@ namespace DominoBDD
             conectar.Open();
             return conectar;
         }
+
     }
 }
